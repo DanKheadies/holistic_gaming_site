@@ -18,25 +18,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  bool played = false;
   int fileIndex = 0;
   List<String> files = [
     'consoles',
-    // 'gpu',
     'joystick',
     'ps-controller',
     'snake',
@@ -44,16 +43,17 @@ class _MyHomePageState extends State<MyHomePage> {
     'switch',
     'vr',
   ];
-  List<int> playTime = [
-    6000, // 148, // ~6s | 6000ms
-    // 3210,
-    3000, // 72,
-    3500, // 192,
-    5000, // 300, // ~5s
-    3000, // 90,
-    3500, // 102,
-    2750, // 80,
-  ];
+  // List<int> playTime = [
+  //   6000, // 148, // ~6s | 6000ms
+  //   3000, // 72,
+  //   3500, // 192,
+  //   5000, // 300, // ~5s
+  //   3000, // 90,
+  //   3500, // 102,
+  //   2750, // 80,
+  // ];
+
+  late AnimationController aniCont;
   late Timer navTimer;
 
   @override
@@ -61,57 +61,83 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     print('init');
 
-    fileIndex = Random().nextInt(files.length);
-
-    navTimer = Timer(
-      Duration(milliseconds: playTime[fileIndex]),
-      () => Navigator.of(context).push(
-        MaterialPageRoute<void>(
-          builder: (BuildContext context) => const DerpScreen(),
-        ),
-      ),
-      // () => print('end ani #$fileIndex'),
+    aniCont = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 3000),
     );
+
+    fileIndex = Random().nextInt(files.length);
+    print('fileIndex: $fileIndex');
+
+    runAni();
+
+    // navTimer = Timer(
+    //   Duration(milliseconds: playTime[fileIndex]),
+    //   () => Navigator.of(context).push(
+    //     MaterialPageRoute<void>(
+    //       builder: (BuildContext context) => const DerpScreen(),
+    //     ),
+    //   ),
+    //   // () => print('end ani #$fileIndex'),
+    // );
+  }
+
+  void runAni() {
+    if (!played) {
+      aniCont.forward();
+      setState(() {
+        played = true;
+      });
+    } else {
+      aniCont.reverse();
+      setState(() {
+        played = false;
+      });
+    }
   }
 
   void changeImage() {
     setState(() {
-      if (fileIndex >= files.length) {
+      if (fileIndex >= files.length - 1) {
         fileIndex = 0;
       } else {
         fileIndex += 1;
       }
 
-      navTimer.cancel();
-      navTimer = Timer(
-        Duration(milliseconds: playTime[fileIndex]),
-        () => Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const DerpScreen(),
-          ),
-        ),
-        // () => print('end ani #$fileIndex'),
-      );
+      // navTimer.cancel();
+      // navTimer = Timer(
+      //   Duration(milliseconds: playTime[fileIndex]),
+      //   () => Navigator.of(context).push(
+      //     MaterialPageRoute<void>(
+      //       builder: (BuildContext context) => const DerpScreen(),
+      //     ),
+      //   ),
+      //   // () => print('end ani #$fileIndex'),
+      // );
     });
+    print('index: $fileIndex');
+    runAni();
   }
 
   void reset() {
-    setState(() {
-      navTimer.cancel();
-      navTimer = Timer(
-        Duration(milliseconds: playTime[fileIndex]),
-        () => Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const DerpScreen(),
-          ),
-        ),
-        // () => print('end ani #$fileIndex'),
-      );
-    });
+    runAni();
+    // setState(() {
+    //   navTimer.cancel();
+    //   navTimer = Timer(
+    //     Duration(milliseconds: playTime[fileIndex]),
+    //     () => Navigator.of(context).push(
+    //       MaterialPageRoute<void>(
+    //         builder: (BuildContext context) => const DerpScreen(),
+    //       ),
+    //     ),
+    //     // () => print('end ani #$fileIndex'),
+    //   );
+    // });
   }
 
   @override
   void dispose() {
+    aniCont.dispose();
     navTimer.cancel();
     super.dispose();
   }
@@ -120,13 +146,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Holistic Gaming'),
       ),
       body: Center(
-        child: Lottie.asset('assets/images/${files[fileIndex]}.json'),
-        // child: Lottie.asset('assets/images/45082-game-controller.json'),
-        // child: Lottie.asset('assets/images/45741-game-console-animation.json'),
-        // child: Lottie.asset('assets/images/75126-gaming-console.json'),
+        child: Lottie.asset(
+          'assets/images/${files[fileIndex]}.json',
+          controller: aniCont,
+        ),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             heroTag: "btn2",
             onPressed: changeImage,
-            tooltip: 'Increment',
+            tooltip: 'change',
             child: const Icon(Icons.change_circle),
           ),
         ],
