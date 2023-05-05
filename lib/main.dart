@@ -54,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage>
   // ];
 
   late AnimationController aniCont;
-  late Timer navTimer;
 
   @override
   void initState() {
@@ -63,23 +62,13 @@ class _MyHomePageState extends State<MyHomePage>
 
     aniCont = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 3000),
+      // duration: const Duration(milliseconds: 3000),
     );
 
     fileIndex = Random().nextInt(files.length);
     print('fileIndex: $fileIndex');
 
-    runAni();
-
-    // navTimer = Timer(
-    //   Duration(milliseconds: playTime[fileIndex]),
-    //   () => Navigator.of(context).push(
-    //     MaterialPageRoute<void>(
-    //       builder: (BuildContext context) => const DerpScreen(),
-    //     ),
-    //   ),
-    //   // () => print('end ani #$fileIndex'),
-    // );
+    // runAni();
   }
 
   void runAni() {
@@ -103,42 +92,23 @@ class _MyHomePageState extends State<MyHomePage>
       } else {
         fileIndex += 1;
       }
-
-      // navTimer.cancel();
-      // navTimer = Timer(
-      //   Duration(milliseconds: playTime[fileIndex]),
-      //   () => Navigator.of(context).push(
-      //     MaterialPageRoute<void>(
-      //       builder: (BuildContext context) => const DerpScreen(),
-      //     ),
-      //   ),
-      //   // () => print('end ani #$fileIndex'),
-      // );
     });
     print('index: $fileIndex');
-    runAni();
+    // runAni();
+    reset();
   }
 
   void reset() {
-    runAni();
-    // setState(() {
-    //   navTimer.cancel();
-    //   navTimer = Timer(
-    //     Duration(milliseconds: playTime[fileIndex]),
-    //     () => Navigator.of(context).push(
-    //       MaterialPageRoute<void>(
-    //         builder: (BuildContext context) => const DerpScreen(),
-    //       ),
-    //     ),
-    //     // () => print('end ani #$fileIndex'),
-    //   );
-    // });
+    // runAni();
+    // aniCont.forward();
+    // aniCont.reverse();
+    aniCont.reset();
+    aniCont.forward();
   }
 
   @override
   void dispose() {
     aniCont.dispose();
-    navTimer.cancel();
     super.dispose();
   }
 
@@ -152,6 +122,11 @@ class _MyHomePageState extends State<MyHomePage>
         child: Lottie.asset(
           'assets/images/${files[fileIndex]}.json',
           controller: aniCont,
+          onLoaded: (composition) {
+            aniCont
+              ..duration = composition.duration
+              ..forward();
+          },
         ),
       ),
       floatingActionButton: Row(
