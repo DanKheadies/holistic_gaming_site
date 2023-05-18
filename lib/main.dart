@@ -43,46 +43,19 @@ class _MyHomePageState extends State<MyHomePage>
     'switch',
     'vr',
   ];
-  // List<int> playTime = [
-  //   6000, // 148, // ~6s | 6000ms
-  //   3000, // 72,
-  //   3500, // 192,
-  //   5000, // 300, // ~5s
-  //   3000, // 90,
-  //   3500, // 102,
-  //   2750, // 80,
-  // ];
 
   late AnimationController aniCont;
+  late Timer navTimer;
 
   @override
   void initState() {
     super.initState();
-    print('init');
 
     aniCont = AnimationController(
       vsync: this,
-      // duration: const Duration(milliseconds: 3000),
     );
 
     fileIndex = Random().nextInt(files.length);
-    print('fileIndex: $fileIndex');
-
-    // runAni();
-  }
-
-  void runAni() {
-    if (!played) {
-      aniCont.forward();
-      setState(() {
-        played = true;
-      });
-    } else {
-      aniCont.reverse();
-      setState(() {
-        played = false;
-      });
-    }
   }
 
   void changeImage() {
@@ -93,15 +66,11 @@ class _MyHomePageState extends State<MyHomePage>
         fileIndex += 1;
       }
     });
-    print('index: $fileIndex');
-    // runAni();
+
     reset();
   }
 
   void reset() {
-    // runAni();
-    // aniCont.forward();
-    // aniCont.reverse();
     aniCont.reset();
     aniCont.forward();
   }
@@ -109,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   void dispose() {
     aniCont.dispose();
+    navTimer.cancel();
     super.dispose();
   }
 
@@ -123,9 +93,24 @@ class _MyHomePageState extends State<MyHomePage>
           'assets/images/${files[fileIndex]}.json',
           controller: aniCont,
           onLoaded: (composition) {
-            aniCont
-              ..duration = composition.duration
-              ..forward();
+            if (fileIndex == 6) {
+              aniCont
+                ..duration = composition.duration
+                ..forward()
+                ..repeat();
+            } else {
+              aniCont
+                ..duration = composition.duration
+                ..forward();
+              navTimer = Timer(
+                composition.duration,
+                () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const DerpScreen(),
+                  ),
+                ),
+              );
+            }
           },
         ),
       ),
