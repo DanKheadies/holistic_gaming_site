@@ -1,156 +1,58 @@
-import 'dart:async';
-import 'dart:math';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:holistic_gaming_site/config/config.dart';
+import 'package:holistic_gaming_site/firebase_options.dart';
+// import 'package:holistic_gaming_site/screens/screens.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const HolisticGaming());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class HolisticGaming extends StatelessWidget {
+  const HolisticGaming({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      // theme: state == Brightness.dark ? darkTheme() : lightTheme(),
+      routerConfig: goRouter,
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+      // initialRoute: SplashScreen.routeName,
+      // onGenerateRoute: AppRouter.onGenerateRoute,
+      // onGenerateInitialRoutes: AppRouter.onGenerateRoute,
+      // onGenerateRoute: (settings) {
+      //   print('Dis is route: ${settings.name}');
+      //   // if (ModalRoute.of(context) != null) {
+      //   //   print('tacos');
+      //   //   print(ModalRoute.of(context)!.settings.name);
+      //   //   // Navigator.of(context).pushNamed(
+      //   //   //   HomeScreen.routeName,
+      //   //   // );
+      //   // } else {
+      //   //   print('flames');
+      //   // }
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+      //   switch (settings.name) {
+      //     case '/':
+      //       // case SplashScreen.routeName:
+      //       return SplashScreen.route();
+      //     case HomeScreen.routeName:
+      //       return HomeScreen.route();
+      //     case TestScreen.routeName:
+      //       return TestScreen.route();
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  bool played = false;
-  int fileIndex = 0;
-  List<String> files = [
-    'consoles',
-    'joystick',
-    'ps-controller',
-    'snake',
-    'snes',
-    'switch',
-    'vr',
-  ];
-
-  late AnimationController aniCont;
-  late Timer navTimer;
-
-  @override
-  void initState() {
-    super.initState();
-
-    aniCont = AnimationController(
-      vsync: this,
-    );
-
-    fileIndex = Random().nextInt(files.length);
-  }
-
-  void changeImage() {
-    setState(() {
-      if (fileIndex >= files.length - 1) {
-        fileIndex = 0;
-      } else {
-        fileIndex += 1;
-      }
-    });
-
-    reset();
-  }
-
-  void reset() {
-    aniCont.reset();
-    aniCont.forward();
-  }
-
-  @override
-  void dispose() {
-    aniCont.dispose();
-    navTimer.cancel();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Holistic Gaming'),
-      ),
-      body: Center(
-        child: Lottie.asset(
-          'assets/images/${files[fileIndex]}.json',
-          controller: aniCont,
-          onLoaded: (composition) {
-            if (fileIndex == 6) {
-              aniCont
-                ..duration = composition.duration
-                ..forward()
-                ..repeat();
-            } else {
-              aniCont
-                ..duration = composition.duration
-                ..forward();
-              navTimer = Timer(
-                composition.duration,
-                () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (BuildContext context) => const DerpScreen(),
-                  ),
-                ),
-              );
-            }
-          },
-        ),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            heroTag: "btn1",
-            onPressed: reset,
-            tooltip: 'Reset',
-            child: const Icon(Icons.restore),
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          FloatingActionButton(
-            heroTag: "btn2",
-            onPressed: changeImage,
-            tooltip: 'change',
-            child: const Icon(Icons.change_circle),
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
-  }
-}
-
-class DerpScreen extends StatelessWidget {
-  const DerpScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Derp'),
-      ),
-      body: const Center(
-        child: Text('Derpsicle.'),
-      ),
+      //     default:
+      //       return AppRouter.errorRoute();
+      //   }
+      // },
     );
   }
 }
