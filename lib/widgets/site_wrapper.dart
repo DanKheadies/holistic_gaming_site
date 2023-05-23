@@ -1,4 +1,3 @@
-// import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics_web/firebase_analytics_web.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,8 +18,10 @@ class SiteWrapper extends StatefulWidget {
 }
 
 class _SiteWrapperState extends State<SiteWrapper> {
-  // FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  bool scrollAtBottom = false;
+  double scrollBottomValue = 0;
   FirebaseAnalyticsWeb analyticsWeb = FirebaseAnalyticsWeb();
+  ScrollController scroller = ScrollController();
 
   @override
   void initState() {
@@ -30,6 +31,8 @@ class _SiteWrapperState extends State<SiteWrapper> {
       // logPageAsEvent(context);
       logPage(context);
     });
+
+    scroller.addListener(scrollListener);
   }
 
   // Future<void> logPageAsEvent(BuildContext context) async {
@@ -45,13 +48,70 @@ class _SiteWrapperState extends State<SiteWrapper> {
     );
   }
 
+  void scrollListener() {
+    if (scroller.position.atEdge) {
+      bool isTop = scroller.position.pixels == 0;
+      if (!isTop) {
+        setState(() {
+          scrollBottomValue = scroller.position.pixels;
+          scrollAtBottom = true;
+        });
+      }
+    }
+
+    if (scrollAtBottom && scroller.position.pixels <= scrollBottomValue - 1.0) {
+      setState(() {
+        scrollAtBottom = false;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    scroller.removeListener(scrollListener);
+    scroller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: widget.child,
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            controller: scroller,
+            child: widget.child,
+          ),
+          Positioned(
+            bottom: 0,
+            child: AnimatedOpacity(
+              opacity: scrollAtBottom ? 1 : 0,
+              duration: const Duration(milliseconds: 1000),
+              child: Container(
+                alignment: Alignment.center,
+                color: Theme.of(context).colorScheme.surface,
+                height: 25,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.only(
+                  bottom: 15,
+                ),
+                child: Text(
+                  '© ${DateTime.now().year} DTFun LLC All rights reserved',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.background,
+                    // fontFamily: 'Inter',
+                    // fontSize: width / 75,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       endDrawer: Responsive.isMobile(context)
-          // || Responsive.isTablet(context)
           ? const CustomDrawer()
           : const SizedBox(),
     );

@@ -32,6 +32,12 @@ class _JumbotronState extends State<Jumbotron> {
     super.initState();
     homePics.shuffle();
 
+    // Initialize to avoid errors
+    text1In = Timer(Duration.zero, () {});
+    text1Out = Timer(Duration.zero, () {});
+    text2In = Timer(Duration.zero, () {});
+    text2Out = Timer(Duration.zero, () {});
+
     // Trigger first time run, then setup for repeating
     text1In = Timer(
       const Duration(milliseconds: 1000),
@@ -92,35 +98,6 @@ class _JumbotronState extends State<Jumbotron> {
         );
       },
     );
-
-    // text1In = Timer.periodic(
-    //   const Duration(milliseconds: 11000),
-    //   (value) {
-    //     setState(() {
-    //       showText1 = true;
-    //     });
-    //     text1Out = Timer(
-    //       const Duration(milliseconds: 4000),
-    //       () => setState(() {
-    //         showText1 = false;
-    //       }),
-    //     );
-    //   },
-    // );
-    // text2In = Timer.periodic(
-    //   const Duration(milliseconds: 16000),
-    //   (value) {
-    //     setState(() {
-    //       showText2 = true;
-    //     });
-    //     text2Out = Timer(
-    //       const Duration(milliseconds: 3000),
-    //       () => setState(() {
-    //         showText2 = false;
-    //       }),
-    //     );
-    //   },
-    // );
   }
 
   @override
@@ -134,7 +111,6 @@ class _JumbotronState extends State<Jumbotron> {
 
   @override
   Widget build(BuildContext context) {
-    // final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
     return Stack(
@@ -179,36 +155,8 @@ class _JumbotronState extends State<Jumbotron> {
           onHover: (value) {
             setState(() {
               isHover = value;
-              // showText1 = !showText1;
             });
           },
-          // child: Container(
-          //   padding: EdgeInsets.symmetric(
-          //     horizontal: width / 15,
-          //     vertical: width / 25,
-          //   ),
-          //   decoration: BoxDecoration(
-          //     border: Border.all(
-          //       color: Colors.white,
-          //       width: width / 200,
-          //     ),
-          //     borderRadius: const BorderRadius.all(
-          //       Radius.circular(10),
-          //     ),
-          //     color: isHover
-          //         ? Colors.black.withAlpha(200)
-          //         : Colors.black.withAlpha(155),
-          //   ),
-          //   child: Text(
-          //     'You\'re smarter than you think.\nSo keep playing.',
-          //     textAlign: TextAlign.center,
-          //     style: TextStyle(
-          //       fontSize: (width / 20).floorToDouble(),
-          //       // fontSize: 18,
-          //       color: Colors.white,
-          //     ),
-          //   ),
-          // ),
           child: Container(
             width: width - (margin * 2),
             height: (width * 9) / 16 - (margin * 2),
@@ -216,10 +164,6 @@ class _JumbotronState extends State<Jumbotron> {
               color: isHover
                   ? Theme.of(context).colorScheme.surface.withAlpha(100)
                   : Colors.transparent,
-              // border: Border.all(
-              //   color: Colors.green,
-              //   width: width / 100,
-              // ),
               borderRadius: BorderRadius.all(
                 Radius.circular(margin),
               ),
@@ -230,11 +174,6 @@ class _JumbotronState extends State<Jumbotron> {
                 AnimatedOpacity(
                   opacity: showText1 ? 1 : 0,
                   duration: const Duration(milliseconds: 500),
-                  // child: Container(
-                  //   width: 200,
-                  //   height: 100,
-                  //   color: Colors.green,
-                  // ),
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: width / 15,
@@ -257,7 +196,6 @@ class _JumbotronState extends State<Jumbotron> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: (width / 20).floorToDouble(),
-                        // fontSize: 18,
                         color: Colors.white,
                       ),
                     ),
@@ -266,11 +204,6 @@ class _JumbotronState extends State<Jumbotron> {
                 AnimatedOpacity(
                   opacity: showText2 ? 1 : 0,
                   duration: const Duration(milliseconds: 500),
-                  // child: Container(
-                  //   width: 100,
-                  //   height: 200,
-                  //   color: Colors.blue,
-                  // ),
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: width / 15,
