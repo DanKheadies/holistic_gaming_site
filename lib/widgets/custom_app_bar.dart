@@ -15,7 +15,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       // title: const Text('Holistic Gaming'),
       leading: InkWell(
-        onTap: () => context.go('/home'),
+        onTap: () => context.goNamed('home'),
+        // onTap: () => context.go('/home'),
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: Stack(
@@ -45,21 +46,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               AppBarHoriItem(
                 label: 'Holistic Gaming',
                 route: '/home',
+                namedRoute: 'home',
               ),
               SizedBox(width: 10),
               AppBarHoriItem(
                 label: 'Games',
                 route: '/games',
+                namedRoute: 'games',
               ),
               SizedBox(width: 10),
               AppBarHoriItem(
                 label: 'Research',
                 route: '/research',
+                namedRoute: 'research',
               ),
               SizedBox(width: 10),
               AppBarHoriItem(
                 label: 'Squad',
                 route: '/squad',
+                namedRoute: 'squad',
               ),
               SizedBox(width: 10),
             ],

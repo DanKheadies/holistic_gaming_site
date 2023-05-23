@@ -14,7 +14,7 @@ class CustomDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           InkWell(
-            onTap: () => context.go('/home'),
+            onTap: () => context.goNamed('home'),
             child: const DrawerHeader(
               margin: EdgeInsets.only(
                 top: 15,
@@ -58,7 +58,7 @@ class CustomDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.background,
               ),
             ),
-            onTap: () => context.go('/home'),
+            onTap: () => context.goNamed('home'),
             hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
           ),
           ListTile(
@@ -69,7 +69,7 @@ class CustomDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.background,
               ),
             ),
-            onTap: () => context.go('/games'),
+            onTap: () => context.goNamed('games'),
             hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
           ),
           ListTile(
@@ -80,7 +80,7 @@ class CustomDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.background,
               ),
             ),
-            onTap: () => context.go('/research'),
+            onTap: () => context.goNamed('research'),
             hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
           ),
           ListTile(
@@ -91,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.background,
               ),
             ),
-            onTap: () => context.go('/squad'),
+            onTap: () => context.goNamed('squad'),
             hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
           ),
           // ListTile(

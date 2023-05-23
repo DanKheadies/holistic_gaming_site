@@ -4,11 +4,13 @@ import 'package:go_router/go_router.dart';
 class AppBarHoriItem extends StatefulWidget {
   final String label;
   final String route;
+  final String namedRoute;
 
   const AppBarHoriItem({
     super.key,
     required this.label,
     required this.route,
+    required this.namedRoute,
   });
 
   @override
@@ -21,7 +23,8 @@ class _AppBarHoriItemState extends State<AppBarHoriItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => context.go(widget.route),
+      onTap: () => context.goNamed(widget.namedRoute),
+      // onTap: () => context.go(widget.route),
       onHover: (value) {
         // print('${widget.route} $value');
         setState(() {
