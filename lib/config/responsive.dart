@@ -14,4 +14,10 @@ class Responsive {
 
   static bool isWideDesktop(BuildContext context) =>
       MediaQuery.of(context).size.width >= 1500;
+
+  static double textAvg(BuildContext context) =>
+      MediaQuery.of(context).size.width / 25;
+
+  static double widthBasic(BuildContext context) =>
+      MediaQuery.of(context).size.width;
 }

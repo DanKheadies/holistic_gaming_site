@@ -14,6 +14,7 @@ dependencies:
   carousel_slider: ^4.2.1
   cloud_firestore: ^4.7.1
   cupertino_icons: ^1.0.2
+  firebase_analytics: ^10.4.1
   firebase_analytics_web: ^0.5.4+1
   firebase_core: ^2.13.0
   firebase_storage: ^11.2.1

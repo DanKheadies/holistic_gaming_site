@@ -32,7 +32,6 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    print('splash init');
 
     aniCont = AnimationController(
       vsync: this,

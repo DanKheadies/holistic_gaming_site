@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 
 Color black = const Color(0xFF0b0b0b);
-Color white = const Color(0xFFf9f9f9);
+Color white = const Color(0xFFfdfdfd);
 
 ThemeData lightTheme() {
   return ThemeData.light().copyWith(
-    primaryColor: const Color(0xFFc0416f),
+    primaryColor: const Color(0xFF669966),
     colorScheme: const ColorScheme.light().copyWith(
-      primary: const Color(0xFFc0416f),
-      secondary: const Color(0xFFff7d81),
-      tertiary: const Color(0xFF669966),
+      primary: const Color(0xFF669966),
+      secondary: const Color(0xFF551a8b),
+      tertiary: const Color(0xFF000000),
       background: white,
       surface: black,
       error: const Color(0xaaFF0000),
       brightness: Brightness.light,
-      onPrimary: const Color(0xFFc0416f),
+      onPrimary: const Color(0xFFcc00cc),
       onSecondary: const Color(0xFFff7d81),
       onTertiary: const Color(0xFF669966),
       onError: const Color(0xFFffffff),
       onBackground: black,
       onSurface: white,
     ),
-    scaffoldBackgroundColor: const Color(0xFFfff8e1),
+    scaffoldBackgroundColor: white,
     snackBarTheme: SnackBarThemeData(
       backgroundColor: black,
     ),
@@ -31,9 +31,10 @@ ThemeData lightTheme() {
       color: white,
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.transparent,
+      backgroundColor: black,
+      foregroundColor: white,
+      centerTitle: false,
       iconTheme: IconThemeData(
-        // color: Color(0xFFc0416f),
         color: white,
       ),
       // systemOverlayStyle: SystemUiOverlayStyle.light,
