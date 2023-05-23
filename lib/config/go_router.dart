@@ -33,6 +33,19 @@ final GoRouter goRouter = GoRouter(
       ),
     ),
     GoRoute(
+      path: '/contact',
+      name: 'contact',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const ContactScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
       path: '/games',
       name: 'games',
       // builder: (context, state) => const GamesScreen(),

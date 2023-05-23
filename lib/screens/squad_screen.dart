@@ -11,16 +11,14 @@ class SquadScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: width / 2,
-              height: height,
-              color: Colors.yellow,
-            ),
-          ],
-        ),
+      child: Column(
+        children: [
+          Container(
+            width: width / 2,
+            height: height,
+            color: Colors.yellow,
+          ),
+        ],
       ),
     );
   }
