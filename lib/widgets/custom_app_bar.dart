@@ -22,11 +22,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Stack(
             children: [
               Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: RadialGradient(
                     colors: [
-                      Colors.white,
-                      Colors.black,
+                      Theme.of(context).colorScheme.background,
+                      Theme.of(context).colorScheme.surface,
                     ],
                     radius: 0.575,
                   ),

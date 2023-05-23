@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 
-Color black = const Color(0xFF0b0b0b);
+Color black = const Color(0xFF2a2a2a);
 Color white = const Color(0xFFfdfdfd);
 
 ThemeData lightTheme() {
