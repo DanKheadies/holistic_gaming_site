@@ -51,6 +51,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/connections/
+    - assets/images/games/
     - assets/images/home/
     - assets/images/logo/
     - assets/images/splash/

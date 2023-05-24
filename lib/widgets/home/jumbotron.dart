@@ -136,14 +136,10 @@ class _JumbotronState extends State<Jumbotron> {
                     borderRadius: BorderRadius.all(
                       Radius.circular(margin),
                     ),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(
-                          pic,
-                          fit: BoxFit.cover,
-                          width: width,
-                        ),
-                      ],
+                    child: Image.asset(
+                      pic,
+                      fit: BoxFit.cover,
+                      width: width,
                     ),
                   ),
                 ),

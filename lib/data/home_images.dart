@@ -52,6 +52,7 @@ final List<String> homePics = [
   'assets/images/home/pokeArc.jpg',
   'assets/images/home/pokemon.jpg',
   'assets/images/home/pokemon2.jpg',
+  'assets/images/home/riskRain.jpg',
   'assets/images/home/rocket.jpg',
   'assets/images/home/smrpg.jpg',
   'assets/images/home/smrpg2.jpg',
