@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       Theme.of(context).colorScheme.background,
                       Theme.of(context).colorScheme.surface,
                     ],
-                    radius: 0.575,
+                    radius: 0.525,
                   ),
                 ),
               ),

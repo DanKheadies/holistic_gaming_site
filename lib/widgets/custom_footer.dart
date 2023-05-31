@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'package:holistic_gaming_site/config/config.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class CustomFooter extends StatefulWidget {
   final ScrollController scroller;
+  final bool? alwaysShowFooter;
 
   const CustomFooter({
     super.key,
     required this.scroller,
+    this.alwaysShowFooter,
   });
 
   @override
@@ -29,6 +30,7 @@ class _CustomFooterState extends State<CustomFooter> {
   }
 
   void scrollListener() {
+    // print('derp');
     if (widget.scroller.position.atEdge) {
       bool isTop = widget.scroller.position.pixels == 0;
       if (!isTop) {
@@ -47,13 +49,6 @@ class _CustomFooterState extends State<CustomFooter> {
     }
   }
 
-  void toSite(String site) async {
-    final Uri url = Uri.parse(site);
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
   @override
   void dispose() {
     widget.scroller.removeListener(scrollListener);
@@ -66,7 +61,7 @@ class _CustomFooterState extends State<CustomFooter> {
     return Positioned(
       bottom: 0,
       child: AnimatedOpacity(
-        opacity: scrollAtBottom ? 1 : 0,
+        opacity: widget.alwaysShowFooter ?? scrollAtBottom ? 1 : 0,
         duration: const Duration(milliseconds: 1000),
         child: Container(
           alignment: Alignment.center,
@@ -88,8 +83,8 @@ class _CustomFooterState extends State<CustomFooter> {
                         // TODO: on hover; explain
                         ActionLink(
                           text: 'CC SA NC BY',
-                          onTap: () =>
-                              toSite('https://creativecommons.org/licenses/'),
+                          navLink: 'https://creativecommons.org/licenses/',
+                          onTap: () {},
                         ),
                         const SizedBox(width: 6),
                         ActionLink(
@@ -101,7 +96,8 @@ class _CustomFooterState extends State<CustomFooter> {
                           '${DateTime.now().year}',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -114,20 +110,23 @@ class _CustomFooterState extends State<CustomFooter> {
                           'Powered by love and ',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
                         ActionLink(
                           text: 'support',
-                          onTap: () => toSite(
-                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079'),
+                          navLink:
+                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
+                          onTap: () {},
                         ),
                         Text(
                           '.',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -142,8 +141,8 @@ class _CustomFooterState extends State<CustomFooter> {
                       children: [
                         ActionLink(
                           text: 'CC SA NC BY',
-                          onTap: () =>
-                              toSite('https://creativecommons.org/licenses/'),
+                          navLink: 'https://creativecommons.org/licenses/',
+                          onTap: () {},
                         ),
                         const SizedBox(width: 6),
                         ActionLink(
@@ -155,7 +154,8 @@ class _CustomFooterState extends State<CustomFooter> {
                           '${DateTime.now().year}',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -167,20 +167,23 @@ class _CustomFooterState extends State<CustomFooter> {
                           'Powered by love and ',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
                         ActionLink(
                           text: 'support',
-                          onTap: () => toSite(
-                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079'),
+                          navLink:
+                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
+                          onTap: () {},
                         ),
                         Text(
                           '.',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.background,
-                            fontSize: 14,
+                            fontSize:
+                                Theme.of(context).textTheme.bodySmall!.fontSize,
                             fontWeight: FontWeight.w300,
                           ),
                         ),

@@ -73,6 +73,14 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
+    // Note: syntax don't seem right (?)
+    GoRoute(
+      path: '/research/:article',
+      name: 'research-article',
+      builder: (context, state) => ResearchScreen(
+        article: state.pathParameters['article'],
+      ),
+    ),
     GoRoute(
       path: '/squad',
       name: 'squad',
@@ -86,14 +94,6 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
-    // Note: syntax don't seem right (?)
-    // GoRoute(
-    //   path: '/profile/:userid?filter=xyz',
-    //   builder: (context, state) => ProfileScreen(
-    //     userId: state.params['userid'],
-    //     filter: state.queryParams[filter],
-    //   ),
-    // ),
     GoRoute(
       path: '/',
       name: 'splash',

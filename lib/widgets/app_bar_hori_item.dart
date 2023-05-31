@@ -49,8 +49,8 @@ class _AppBarHoriItemState extends State<AppBarHoriItem> {
         child: Center(
           child: Text(
             widget.label,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
             ),
           ),
         ),

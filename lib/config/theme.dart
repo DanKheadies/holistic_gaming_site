@@ -10,7 +10,7 @@ ThemeData lightTheme() {
     colorScheme: const ColorScheme.light().copyWith(
       primary: const Color(0xFF669966),
       secondary: const Color(0xFF551a8b),
-      tertiary: const Color(0xFF000000),
+      tertiary: const Color(0xFFf1f1f1),
       background: white,
       surface: black,
       error: const Color(0xaaFF0000),
@@ -38,6 +38,20 @@ ThemeData lightTheme() {
         color: white,
       ),
       // systemOverlayStyle: SystemUiOverlayStyle.light,
+    ),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        fontSize: 20,
+        height: 1.25,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 16,
+        height: 1.25,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 14,
+        height: 1.25,
+      ),
     ),
     // textTheme: const TextTheme(
     //   titleLarge: TextStyle(

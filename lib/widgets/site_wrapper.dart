@@ -7,10 +7,14 @@ import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class SiteWrapper extends StatefulWidget {
   final Widget child;
+  final Widget? bottAppBar;
+  final bool? alwaysShowFooter;
 
   const SiteWrapper({
     super.key,
     required this.child,
+    this.bottAppBar,
+    this.alwaysShowFooter,
   });
 
   @override
@@ -56,12 +60,14 @@ class _SiteWrapperState extends State<SiteWrapper> {
           ),
           CustomFooter(
             scroller: scroller,
+            alwaysShowFooter: widget.alwaysShowFooter,
           ),
         ],
       ),
       endDrawer: Responsive.isMobile(context)
           ? const CustomDrawer()
           : const SizedBox(),
+      bottomNavigationBar: widget.bottAppBar,
     );
   }
 }

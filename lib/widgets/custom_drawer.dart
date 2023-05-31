@@ -94,20 +94,6 @@ class CustomDrawer extends StatelessWidget {
             onTap: () => context.goNamed('squad'),
             hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
           ),
-          // ListTile(
-          //   title: Text(
-          //     'Dino Dash',
-          //     style: TextStyle(
-          //       fontSize: 18,
-          //       color: Theme.of(context).colorScheme.primary,
-          //     ),
-          //   ),
-          //   leading: Icon(
-          //     Icons.run_circle,
-          //     color: Theme.of(context).colorScheme.primary,
-          //   ),
-          //   onTap: () {},
-          // ),
         ],
       ),
     );

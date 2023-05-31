@@ -30,6 +30,7 @@ class _GamesScreenState extends State<GamesScreen> {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      alwaysShowFooter: true,
       child: CarouselSlider(
         options: CarouselOptions(
           // aspectRatio: 3,

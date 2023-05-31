@@ -222,7 +222,6 @@ class _JumbotronState extends State<Jumbotron> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: (width / 20).floorToDouble(),
-                        // fontSize: 18,
                         color: Colors.white,
                       ),
                     ),

@@ -25,7 +25,7 @@ class HomeLeftCol extends StatelessWidget {
                   'What?',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.background,
-                    fontSize: 16,
+                    fontSize: 17,
                   ),
                 ),
               ],
@@ -36,10 +36,6 @@ class HomeLeftCol extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               'Games affect people physically, mentally, emotionally, socially, and academically. Holistic gaming recognizes these effects, and it helps people research, design, and develop awesome games.',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.25,
-              ),
             ),
           ),
           const SizedBox(height: 35),
@@ -58,7 +54,7 @@ class HomeLeftCol extends StatelessWidget {
                   'Why?',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.background,
-                    fontSize: 16,
+                    fontSize: 17,
                   ),
                 ),
               ],
@@ -69,10 +65,6 @@ class HomeLeftCol extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               'Games make life better. They are valuable to many people for many reasons. Holistic gaming explains why they are valuable, how they work, and what people can do with games to make their lives better.',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.25,
-              ),
             ),
           ),
           const SizedBox(height: 35),
@@ -91,7 +83,7 @@ class HomeLeftCol extends StatelessWidget {
                   'Who?',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.background,
-                    fontSize: 16,
+                    fontSize: 17,
                   ),
                 ),
               ],
@@ -102,10 +94,6 @@ class HomeLeftCol extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               'Everyone should adopt a holistic approach while researching and creating games—and for life. Like most things, the more you know and do, the better you\'ll be at it. We are the best holistic gamers.',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.25,
-              ),
             ),
           ),
           const SizedBox(height: 35),
