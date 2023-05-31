@@ -11,6 +11,7 @@ class ResearchArticle extends Equatable {
   final String authors;
   final String publishedDate;
   final String postedDate;
+  final String filter;
   final String tldr;
   final String eli5;
   final Widget elevatorSum;
@@ -25,6 +26,7 @@ class ResearchArticle extends Equatable {
     required this.authors,
     required this.publishedDate,
     required this.postedDate,
+    required this.filter,
     required this.tldr,
     required this.eli5,
     required this.elevatorSum,
@@ -56,6 +58,7 @@ class ResearchArticle extends Equatable {
     //   authors: '',
     //   publishedDate: '',
     //   postedDate: '',
+    //   filter: '',
     //   tldr: '',
     //   eli5: '',
     //   elevatorSum: Column(
@@ -90,6 +93,7 @@ class ResearchArticle extends Equatable {
       authors: 'David Zendle, Rachel Meyer, and Harriet Over',
       publishedDate: 'Jun 2019',
       postedDate: 'Mar 2021',
+      filter: 'Gaming',
       tldr:
           'There is a relationship between loot box spending and gambling behavior problems.',
       eli5:
@@ -168,6 +172,7 @@ class ResearchArticle extends Equatable {
           'Russell Fulmer, PhD; Angela Joerin, MS; Breanna Gentile, MS, MA; Lysanne Lakerink; Michiel Rauws, MBA',
       publishedDate: 'Feb 2018',
       postedDate: 'Aug 2022',
+      filter: '',
       tldr:
           'Artificial intelligence treatment shows promise for psychological aid.',
       eli5:
@@ -225,6 +230,7 @@ class ResearchArticle extends Equatable {
           'Shuang Bai, Wenliang Guo, Yangyang Feng, Hong Deng, Gaigai Li, Hao Nie, Guangyu Guo, Haihan Yu, Yang Ma, Jiahui Wang, Shiling Chen, Jie Jing, Jingfei Yang, Yingxin Tang & Zhouping Tang',
       publishedDate: 'Oct 2019',
       postedDate: 'Nov 2019',
+      filter: 'Immunis',
       tldr: 'Reducing inflammation helps treat depression.',
       eli5:
           'If a highway gets damaged, construction crews come to fix it. Them fixing the highway causes traffic to build up and annoys people. By minimizing their presence on the highway while they fix the road, traffic can flow normally and people are less upset. Likewise, when your body gets damaged, inflammation and white blood cells work to repair the problem at the cost of your body working normally. Reducing the inflammation allows things to flow normally and your are less upset and depressed.',
@@ -271,6 +277,7 @@ class ResearchArticle extends Equatable {
           'Bader Chaarani, PhD; Joseph Ortigara, MS; DeKang Yuan, MS; Hannah Loso, PhD; Alexandra Potter, PhD; Hugh P. Garavan, PhD',
       publishedDate: 'Oct 2022',
       postedDate: 'Oct 2022',
+      filter: 'Gaming',
       tldr:
           'Video gaming improves kids\' working memory and response inhibition.',
       eli5:
@@ -343,6 +350,7 @@ class ResearchArticle extends Equatable {
       authors: 'Jon Roozenbeek & Sander van der Linden',
       publishedDate: 'Jun 2019',
       postedDate: 'Jul 2019',
+      filter: 'Gaming',
       tldr:
           'A game about fake news helps people identify and resist misinformation.',
       eli5:
@@ -436,6 +444,7 @@ class ResearchArticle extends Equatable {
       authors: 'Andrew K. Przybylski, Netta Weinstein',
       publishedDate: 'Feb 2021',
       postedDate: 'Aug 2019',
+      filter: 'Gaming',
       tldr: 'Adolescents get just as frustrated at games as they do in life.',
       eli5:
           'When people get upset, they can act inappropriately and hurt others. Kids and young adults do this at school, during a game, and throughout their lives. When playing video games, they are just as likely to act out as if they were frustrated from a school assignment. While we don\'t need doctors to help correct this, we should try to be better about expressing our problems.',
@@ -486,6 +495,7 @@ class ResearchArticle extends Equatable {
           'Committee on the Health Effects of Marijuana: An Evidence Review and Research Agenda; Board on Population Health and Public Health Practice; Health and Medicine Division; National Academies of Sciences, Engineering, and Medicine',
       publishedDate: 'Jan 2017',
       postedDate: 'Apr 2020',
+      filter: 'Dan Kheadies',
       tldr:
           'There\'s a LOT more to find out and do for cannabis research, but some claims can be made about its effects or lack thereof.',
       eli5:
@@ -544,6 +554,7 @@ class ResearchArticle extends Equatable {
           'Nils Opel, Stella Martin, Susanne Meinert, Ronny Redlich, Verena Enneking, Maike Richter, Janik Goltermann, Andreas Johnen, Udo Dannlowski & Jonathan Repple',
       publishedDate: 'Sep 2019',
       postedDate: 'Sep 2019',
+      filter: '',
       tldr:
           'Physical fitness provides benefits to brain structure and cognition.',
       eli5:
@@ -596,6 +607,7 @@ class ResearchArticle extends Equatable {
       authors: 'Jesse Gomez, Michael Barnett & Kalanit Grill-Spector',
       publishedDate: 'Jun 2019',
       postedDate: 'Jul 2019',
+      filter: 'Gaming',
       tldr: 'Pokemon games show that people learn things for life.',
       eli5:
           'Human brains are like buildings with lots of rooms to do stuff in. Certain areas in the brain “light up” for certain things just like certain rooms in a house turn on when you have to do stuff in em. People who played Pokemon a lot as kids lit up certain rooms in their brains more than people who didn\'t play it, but they both had a lot of lights on for faces and words.',
@@ -689,6 +701,7 @@ class ResearchArticle extends Equatable {
           'Madina Khamzina, MPH, Kaustubh V. Parab, MPH, MBBS, Ruopeng An, PhD, Tiffany Bullard, PhD, Diana S. Grigsby-Toussaint, PhD',
       publishedDate: 'Dec 2016',
       postedDate: 'Aug 2022',
+      filter: 'Gaming',
       tldr: 'Pokemon Go makes people walk more.',
       eli5:
           'Being physically health is good. There are a lot of ways people can stay physically healthy: running, swimming, playing sports, working out, and on and on. The trick is finding something that gets people up and active. Pokemon Go is a good way for people to get up and be active. A lot of people enjoy walking around their community in search of Pokemon to catch and battle.',
@@ -748,6 +761,7 @@ class ResearchArticle extends Equatable {
       authors: 'Reza Safdari, Marjan Ghazisaeidi, and Azadeh Goodini',
       publishedDate: 'Oct 2018',
       postedDate: 'Mar 2021',
+      filter: 'Gaming',
       tldr:
           'Building a health-based game should focus on self-learning and is an involved process.',
       eli5:
@@ -804,6 +818,7 @@ class ResearchArticle extends Equatable {
       authors: 'Nathaniel J. Blanco, Vladimir M. Sloutsky',
       publishedDate: 'Aug 2020',
       postedDate: 'May 2021',
+      filter: '',
       tldr: 'Kids tend to explore rather than exploit.',
       eli5:
           'If I had a gold mine and I wanted to get more gold, I could either keep going down into my gold mine to get more, or I could explore around my gold mine to see if there\'s gold anywhere else. There\'s uncertainty if I go explore for new sources of gold, and I can get the most bang-for-my-buck if I keep going to my gold mine. For kids, they have a stronger tendency to explore for new gold rather than exploit the gold mine they know exists. This drive to explore helps them learn and grow while they see and experience what\'s around.',
@@ -848,6 +863,7 @@ class ResearchArticle extends Equatable {
           'L Iyadurai, S E Blackwell, R Meiser-Stedman, P C Watson, M B Bonsall, J R Geddes, A C Nobre, E A Holmes',
       publishedDate: 'Mar 2017',
       postedDate: 'Mar 2021',
+      filter: 'Gaming',
       tldr:
           'Videos games help prevent traumatic memories when administered soon after the event.',
       eli5:
@@ -902,6 +918,7 @@ class ResearchArticle extends Equatable {
           'Athanasios V. Kokkinakis, Peter I. Cowling, Anders Drachen & Alex R. Wade',
       publishedDate: 'Nov 2017',
       postedDate: 'May 2020',
+      filter: 'Gaming',
       tldr:
           'MOBA performance is a good proxy to logical thinking & solving novel problems.',
       eli5:

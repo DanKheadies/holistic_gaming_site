@@ -33,23 +33,60 @@ class _ActionLinkState extends State<ActionLink> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap:
-          widget.navLink != null ? () => toSite(widget.navLink!) : widget.onTap,
-      onHover: (value) {
-        setState(() {
-          hovering = value;
-        });
-      },
-      child: Text(
-        widget.text,
-        style: TextStyle(
-          color: widget.color ?? Theme.of(context).colorScheme.background,
-          decoration: hovering ? TextDecoration.none : TextDecoration.underline,
-          fontSize: widget.fontSize ??
-              Theme.of(context).textTheme.bodySmall!.fontSize,
-          fontWeight: FontWeight.w300,
-          height: Theme.of(context).textTheme.bodySmall!.height,
+    // return InkWell(
+    //   onTap:
+    //       widget.navLink != null ? () => toSite(widget.navLink!) : widget.onTap,
+    //   onHover: (value) {
+    //     setState(() {
+    //       hovering = value;
+    //     });
+    //   },
+    //   child: Text(
+    //     widget.text,
+    //     style: TextStyle(
+    //       color: widget.color ?? Theme.of(context).colorScheme.background,
+    //       decoration: hovering ? TextDecoration.none : TextDecoration.underline,
+    //       fontSize: widget.fontSize ??
+    //           Theme.of(context).textTheme.bodySmall!.fontSize,
+    //       fontWeight: FontWeight.w300,
+    //       height: Theme.of(context).textTheme.bodySmall!.height,
+    //     ),
+    //   ),
+    // );
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 4,
+      ),
+      child: InkWell(
+        onTap: widget.navLink != null
+            ? () => toSite(widget.navLink!)
+            : widget.onTap,
+        onHover: (value) {
+          setState(() {
+            hovering = value;
+          });
+        },
+        hoverColor: Colors.transparent,
+        child: Text(
+          widget.text,
+          style: TextStyle(
+            // color: widget.color ?? Theme.of(context).colorScheme.background,
+            color: Colors.transparent,
+            decoration:
+                hovering ? TextDecoration.none : TextDecoration.underline,
+            decorationColor:
+                widget.color ?? Theme.of(context).colorScheme.background,
+            fontSize: widget.fontSize ??
+                Theme.of(context).textTheme.bodySmall!.fontSize,
+            fontWeight: FontWeight.w300,
+            height: Theme.of(context).textTheme.bodySmall!.height,
+            shadows: [
+              Shadow(
+                color: widget.color ?? Theme.of(context).colorScheme.background,
+                offset: const Offset(0, -2),
+              ),
+            ],
+          ),
         ),
       ),
     );

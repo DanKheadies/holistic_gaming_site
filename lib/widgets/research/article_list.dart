@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:holistic_gaming_site/models/models.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
-class ArticlesList extends StatefulWidget {
+class ArticleList extends StatefulWidget {
   final List<bool> isTileExpanded;
   final List<int> tileOrder;
   final List<ExpansionTileController> controllers;
   final List<ResearchArticle> articles;
   final Function(bool, int) handleToggle;
 
-  const ArticlesList({
+  const ArticleList({
     super.key,
     required this.isTileExpanded,
     required this.tileOrder,
@@ -20,12 +20,10 @@ class ArticlesList extends StatefulWidget {
   });
 
   @override
-  State<ArticlesList> createState() => _ArticlesListState();
+  State<ArticleList> createState() => _ArticleListState();
 }
 
-class _ArticlesListState extends State<ArticlesList> {
-  // List<ResearchArticle> articles = ResearchArticle.articles;
-
+class _ArticleListState extends State<ArticleList> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,38 +31,34 @@ class _ArticlesListState extends State<ArticlesList> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        // controller: scrollController,
         itemCount: widget.articles.length,
         itemBuilder: (context, index) {
           return Card(
             color: Theme.of(context).colorScheme.surface,
             child: ExpansionTile(
-              title: Text(
-                widget.articles[index].shortTitle,
-                style: TextStyle(
-                  color: widget.isTileExpanded[index]
-                      ? Theme.of(context).colorScheme.surface
-                      : Theme.of(context).colorScheme.background,
-                  fontSize: 17,
-                  fontWeight: widget.isTileExpanded[index]
-                      ? FontWeight.bold
-                      : FontWeight.normal,
+              title: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                ),
+                child: Text(
+                  widget.articles[index].shortTitle,
+                  style: TextStyle(
+                    color: widget.isTileExpanded[index]
+                        ? Theme.of(context).colorScheme.surface
+                        : Theme.of(context).colorScheme.background,
+                    fontSize: 17,
+                    fontWeight: widget.isTileExpanded[index]
+                        ? FontWeight.bold
+                        : FontWeight.normal,
+                    // height: 1.25,
+                  ),
                 ),
               ),
+              // tilePadding: const EdgeInsets.all(15),
               iconColor: Theme.of(context).colorScheme.surface,
               collapsedIconColor: Theme.of(context).colorScheme.background,
               backgroundColor: Theme.of(context).colorScheme.background,
               controller: widget.controllers[index],
-              // onExpansionChanged: (value) {
-              //   setState(() {
-              //     widget.isTileExpanded[index] = value;
-              //     if (value) {
-              //       widget.tileOrder.add(index);
-              //     } else {
-              //       widget.tileOrder.removeWhere((value) => value == index);
-              //     }
-              //   });
-              // },
               onExpansionChanged: (value) => widget.handleToggle(value, index),
               children: [
                 SelectionArea(

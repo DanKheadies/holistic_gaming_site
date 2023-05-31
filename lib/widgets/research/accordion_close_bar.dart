@@ -4,12 +4,14 @@ class AccordionCloseBar extends StatefulWidget {
   final List<bool> isTileExpanded;
   final List<int> tileOrder;
   final List<ExpansionTileController> controllers;
+  final Function() handleCloseAllTiles;
 
   const AccordionCloseBar({
     super.key,
     required this.isTileExpanded,
     required this.tileOrder,
     required this.controllers,
+    required this.handleCloseAllTiles,
   });
 
   @override
@@ -28,16 +30,7 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.isTileExpanded.map((tile) => tile == false);
-                        // widget.tileOrder = [];
-                        widget.tileOrder.clear();
-                      });
-                      for (var cont in widget.controllers) {
-                        cont.collapse();
-                      }
-                    },
+                    onPressed: widget.handleCloseAllTiles,
                     child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
@@ -52,7 +45,6 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                     onPressed: () {
                       setState(() {
                         widget.isTileExpanded[widget.tileOrder.last] = false;
-                        // tileOrder.removeLast();
                       });
                       widget.controllers[widget.tileOrder.last].collapse();
                     },
