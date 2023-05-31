@@ -13,9 +13,11 @@ class QuotesHeader extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       color: Theme.of(context).colorScheme.tertiary,
       width: double.infinity,
-      child: Text(
-        quotes[Random().nextInt(quotes.length)],
-        textAlign: TextAlign.center,
+      child: SelectionArea(
+        child: Text(
+          quotes[Random().nextInt(quotes.length)],
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

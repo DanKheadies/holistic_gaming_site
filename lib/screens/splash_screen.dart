@@ -50,20 +50,26 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Lottie.asset(
-          'images/splash/${files[fileIndex]}.json',
-          controller: aniCont,
-          onLoaded: (composition) {
-            aniCont
-              ..duration = composition.duration
-              ..forward();
+      body: InkWell(
+        onTap: () {
+          navTimer.cancel();
+          context.go('/home');
+        },
+        child: Center(
+          child: Lottie.asset(
+            'images/splash/${files[fileIndex]}.json',
+            controller: aniCont,
+            onLoaded: (composition) {
+              aniCont
+                ..duration = composition.duration
+                ..forward();
 
-            navTimer = Timer(
-              composition.duration,
-              () => context.go('/home'),
-            );
-          },
+              navTimer = Timer(
+                composition.duration,
+                () => context.go('/home'),
+              );
+            },
+          ),
         ),
       ),
     );

@@ -17,8 +17,10 @@ void keepPlaying(
               fontWeight: FontWeight.w600,
             ),
           ),
-          content: Text(
-            soKeepPlaying,
+          content: SelectionArea(
+            child: Text(
+              soKeepPlaying,
+            ),
           ),
           scrollable: true,
           actionsAlignment: MainAxisAlignment.center,
