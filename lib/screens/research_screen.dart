@@ -329,7 +329,7 @@ class _ResearchScreenState extends State<ResearchScreen> {
               ),
             ],
           ),
-          const SizedBox(height: 100),
+          const SizedBox(height: 50),
         ],
       ),
     );

@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:holistic_gaming_site/config/config.dart';
-import 'package:holistic_gaming_site/data/data.dart';
+// import 'package:holistic_gaming_site/data/data.dart';
+import 'package:holistic_gaming_site/models/models.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class GamesScreen extends StatefulWidget {
@@ -13,17 +16,6 @@ class GamesScreen extends StatefulWidget {
 }
 
 class _GamesScreenState extends State<GamesScreen> {
-  List<String> games = [
-    'The Story of Dan Kheadies',
-    'Corso Games',
-    'Truth or Elaborate Lie',
-    'TowerDeez\'s Super Best Friends Tower Defense',
-    'Immunis',
-    'Guess Who Colluded',
-    // 'Monkey\'s Paw: Super Powers Edition',
-    'Ploys R Us',
-  ];
-
   @override
   Widget build(BuildContext context) {
     // final height = MediaQuery.of(context).size.height;
@@ -40,42 +32,117 @@ class _GamesScreenState extends State<GamesScreen> {
           autoPlayCurve: Curves.fastOutSlowIn,
           enableInfiniteScroll: true,
           enlargeCenterPage: true,
-          initialPage: 3,
+          initialPage: Random().nextInt(GameSlide.gameSlides.length),
           scrollDirection: Axis.vertical,
-          // scrollPhysics: const NeverScrollableScrollPhysics(),
           viewportFraction: Responsive.isMobile(context)
               ? 0.5
               : Responsive.isTablet(context)
                   ? 0.65
-                  : 0.8,
+                  : 0.75,
           height: MediaQuery.of(context).size.height - 56,
         ),
-        items: gamesPics
+        items: GameSlide.gameSlides
             .map(
-              (pic) => Container(
-                margin: const EdgeInsets.all(15),
-                padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
-                  ),
-                  child: Container(
-                    color: Colors.red,
-                    // child: Stack(),
-                    child: Image.network(
-                      pic,
-                      fit: BoxFit.contain,
-                      // fit: BoxFit.scaleDown,
-                      width: width,
+              (game) => Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(30),
+                      ),
+                      child: Image.network(
+                        game.picPath,
+                        fit: BoxFit.contain,
+                        width: width,
+                      ),
                     ),
                   ),
-                ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: game.upperPosition,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          Theme.of(context).colorScheme.surface.withAlpha(150),
+                          Theme.of(context).colorScheme.surface.withAlpha(200),
+                          Theme.of(context).colorScheme.surface.withAlpha(150),
+                          Colors.transparent,
+                        ],
+                      ),
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    // height: MediaQuery.of(context).size.height / 10,
+                    height: 100,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 30,
+                        ),
+                        child: Text(
+                          game.description,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.background,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: game.lowerPosition,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: game.upperPosition,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.transparent,
+                            Theme.of(context)
+                                .colorScheme
+                                .surface
+                                .withAlpha(150),
+                            Theme.of(context)
+                                .colorScheme
+                                .surface
+                                .withAlpha(200),
+                            Theme.of(context)
+                                .colorScheme
+                                .surface
+                                .withAlpha(150),
+                            Colors.transparent,
+                          ],
+                        ),
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      // height: MediaQuery.of(context).size.height / 10,
+                      height: 100,
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                          ),
+                          child: Text(
+                            game.callToAction,
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.background,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             )
             .toList(),

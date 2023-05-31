@@ -67,9 +67,9 @@ class _CustomFooterState extends State<CustomFooter> {
           alignment: Alignment.center,
           color: Theme.of(context).colorScheme.surface,
           width: MediaQuery.of(context).size.width,
-          margin: EdgeInsets.only(
-            bottom: Responsive.isMobile(context) ? 5 : 15,
-          ),
+          // margin: EdgeInsets.only(
+          //   bottom: Responsive.isMobile(context) ? 5 : 15,
+          // ),
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 8,
