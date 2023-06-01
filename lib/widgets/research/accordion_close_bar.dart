@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class AccordionCloseBar extends StatefulWidget {
@@ -46,7 +48,13 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                       setState(() {
                         widget.isTileExpanded[widget.tileOrder.last] = false;
                       });
-                      widget.controllers[widget.tileOrder.last].collapse();
+                      // widget.controllers[widget.tileOrder.last].collapse();
+                      // NOTE: kinda a temp work-around, but not good enough
+                      Timer(
+                        Duration.zero,
+                        () => widget.controllers[widget.tileOrder.last]
+                            .collapse(),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(20),

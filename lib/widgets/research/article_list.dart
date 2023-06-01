@@ -8,6 +8,7 @@ class ArticleList extends StatefulWidget {
   final List<int> tileOrder;
   final List<ExpansionTileController> controllers;
   final List<ResearchArticle> articles;
+  final Map<int, List<bool>> isSubTileExpanded;
   final Function(bool, int) handleToggle;
 
   const ArticleList({
@@ -16,6 +17,7 @@ class ArticleList extends StatefulWidget {
     required this.tileOrder,
     required this.controllers,
     required this.articles,
+    required this.isSubTileExpanded,
     required this.handleToggle,
   });
 
@@ -50,11 +52,9 @@ class _ArticleListState extends State<ArticleList> {
                     fontWeight: widget.isTileExpanded[index]
                         ? FontWeight.bold
                         : FontWeight.normal,
-                    // height: 1.25,
                   ),
                 ),
               ),
-              // tilePadding: const EdgeInsets.all(15),
               iconColor: Theme.of(context).colorScheme.surface,
               collapsedIconColor: Theme.of(context).colorScheme.background,
               backgroundColor: Theme.of(context).colorScheme.background,
@@ -117,6 +117,13 @@ class _ArticleListState extends State<ArticleList> {
                         const SizedBox(height: 5),
                         widget.articles[index].dissertation,
                         const SizedBox(height: 15),
+                        widget.articles[index].subsetLists != null
+                            ? ArticleSublist(
+                                index: index,
+                                articles: widget.articles,
+                                isSubTileExpanded: widget.isSubTileExpanded,
+                              )
+                            : const SizedBox(),
                         const SizedBox(height: 15),
                         Row(
                           children: [

@@ -6,6 +6,7 @@ class ActionLink extends StatefulWidget {
   final String? navLink;
   final Color? color;
   final double? fontSize;
+  final TextAlign? alignment;
   final void Function() onTap;
 
   const ActionLink({
@@ -14,6 +15,7 @@ class ActionLink extends StatefulWidget {
     this.navLink,
     this.color,
     this.fontSize,
+    this.alignment,
     required this.onTap,
   });
 
@@ -33,32 +35,12 @@ class _ActionLinkState extends State<ActionLink> {
 
   @override
   Widget build(BuildContext context) {
-    // return InkWell(
-    //   onTap:
-    //       widget.navLink != null ? () => toSite(widget.navLink!) : widget.onTap,
-    //   onHover: (value) {
-    //     setState(() {
-    //       hovering = value;
-    //     });
-    //   },
-    //   child: Text(
-    //     widget.text,
-    //     style: TextStyle(
-    //       color: widget.color ?? Theme.of(context).colorScheme.background,
-    //       decoration: hovering ? TextDecoration.none : TextDecoration.underline,
-    //       fontSize: widget.fontSize ??
-    //           Theme.of(context).textTheme.bodySmall!.fontSize,
-    //       fontWeight: FontWeight.w300,
-    //       height: Theme.of(context).textTheme.bodySmall!.height,
-    //     ),
-    //   ),
-    // );
     return Container(
       margin: const EdgeInsets.only(
         top: 4,
       ),
       child: InkWell(
-        onTap: widget.navLink != null
+        onTap: widget.navLink != null && widget.navLink != ''
             ? () => toSite(widget.navLink!)
             : widget.onTap,
         onHover: (value) {
@@ -69,8 +51,8 @@ class _ActionLinkState extends State<ActionLink> {
         hoverColor: Colors.transparent,
         child: Text(
           widget.text,
+          textAlign: widget.alignment ?? TextAlign.left,
           style: TextStyle(
-            // color: widget.color ?? Theme.of(context).colorScheme.background,
             color: Colors.transparent,
             decoration:
                 hovering ? TextDecoration.none : TextDecoration.underline,

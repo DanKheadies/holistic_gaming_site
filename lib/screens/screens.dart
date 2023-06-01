@@ -1,8 +1,10 @@
 export 'contact_screen.dart';
 export 'error_screen.dart';
 export 'games_screen.dart';
+export 'games/screens.dart';
 export 'home_screen.dart';
 export 'research_screen.dart';
 export 'splash_screen.dart';
 export 'squad_screen.dart';
+export 'squad/screens.dart';
 export 'test_screen.dart';

@@ -7,9 +7,13 @@ class ErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SiteWrapper(
-      child: Center(
-        child: Text('Something went wrong.'),
+    return SiteWrapper(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height - 56,
+        width: MediaQuery.of(context).size.width,
+        child: const Center(
+          child: Text('Something went wrong.'),
+        ),
       ),
     );
   }

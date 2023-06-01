@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:holistic_gaming_site/widgets/widgets.dart';
+import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class ResearchArticle extends Equatable {
   final String shortTitle;
@@ -518,31 +518,774 @@ class ResearchArticle extends Equatable {
           ),
         ],
       ),
-      // TODO: finish subset lists
-      // subsetLists: {
-      //   'Chapter 4 Conclusions—Therapeutic Effects of Cannabis and Cannabinoids':
-      //       Column(
-      //     children: [
-      //       Text(
-      //         '\u2022 ',
-      //       ),
-      //     ],
-      //   ),
-      //   'Chapter 5 Conclusions—Cancer': Column(),
-      //   'Chapter 6 Conclusions—Cardiometabolic Risk': Column(),
-      //   'Chapter 7 Conclusions—Respiratory Disease': Column(),
-      //   'Chapter 8 Conclusions—Immunity': Column(),
-      //   'Chapter 9 Conclusions—Injury and Death': Column(),
-      //   'Chapter 10 Conclusions—Prenatal, Perinatal, and Neonatal Exposure':
-      //       Column(),
-      //   'Chapter 11 Conclusions—Psychosocial': Column(),
-      //   'Chapter 12 Conclusions—Mental Health': Column(),
-      //   'Chapter 13 Conclusions—Problem Cannabis Use': Column(),
-      //   'Chapter 14 Conclusions—Cannaabis Use and the Abuse of Other Substances':
-      //       Column(),
-      //   'Chapter 15 Conclusions—Challenges and Barriers in Conducting Cannabis Research':
-      //       Column(),
-      // },
+      subsetLists: {
+        'Chapter 4 Conclusions—Therapeutic Effects of Cannabis and Cannabinoids':
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is conclusive or substantial evidence that cannabis or cannabinoids are effective:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'For the treatment of chronic pain in adults (cannabis) (4-1)',
+            ),
+            BulletItem(
+              content:
+                  'As antiemetics in the treatment of chemotherapy-induced nausea and vomiting (oral cannabinoids) (4-3)',
+            ),
+            BulletItem(
+              content:
+                  'For improving patient-reported multiple sclerosis spasticity symptoms (oral cannabinoids) (4-7a)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence that cannabis or cannabinoids are effective for:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Improving short-term sleep outcomes in individuals with sleep disturbance associated with obstructive sleep apnea syndrome, fibromyalgia, chronic pain, and multiple sclerosis (cannabinoids, primarily nabiximols) (4-19)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence that cannabis or cannabinoids are effective for:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Increasing appetite and decreasing weight loss associated with HIV/AIDS (cannabis and oral cannabinoids) (4-4a)',
+            ),
+            BulletItem(
+              content:
+                  'Improving clinician-measured multiple sclerosis spasticity symptoms (oral cannabinoids) (4-7a)',
+            ),
+            BulletItem(
+              content:
+                  'Improving symptoms of Tourette syndrome (THC capsules) (4-8)',
+            ),
+            BulletItem(
+              content:
+                  'Improving anxiety symptoms, as assessed by a public speaking test, in individuals with social anxiety disorders (cannabidiol) (4-17)',
+            ),
+            BulletItem(
+              content:
+                  'Improving symptoms of posttraumatic stress disorder (nabilone; a single, small fair-quality trial) (4-20)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between cannabinoids and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Better outcomes (i.e., mortality, disability) after a traumatic brain injury or intracranial hemorrhage (4-15)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence that cannabis or cannabinoids are ineffective for:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Improving symptoms associated with dementia (cannabinoids) (4-13)',
+            ),
+            BulletItem(
+              content:
+                  'Improving intraocular pressure associated with glaucoma (cannabinoids) (4-14)',
+            ),
+            BulletItem(
+              content:
+                  'Reducing depressive symptoms in individuals with chronic pain or multiple sclerosis (nabiximols, dronabinol, and nabilone) (4-18)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no or insufficient evidence to support or refute the conclusion that cannabis or cannabinoids are an effective treatment for:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Cancers, including glioma (cannabinoids) (4-2)',
+            ),
+            BulletItem(
+              content:
+                  'Cancer-associated anorexia cachexia syndrome and anorexia nervosa (cannabinoids) (4-4b)',
+            ),
+            BulletItem(
+              content:
+                  'Symptoms of irritable bowel syndrome (dronabinol) (4-5)',
+            ),
+            BulletItem(
+              content: 'Epilepsy (cannabinoids) (4-6)',
+            ),
+            BulletItem(
+              content:
+                  'Spasticity in patients with paralysis due to spinal cord injury (cannabinoids) (4-7b)',
+            ),
+            BulletItem(
+              content:
+                  'Symptoms associated with amyotrophic lateral sclerosis (cannabinoids) (4-9)',
+            ),
+            BulletItem(
+              content:
+                  'Chorea and certain neuropsychiatric symptoms associated with Huntington\'s disease (oral cannabinoids) (4-10)',
+            ),
+            BulletItem(
+              content:
+                  'Motor system symptoms associated with Parkinson\'s disease or the levodopa-induced dyskinesia (cannabinoids) (4-11)',
+            ),
+            BulletItem(
+              content: 'Dystonia (nabilone and dronabinol) (4-12)',
+            ),
+            BulletItem(
+              content:
+                  'Achieving abstinence in the use of addictive substances (cannabinoids) (4-16)',
+            ),
+            BulletItem(
+              content:
+                  'Mental health outcomes in individuals with schizophrenia or schizophreniform psychosis (cannabidiol) (4-21)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 5 Conclusions—Cancer': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is moderate evidence of no statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Incidence of lung cancer (cannabis smoking) (5-1)',
+            ),
+            BulletItem(
+              content: 'Incidence of head and neck cancers (5-2)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Non-seminoma-type testicular germ cell tumors (current, frequent, or chronic cannabis smoking) (5-3)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no or insufficient evidence to support or refute a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Incidence of esophageal cancer (cannabis smoking) (5-4)',
+            ),
+            BulletItem(
+              content:
+                  'Incidence of prostate cancer, cervical cancer, malignant gliomas, non-Hodgkin lymphoma, penile cancer, anal cancer, Kaposi’s sarcoma, or bladder cancer (5-5)',
+            ),
+            BulletItem(
+              content:
+                  'Subsequent risk of developing acute myeloid leukemia/acute non-lymphoblastic leukemia, acute lymphoblastic leukemia, rhabdomyosarcoma, astrocytoma, or neuroblastoma in offspring (parental cannabis use) (5-6)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 6 Conclusions—Cardiometabolic Risk': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is limited evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The triggering of acute myocardial infarction (cannabis smoking) (6-1a)',
+            ),
+            BulletItem(
+              content: 'Ischemic stroke or subarachnoid hemorrhage (6-2)',
+            ),
+            BulletItem(
+              content:
+                  'Decreased risk of metabolic syndrome and diabetes (6-3a)',
+            ),
+            BulletItem(
+              content: 'Increased risk of prediabetes (6-3b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no evidence to support or refute a statistical association between chronic effects of cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The increased risk of acute myocardial infarction (6-1b)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 7 Conclusions—Respiratory Disease': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is substantial evidence of a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Worse respiratory symptoms and more frequent chronic bronchitis episodes (long-term cannabis smoking) (7-3a)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Improved airway dynamics with acute use, but not with chronic use (7-1a)',
+            ),
+            BulletItem(
+              content: 'Higher forced vital capacity (FVC) (7-1b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of a statistical association between the cessation of cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Improvements in respiratory symptoms (7-3b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'An increased risk of developing chronic obstructive pulmonary disease (COPD) when controlled for tobacco use (occasional cannabis smoking) (7-2a)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no or insufficient evidence to support or refute a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Hospital admissions for COPD (7-2b)',
+            ),
+            BulletItem(
+              content: 'Asthma development or asthma exacerbation (7-4)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 8 Conclusions—Immunity': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is limited evidence of a statistical association between cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'A decrease in the production of several inflammatory cytokines in healthy individuals (8-1a)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of no statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The progression of liver fibrosis or hepatic disease in individuals with viral hepatitis C (HCV) (daily cannabis use) (8-3)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no or insufficient evidence to support or refute a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Other adverse immune cell responses in healthy individuals (cannabis smoking) (8-1b)',
+            ),
+            BulletItem(
+              content:
+                  'Adverse effects on immune status in individuals with HIV (cannabis or dronabinol use) (8-2)',
+            ),
+            BulletItem(
+              content:
+                  'Increased incidence of oral human papilloma virus (HPV) (regular cannabis use) (8-4)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 9 Conclusions—Injury and Death': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is substantial evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Increased risk of motor vehicle crashes (9-3)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Increased risk of overdose injuries, including respiratory distress, among pediatric populations in U.S. states where cannabis is legal (9-4b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no or insufficient evidence to support or refute a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'All-cause mortality (self-reported cannabis use) (9-1)',
+            ),
+            BulletItem(
+              content:
+                  'Occupational accidents or injuries (general, nonmedical cannabis use) (9-2)',
+            ),
+            BulletItem(
+              content: 'Death due to cannabis overdose (9-4a)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 10 Conclusions—Prenatal, Perinatal, and Neonatal Exposure':
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is substantial evidence of a statistical association between maternal cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Lower birth weight of the offspring (10-2)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between maternal cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'Pregnancy complications for the mother (10-1)',
+            ),
+            BulletItem(
+              content:
+                  'Admission of the infant to the neonatal intensive care unit (NICU) (10-3)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is insufficient evidence to support or refute a statistical association between maternal cannabis smoking and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Later outcomes in the offspring (e.g., sudden infant death syndrome, cognition/academic achievement, and later substance use) (10-4)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 11 Conclusions—Psychosocial': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is moderate evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The impairment in the cognitive domains of learning, memory, and attention (acute cannabis use) (11-1a)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Impaired academic achievement and education outcomes (11-2)',
+            ),
+            BulletItem(
+              content:
+                  'Increased rates of unemployment and/or low income (11-3)',
+            ),
+            BulletItem(
+              content:
+                  'Impaired social functioning or engagement in developmentally appropriate social roles (11-4)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between sustained abstinence from cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Impairments in the cognitive domains of learning, memory, and attention (11-1b)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 12 Conclusions—Mental Health': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is substantial evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The development of schizophrenia or other psychoses, with the highest risk among the most frequent users (12-1)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Better cognitive performance among individuals with psychotic disorders and a history of cannabis use (12-2a)',
+            ),
+            BulletItem(
+              content:
+                  'Increased symptoms of mania and hypomania in individuals diagnosed with bipolar disorders (regular cannabis use) (12-4)',
+            ),
+            BulletItem(
+              content:
+                  'A small increased risk for the development of depressive disorders (12-5)',
+            ),
+            BulletItem(
+              content:
+                  'Increased incidence of suicidal ideation and suicide attempts with a higher incidence among heavier users (12-7a)',
+            ),
+            BulletItem(
+              content: 'Increased incidence of suicide completion (12-7b)',
+            ),
+            BulletItem(
+              content:
+                  'Increased incidence of social anxiety disorder (regular cannabis use) (12-8b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of no statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Worsening of negative symptoms of schizophrenia (e.g., blunted affect) among individuals with psychotic disorders (12-2c)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of no statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'An increase in positive symptoms of schizophrenia (e.g., hallucinations) among individuals with psychotic disorders (12-2b)',
+            ),
+            BulletItem(
+              content:
+                  'The likelihood of developing bipolar disorder, particularly among regular or daily users (12-3)',
+            ),
+            BulletItem(
+              content:
+                  'The development of any type of anxiety disorder, except social anxiety disorder (12-8a)',
+            ),
+            BulletItem(
+              content:
+                  'Increased symptoms of anxiety (near daily cannabis use) (12-9)',
+            ),
+            BulletItem(
+              content:
+                  'Increased severity of posttraumatic stress disorder symptoms among individuals with posttraumatic stress disorder (12-11)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is no evidence to support or refute a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Changes in the course or symptoms of depressive disorders (12-6)',
+            ),
+            BulletItem(
+              content:
+                  'The development of posttraumatic stress disorder (12-10)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 13 Conclusions—Problem Cannabis Use': Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is substantial evidence that:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Stimulant treatment of attention deficit hyperactivity disorder (ADHD) during adolescence is not a risk factor for the development of problem cannabis use (13-2e)',
+            ),
+            BulletItem(
+              content:
+                  'Being male and smoking cigarettes are risk factors for the progression of cannabis use to problem cannabis use (13-2i)',
+            ),
+            BulletItem(
+              content:
+                  'Initiating cannabis use at an earlier age is a risk factor for the development of problem cannabis use (13-2j)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is substantial evidence of a statistical association between:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Increases in cannabis use frequency and the progression to developing problem cannabis use (13-1)',
+            ),
+            BulletItem(
+              content:
+                  'Being male and the severity of problem cannabis use, but the recurrence of problem cannabis use does not differ between males and females (13-3b)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence that:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Anxiety, personality disorders, and bipolar disorders are not risk factors for the development of problem cannabis use (13-2b)',
+            ),
+            BulletItem(
+              content:
+                  'Major depressive disorder is a risk factor for the development of problem cannabis use (13-2c)',
+            ),
+            BulletItem(
+              content:
+                  'Adolescent ADHD is not a risk factor for the development of problem cannabis use (13-2d)',
+            ),
+            BulletItem(
+              content:
+                  'Being male is a risk factor for the development of problem cannabis use (13-2f)',
+            ),
+            BulletItem(
+              content:
+                  'Exposure to the combined use of abused drugs is a risk factor for the development of problem cannabis use (13-2g)',
+            ),
+            BulletItem(
+              content:
+                  'Neither alcohol nor nicotine dependence alone are risk factors for the progression from cannabis use to problem cannabis use (13-2h)',
+            ),
+            BulletItem(
+              content:
+                  'During adolescence the frequency of cannabis use, oppositional behaviors, a younger age of first alcohol use, nicotine use, parental substance use, poor school performance, anti-social behaviors, and childhood sexual abuse are risk factors for the development of problem cannabis use (13-2k)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is moderate evidence of a statistical association between:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'A persistence of problem cannabis use and a history of psychiatric treatment (13-3a)',
+            ),
+            BulletItem(
+              content:
+                  'Problem cannabis use and increased severity of posttraumatic stress disorder symptoms (13-3c)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence that:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'Childhood anxiety and childhood depression are risk factors for the development of problem cannabis use (13-2a)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 14 Conclusions—Cannabis Use and the Abuse of Other Substances':
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There is moderate evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'The development of substance dependence and/or a substance abuse disorder for substances, including alcohol, tobacco, and other illicit drugs (14-3)',
+            ),
+            SizedBox(height: 20),
+            Text(
+              'There is limited evidence of a statistical association between cannabis use and:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content: 'The initiation of tobacco use (14-1)',
+            ),
+            BulletItem(
+              content:
+                  'Changes in the rates and use patterns of other licit and illicit substances (14-2)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+        'Chapter 15 Conclusions—Challenges and Barriers in Conducting Cannabis Research':
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'There are several challenges and barriers in conducting cannabis and cannabinoid research, including',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            BulletItem(
+              content:
+                  'There are specific regulatory barriers, including the classification of cannabis as a Schedule I substance, that impede the advancement of cannabis and cannabinoid research (15-1)',
+            ),
+            BulletItem(
+              content:
+                  'It is often difficult for researchers to gain access to the quantity, quality, and type of cannabis product necessary to address specific research questions on the health effects of cannabis use (15-2)',
+            ),
+            BulletItem(
+              content:
+                  'A diverse network of funders is needed to support cannabis and cannabinoid research that explores the beneficial and harmful health effects of cannabis use (15-3)',
+            ),
+            BulletItem(
+              content:
+                  'To develop conclusive evidence for the effects of cannabis use on short- and long-term health outcomes, improvements and standardization in research methodology (including those used in controlled trials and observational studies) are needed (15-4)',
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+      },
     ),
     ResearchArticle(
       shortTitle: 'Physical Fitness\'s Effect on White Matter Microstructures',

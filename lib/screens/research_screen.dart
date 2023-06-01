@@ -23,6 +23,8 @@ class _ResearchScreenState extends State<ResearchScreen> {
   List<int> tileOrder = [];
   List<ExpansionTileController> controllers = [];
   List<ResearchArticle> articles = ResearchArticle.articles;
+  Map<int, List<bool>> isSubTileExpanded = {};
+  // Map<int, bool> derp = {};
 
   @override
   void initState() {
@@ -33,30 +35,34 @@ class _ResearchScreenState extends State<ResearchScreen> {
   }
 
   void setupArticles() {
-    // print('setup');
     articles.sort(
       (a, b) => a.shortTitle.compareTo(b.refTitle),
     );
 
-    // print(controllers.length);
     if (controllers.isNotEmpty) {
       controllers.clear();
     }
     if (isTileExpanded.isNotEmpty) {
       isTileExpanded.clear();
     }
-    // print(controllers.length);
-    // if (tileOrder.isNotEmpty) {
-    //   tileOrder.clear();
-    // }
+    if (isSubTileExpanded.isNotEmpty) {
+      isSubTileExpanded.clear();
+    }
 
     for (int i = 0; i < articles.length; i++) {
       setState(() {
         controllers.add(ExpansionTileController());
         isTileExpanded.add(false);
+        if (articles[i].subsetLists != null) {
+          isSubTileExpanded.addAll(<int, List<bool>>{
+            i: List<bool>.generate(
+              articles[i].subsetLists!.length,
+              (index) => false,
+            ),
+          });
+        }
       });
     }
-    // print(controllers.length);
   }
 
   void handleUrlLink() {
@@ -79,25 +85,23 @@ class _ResearchScreenState extends State<ResearchScreen> {
   }
 
   void closeAllTiles() {
-    // print('close');
-    // print(controllers.length);
-
     setState(() {
       isTileExpanded.map((tile) => tile == false);
       tileOrder.clear();
     });
 
-    // Timer(
-    //   const Duration(milliseconds: 1),
-    //   () {
-    //     for (var cont in controllers) {
-    //       cont.collapse();
-    //     }
-    //   },
-    // );
-    for (var cont in controllers) {
-      cont.collapse();
-    }
+    // NOTE: kinda a work around, but not good enough
+    Timer(
+      Duration.zero,
+      () {
+        for (var cont in controllers) {
+          cont.collapse();
+        }
+      },
+    );
+    // for (var cont in controllers) {
+    //   cont.collapse();
+    // }
   }
 
   // TODO: using filtering breaks because of the ExpansionTile controllers
@@ -105,9 +109,14 @@ class _ResearchScreenState extends State<ResearchScreen> {
   // But it's sending a null value when I try to collapse (see above).
   // Collapsing before filtering has no issues.
   // Collapsing non-programmatically (i.e. clicking) works fine after filtering.
+  // UPDATE: can remove the progammatic-close (as well as accordion close bar)
+  // and all works "fine."
+  // UPDATE: disabling CloseBar & prog-close until further tests
+  // OPTIONS:
+  // 1) Re-construct ExpansionTiles by hand to avoid state issue
+  // 2) Pray
   void handleFilter(String filter) {
-    // print('filter');
-    closeAllTiles();
+    // closeAllTiles();
 
     List<ResearchArticle> filteredArticles = [];
     if (filter == '' || filter == 'All Articles') {
@@ -122,21 +131,18 @@ class _ResearchScreenState extends State<ResearchScreen> {
       articles = filteredArticles;
     });
 
-    // print(articles.length);
-    // print(controllers.length);
-
     setupArticles();
   }
 
   @override
   Widget build(BuildContext context) {
     return SiteWrapper(
-      bottAppBar: AccordionCloseBar(
-        isTileExpanded: isTileExpanded,
-        tileOrder: tileOrder,
-        controllers: controllers,
-        handleCloseAllTiles: closeAllTiles,
-      ),
+      // bottAppBar: AccordionCloseBar(
+      //   isTileExpanded: isTileExpanded,
+      //   tileOrder: tileOrder,
+      //   controllers: controllers,
+      //   handleCloseAllTiles: closeAllTiles,
+      // ),
       child: Column(
         children: [
           const QuotesHeader(),
@@ -173,6 +179,7 @@ class _ResearchScreenState extends State<ResearchScreen> {
                   controllers: controllers,
                   isTileExpanded: isTileExpanded,
                   tileOrder: tileOrder,
+                  isSubTileExpanded: isSubTileExpanded,
                   handleToggle: (value, index) {
                     setState(() {
                       isTileExpanded[index] = value;
@@ -184,148 +191,6 @@ class _ResearchScreenState extends State<ResearchScreen> {
                     });
                   },
                 ),
-                // child: Padding(
-                //   padding: const EdgeInsets.all(25),
-                //   child: ListView.builder(
-                //     shrinkWrap: true,
-                //     physics: const NeverScrollableScrollPhysics(),
-                //     itemCount: articles.length,
-                //     itemBuilder: (context, index) {
-                //       return Card(
-                //         color: Theme.of(context).colorScheme.surface,
-                //         child: ExpansionTile(
-                //           title: Padding(
-                //             padding: const EdgeInsets.symmetric(
-                //               vertical: 10,
-                //             ),
-                //             child: Text(
-                //               articles[index].shortTitle,
-                //               style: TextStyle(
-                //                 color: isTileExpanded[index]
-                //                     ? Theme.of(context).colorScheme.surface
-                //                     : Theme.of(context).colorScheme.background,
-                //                 fontSize: 17,
-                //                 fontWeight: isTileExpanded[index]
-                //                     ? FontWeight.bold
-                //                     : FontWeight.normal,
-                //                 // height: 1.25,
-                //               ),
-                //             ),
-                //           ),
-                //           // tilePadding: const EdgeInsets.all(15),
-                //           iconColor: Theme.of(context).colorScheme.surface,
-                //           collapsedIconColor:
-                //               Theme.of(context).colorScheme.background,
-                //           backgroundColor:
-                //               Theme.of(context).colorScheme.background,
-                //           controller: controllers[index],
-                //           onExpansionChanged: (value) {
-                //             setState(() {
-                //               isTileExpanded[index] = value;
-                //               if (value) {
-                //                 tileOrder.add(index);
-                //               } else {
-                //                 tileOrder
-                //                     .removeWhere((value) => value == index);
-                //               }
-                //             });
-                //           },
-                //           children: [
-                //             SelectionArea(
-                //               child: Padding(
-                //                 padding: const EdgeInsets.all(15),
-                //                 child: Column(
-                //                   crossAxisAlignment: CrossAxisAlignment.start,
-                //                   children: [
-                //                     Text(
-                //                         'Posted: ${articles[index].postedDate}'),
-                //                     const SizedBox(height: 15),
-                //                     ActionLink(
-                //                       text: articles[index].realTitle,
-                //                       navLink: articles[index].articleLink,
-                //                       color:
-                //                           Theme.of(context).colorScheme.surface,
-                //                       fontSize: Theme.of(context)
-                //                           .textTheme
-                //                           .bodyMedium!
-                //                           .fontSize,
-                //                       onTap: () {},
-                //                     ),
-                //                     Text(articles[index].authors),
-                //                     Text(
-                //                         'Published: ${articles[index].publishedDate}'),
-                //                     const SizedBox(height: 15),
-                //                     const Text(
-                //                       'tl;dr',
-                //                       style: TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                       ),
-                //                     ),
-                //                     const SizedBox(height: 5),
-                //                     Text(articles[index].tldr),
-                //                     const SizedBox(height: 15),
-                //                     const Text(
-                //                       'eli5',
-                //                       style: TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                       ),
-                //                     ),
-                //                     const SizedBox(height: 5),
-                //                     Text(articles[index].eli5),
-                //                     const SizedBox(height: 15),
-                //                     const Text(
-                //                       'elevator sum',
-                //                       style: TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                       ),
-                //                     ),
-                //                     const SizedBox(height: 5),
-                //                     articles[index].elevatorSum,
-                //                     const SizedBox(height: 15),
-                //                     const Text(
-                //                       '3 min dissertation',
-                //                       style: TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                       ),
-                //                     ),
-                //                     const SizedBox(height: 5),
-                //                     articles[index].dissertation,
-                //                     const SizedBox(height: 15),
-                //                     const SizedBox(height: 15),
-                //                     Row(
-                //                       children: [
-                //                         const Text(
-                //                           'Thanks for your time! Feel free to ',
-                //                         ),
-                //                         ActionLink(
-                //                           text: 'share this review',
-                //                           // TODO: update this
-                //                           navLink:
-                //                               'http://localhost:63132/#/research/${articles[index].refTitle}',
-                //                           color: Theme.of(context)
-                //                               .colorScheme
-                //                               .surface,
-                //                           fontSize: Theme.of(context)
-                //                               .textTheme
-                //                               .bodyMedium!
-                //                               .fontSize,
-                //                           onTap: () {},
-                //                         ),
-                //                         const Text(
-                //                           '.',
-                //                         ),
-                //                       ],
-                //                     ),
-                //                   ],
-                //                 ),
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       );
-                //     },
-                //   ),
-                // ),
               ),
             ],
           ),

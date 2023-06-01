@@ -8,7 +8,6 @@ final GoRouter goRouter = GoRouter(
     GoRoute(
       path: '/home',
       name: 'home',
-      // builder: (context, state) => const HomeScreen(),
       pageBuilder: (context, state) => CustomTransitionPage(
         child: const HomeScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) =>
@@ -18,20 +17,20 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
-    GoRoute(
-      path: '/home/test',
-      name: 'test',
-      // builder: (context, state) => const TestScreen(),
-      pageBuilder: (context, state) => CustomTransitionPage(
-        key: state.pageKey,
-        child: const TestScreen(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-            FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
-      ),
-    ),
+    // GoRoute(
+    //   path: '/home/test',
+    //   name: 'test',
+    //   // builder: (context, state) => const TestScreen(),
+    //   pageBuilder: (context, state) => CustomTransitionPage(
+    //     key: state.pageKey,
+    //     child: const TestScreen(),
+    //     transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+    //         FadeTransition(
+    //       opacity: animation,
+    //       child: child,
+    //     ),
+    //   ),
+    // ),
     GoRoute(
       path: '/contact',
       name: 'contact',
@@ -48,7 +47,6 @@ final GoRouter goRouter = GoRouter(
     GoRoute(
       path: '/games',
       name: 'games',
-      // builder: (context, state) => const GamesScreen(),
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
         child: const GamesScreen(),
@@ -60,9 +58,60 @@ final GoRouter goRouter = GoRouter(
       ),
     ),
     GoRoute(
+      path: '/games/corso-games',
+      name: 'corso-games',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const CorsoGamesScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/games/ploys-r-us',
+      name: 'ploys-r-us',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const PloysRUsScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/games/super-best-friends',
+      name: 'super-best-friends',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const SuperBestFriendsScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/games/the-story-of-dan-kheadies',
+      name: 'the-story-of-dan-kheadies',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const TheStoryOfDanKheadiesScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
       path: '/research',
       name: 'research',
-      // builder: (context, state) => const ResearchScreen(),
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
         child: const ResearchScreen(),
@@ -73,7 +122,6 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
-    // Note: syntax don't seem right (?)
     GoRoute(
       path: '/research/:article',
       name: 'research-article',
@@ -95,9 +143,21 @@ final GoRouter goRouter = GoRouter(
       ),
     ),
     GoRoute(
+      path: '/squad/david',
+      name: 'david',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const DavidScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
       path: '/',
       name: 'splash',
-      // builder: (context, state) => const SplashScreen(),
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
         child: const SplashScreen(),
@@ -115,9 +175,6 @@ final GoRouter goRouter = GoRouter(
     //   },
     // ),
   ],
-  // errorPageBuilder: (context, state) => const MaterialPage(
-  //   child: ErrorScreen(),
-  // ),
   errorPageBuilder: (context, state) => CustomTransitionPage(
     key: state.pageKey,
     name: 'error',

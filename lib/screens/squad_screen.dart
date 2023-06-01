@@ -7,16 +7,20 @@ class SquadScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-
     return SiteWrapper(
-      child: Column(
+      alwaysShowFooter: true,
+      child: Stack(
         children: [
           Container(
-            width: width / 2,
-            height: height,
-            color: Colors.yellow,
+            height: MediaQuery.of(context).size.height - 56,
+          ),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SquadMember(
+                name: 'David Corso',
+              ),
+            ],
           ),
         ],
       ),

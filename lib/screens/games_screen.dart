@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:holistic_gaming_site/config/config.dart';
-// import 'package:holistic_gaming_site/data/data.dart';
 import 'package:holistic_gaming_site/models/models.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
@@ -18,16 +18,12 @@ class GamesScreen extends StatefulWidget {
 class _GamesScreenState extends State<GamesScreen> {
   @override
   Widget build(BuildContext context) {
-    // final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-
     return SiteWrapper(
       alwaysShowFooter: true,
       child: CarouselSlider(
         options: CarouselOptions(
-          // aspectRatio: 3,
           autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 10),
+          autoPlayInterval: const Duration(seconds: 13),
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
           autoPlayCurve: Curves.fastOutSlowIn,
           enableInfiniteScroll: true,
@@ -45,61 +41,53 @@ class _GamesScreenState extends State<GamesScreen> {
             .map(
               (game) => Stack(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(30),
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
                       ),
-                      child: Image.network(
-                        game.picPath,
-                        fit: BoxFit.contain,
-                        width: width,
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        child: Image.network(
+                          game.picPath,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: game.upperPosition,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                  ShaderMask(
+                    shaderCallback: (Rect rect) {
+                      return LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                         colors: [
                           Colors.transparent,
-                          Theme.of(context).colorScheme.surface.withAlpha(150),
-                          Theme.of(context).colorScheme.surface.withAlpha(200),
-                          Theme.of(context).colorScheme.surface.withAlpha(150),
+                          Theme.of(context).colorScheme.background,
+                          Theme.of(context).colorScheme.background,
                           Colors.transparent,
                         ],
-                      ),
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    // height: MediaQuery.of(context).size.height / 10,
-                    height: 100,
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                        ),
-                        child: Text(
-                          game.description,
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: game.lowerPosition,
+                        stops: [
+                          0.0,
+                          Responsive.isMobile(context) ? 0.05 : 0.1,
+                          Responsive.isMobile(context) ? 0.95 : 0.9,
+                          1.0,
+                        ],
+                      ).createShader(rect);
+                    },
                     child: Container(
                       margin: EdgeInsets.only(
-                        top: game.upperPosition,
+                        top: Responsive.isMobile(context) &&
+                                game.mobileUpperPosiion != null
+                            ? game.mobileUpperPosiion!
+                            : Responsive.isTablet(context) &&
+                                    game.tabletUpperPosition != null
+                                ? game.tabletUpperPosition!
+                                : Responsive.isDesktop(context) &&
+                                        game.desktopUpperPosition != null
+                                    ? game.desktopUpperPosition!
+                                    : game.upperPosition,
                       ),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -124,7 +112,6 @@ class _GamesScreenState extends State<GamesScreen> {
                         ),
                       ),
                       width: MediaQuery.of(context).size.width,
-                      // height: MediaQuery.of(context).size.height / 10,
                       height: 100,
                       child: Center(
                         child: Padding(
@@ -132,11 +119,98 @@ class _GamesScreenState extends State<GamesScreen> {
                             horizontal: 30,
                           ),
                           child: Text(
-                            game.callToAction,
+                            game.description,
                             style: TextStyle(
                               color: Theme.of(context).colorScheme.background,
+                              fontSize: Responsive.isMobile(context) ||
+                                      Responsive.isTablet(context)
+                                  ? 16
+                                  : 18,
                             ),
                             textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        bottom: Responsive.isMobile(context) &&
+                                game.mobileLowerPosiion != null
+                            ? game.mobileLowerPosiion!
+                            : Responsive.isTablet(context) &&
+                                    game.tabletLowerPosition != null
+                                ? game.tabletLowerPosition!
+                                : Responsive.isDesktop(context) &&
+                                        game.desktopLowerPosition != null
+                                    ? game.desktopLowerPosition!
+                                    : game.lowerPosition,
+                      ),
+                      child: ShaderMask(
+                        shaderCallback: (Rect rect) {
+                          return LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              Colors.transparent,
+                              Theme.of(context).colorScheme.background,
+                              Theme.of(context).colorScheme.background,
+                              Colors.transparent,
+                            ],
+                            stops: [
+                              0.0,
+                              Responsive.isMobile(context) ? 0.05 : 0.1,
+                              Responsive.isMobile(context) ? 0.95 : 0.9,
+                              1.0,
+                            ],
+                          ).createShader(rect);
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(
+                            top: 300,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.transparent,
+                                Theme.of(context)
+                                    .colorScheme
+                                    .surface
+                                    .withAlpha(150),
+                                Theme.of(context)
+                                    .colorScheme
+                                    .surface
+                                    .withAlpha(200),
+                                Theme.of(context)
+                                    .colorScheme
+                                    .surface
+                                    .withAlpha(150),
+                                Colors.transparent,
+                              ],
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 100,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 30,
+                              ),
+                              child: ActionLink(
+                                text: game.callToAction,
+                                onTap: () => context.go(game.onTapScreen),
+                                navLink: game.navLink,
+                                fontSize: Responsive.isMobile(context) ||
+                                        Responsive.isTablet(context)
+                                    ? 16
+                                    : 18,
+                                alignment: TextAlign.center,
+                              ),
+                            ),
                           ),
                         ),
                       ),
