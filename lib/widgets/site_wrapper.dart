@@ -54,9 +54,16 @@ class _SiteWrapperState extends State<SiteWrapper> {
       appBar: const CustomAppBar(),
       body: Stack(
         children: [
-          SingleChildScrollView(
+          RawScrollbar(
             controller: scroller,
-            child: widget.child,
+            shape: const StadiumBorder(),
+            thumbColor: Theme.of(context).colorScheme.surface,
+            thickness: 10,
+            crossAxisMargin: 1,
+            child: SingleChildScrollView(
+              controller: scroller,
+              child: widget.child,
+            ),
           ),
           CustomFooter(
             scroller: scroller,

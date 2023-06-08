@@ -61,94 +61,94 @@ class _ArticleListState extends State<ArticleList> {
               controller: widget.controllers[index],
               onExpansionChanged: (value) => widget.handleToggle(value, index),
               children: [
-                SelectionArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Posted: ${widget.articles[index].postedDate}'),
-                        const SizedBox(height: 15),
-                        ActionLink(
-                          text: widget.articles[index].realTitle,
-                          navLink: widget.articles[index].articleLink,
-                          color: Theme.of(context).colorScheme.surface,
-                          fontSize:
-                              Theme.of(context).textTheme.bodyMedium!.fontSize,
-                          onTap: () {},
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Posted: ${widget.articles[index].postedDate}'),
+                      const SizedBox(height: 15),
+                      ActionLink(
+                        text: widget.articles[index].realTitle,
+                        navLink: widget.articles[index].articleLink,
+                        onTap: () {},
+                      ),
+                      SelectionArea(
+                        child: Text(widget.articles[index].authors),
+                      ),
+                      Text(
+                          'Published: ${widget.articles[index].publishedDate}'),
+                      const SizedBox(height: 15),
+                      const Text(
+                        'tl;dr',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text(widget.articles[index].authors),
-                        Text(
-                            'Published: ${widget.articles[index].publishedDate}'),
-                        const SizedBox(height: 15),
-                        const Text(
-                          'tl;dr',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                      ),
+                      const SizedBox(height: 5),
+                      SelectionArea(
+                        child: Text(widget.articles[index].tldr),
+                      ),
+                      const SizedBox(height: 15),
+                      const Text(
+                        'eli5',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      SelectionArea(
+                        child: Text(widget.articles[index].eli5),
+                      ),
+                      const SizedBox(height: 15),
+                      const Text(
+                        'elevator sum',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      SelectionArea(
+                        child: widget.articles[index].elevatorSum,
+                      ),
+                      const SizedBox(height: 15),
+                      const Text(
+                        '3 min dissertation',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      SelectionArea(
+                        child: widget.articles[index].dissertation,
+                      ),
+                      const SizedBox(height: 15),
+                      widget.articles[index].subsetLists != null
+                          ? ArticleSublist(
+                              index: index,
+                              articles: widget.articles,
+                              isSubTileExpanded: widget.isSubTileExpanded,
+                            )
+                          : const SizedBox(),
+                      const SizedBox(height: 15),
+                      Row(
+                        children: [
+                          const Text(
+                            'Thanks for your time! Feel free to ',
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(widget.articles[index].tldr),
-                        const SizedBox(height: 15),
-                        const Text(
-                          'eli5',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          ActionLink(
+                            text: 'share this review',
+                            // TODO: update this
+                            navLink:
+                                'http://localhost:63132/#/research/${widget.articles[index].refTitle}',
+                            onTap: () {},
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(widget.articles[index].eli5),
-                        const SizedBox(height: 15),
-                        const Text(
-                          'elevator sum',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          const Text(
+                            '.',
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        widget.articles[index].elevatorSum,
-                        const SizedBox(height: 15),
-                        const Text(
-                          '3 min dissertation',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        widget.articles[index].dissertation,
-                        const SizedBox(height: 15),
-                        widget.articles[index].subsetLists != null
-                            ? ArticleSublist(
-                                index: index,
-                                articles: widget.articles,
-                                isSubTileExpanded: widget.isSubTileExpanded,
-                              )
-                            : const SizedBox(),
-                        const SizedBox(height: 15),
-                        Row(
-                          children: [
-                            const Text(
-                              'Thanks for your time! Feel free to ',
-                            ),
-                            ActionLink(
-                              text: 'share this review',
-                              // TODO: update this
-                              navLink:
-                                  'http://localhost:63132/#/research/${widget.articles[index].refTitle}',
-                              color: Theme.of(context).colorScheme.surface,
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .fontSize,
-                              onTap: () {},
-                            ),
-                            const Text(
-                              '.',
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],

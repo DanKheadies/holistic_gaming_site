@@ -206,7 +206,10 @@ class _GamesScreenState extends State<GamesScreen> {
                                 navLink: game.navLink,
                                 fontSize: Responsive.isMobile(context) ||
                                         Responsive.isTablet(context)
-                                    ? 16
+                                    ? Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .fontSize
                                     : 18,
                                 alignment: TextAlign.center,
                               ),

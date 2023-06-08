@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-void keepPlaying(
+void playOnPrompt(
   BuildContext context,
-  String soKeepPlaying,
+  String title,
+  Widget content,
 ) {
   showDialog(
     context: context,
@@ -10,18 +11,14 @@ void keepPlaying(
       return Padding(
         padding: const EdgeInsets.all(50),
         child: AlertDialog(
-          title: const Text(
-            'You\'re smarter than you think.\nSo keep playing.',
+          title: Text(
+            title,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w600,
             ),
           ),
-          content: SelectionArea(
-            child: Text(
-              soKeepPlaying,
-            ),
-          ),
+          content: content,
           scrollable: true,
           actionsAlignment: MainAxisAlignment.center,
           actions: [

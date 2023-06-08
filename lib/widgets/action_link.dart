@@ -57,14 +57,12 @@ class _ActionLinkState extends State<ActionLink> {
             decoration:
                 hovering ? TextDecoration.none : TextDecoration.underline,
             decorationColor:
-                widget.color ?? Theme.of(context).colorScheme.background,
+                widget.color ?? Theme.of(context).colorScheme.surface,
             fontSize: widget.fontSize ??
-                Theme.of(context).textTheme.bodySmall!.fontSize,
-            fontWeight: FontWeight.w300,
-            height: Theme.of(context).textTheme.bodySmall!.height,
+                Theme.of(context).textTheme.bodyMedium!.fontSize,
             shadows: [
               Shadow(
-                color: widget.color ?? Theme.of(context).colorScheme.background,
+                color: widget.color ?? Theme.of(context).colorScheme.surface,
                 offset: const Offset(0, -2),
               ),
             ],

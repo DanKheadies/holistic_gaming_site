@@ -27,8 +27,6 @@ class _ArticleFilterState extends State<ArticleFilter> {
               ? const Text('All Articles')
               : ActionLink(
                   text: 'All Articles',
-                  color: Theme.of(context).colorScheme.surface,
-                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
                   onTap: () {
                     setState(() {
                       filter = 'All Articles';
@@ -48,8 +46,6 @@ class _ArticleFilterState extends State<ArticleFilter> {
               ? const Text('Dan Kheadies')
               : ActionLink(
                   text: 'Dan Kheadies',
-                  color: Theme.of(context).colorScheme.surface,
-                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
                   onTap: () {
                     setState(() {
                       filter = 'Dan Kheadies';
@@ -72,8 +68,6 @@ class _ArticleFilterState extends State<ArticleFilter> {
               ? const Text('Gaming')
               : ActionLink(
                   text: 'Gaming',
-                  color: Theme.of(context).colorScheme.surface,
-                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
                   onTap: () {
                     setState(() {
                       filter = 'Gaming';
@@ -96,8 +90,6 @@ class _ArticleFilterState extends State<ArticleFilter> {
               ? const Text('Immunis')
               : ActionLink(
                   text: 'Immunis',
-                  color: Theme.of(context).colorScheme.surface,
-                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
                   onTap: () {
                     setState(() {
                       filter = 'Immunis';

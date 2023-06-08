@@ -30,7 +30,6 @@ class _CustomFooterState extends State<CustomFooter> {
   }
 
   void scrollListener() {
-    // print('derp');
     if (widget.scroller.position.atEdge) {
       bool isTop = widget.scroller.position.pixels == 0;
       if (!isTop) {
@@ -47,6 +46,108 @@ class _CustomFooterState extends State<CustomFooter> {
         scrollAtBottom = false;
       });
     }
+  }
+
+  Widget buildPromptContent() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Except where noted, all content on this site is licensed under a ',
+        ),
+        const SizedBox(height: 15),
+        ActionLink(
+          text: 'CC Attribution 4.0 International License',
+          navLink: 'https://creativecommons.org/licenses/',
+          onTap: () {},
+        ),
+        const SizedBox(height: 15),
+        const Text(
+          'ShareAlike',
+        ),
+        const Text(
+          'NonCommercial',
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Attribution—',
+            ),
+            ActionLink(
+              text: 'DTFun LLC',
+              onTap: () => context.goNamed('contact'),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Row buildAttribution() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ActionLink(
+          text: 'CC SA NC BY',
+          color: Theme.of(context).colorScheme.background,
+          fontSize: 14,
+          onTap: () => playOnPrompt(
+            context,
+            'CC Attribution License',
+            buildPromptContent(),
+          ),
+        ),
+        const SizedBox(width: 6),
+        ActionLink(
+          text: 'DTFun LLC',
+          color: Theme.of(context).colorScheme.background,
+          fontSize: 14,
+          onTap: () => context.goNamed('contact'),
+        ),
+        const SizedBox(width: 6),
+        Text(
+          '${DateTime.now().year}',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.background,
+            fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildLoveSupport() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Powered by love and ',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.background,
+            fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        ActionLink(
+          text: 'support',
+          color: Theme.of(context).colorScheme.background,
+          fontSize: 14,
+          navLink:
+              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
+          onTap: () {},
+        ),
+        Text(
+          '.',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.background,
+            fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+      ],
+    );
   }
 
   @override
@@ -67,9 +168,6 @@ class _CustomFooterState extends State<CustomFooter> {
           alignment: Alignment.center,
           color: Theme.of(context).colorScheme.surface,
           width: MediaQuery.of(context).size.width,
-          // margin: EdgeInsets.only(
-          //   bottom: Responsive.isMobile(context) ? 5 : 15,
-          // ),
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 8,
@@ -77,118 +175,15 @@ class _CustomFooterState extends State<CustomFooter> {
           child: Responsive.isMobile(context)
               ? Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // TODO: on hover; explain
-                        ActionLink(
-                          text: 'CC SA NC BY',
-                          navLink: 'https://creativecommons.org/licenses/',
-                          onTap: () {},
-                        ),
-                        const SizedBox(width: 6),
-                        ActionLink(
-                          text: 'DTFun LLC',
-                          onTap: () => context.goNamed('contact'),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          '${DateTime.now().year}',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Powered by love and ',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        ActionLink(
-                          text: 'support',
-                          navLink:
-                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
-                          onTap: () {},
-                        ),
-                        Text(
-                          '.',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
+                    buildAttribution(),
+                    buildLoveSupport(),
                   ],
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        ActionLink(
-                          text: 'CC SA NC BY',
-                          navLink: 'https://creativecommons.org/licenses/',
-                          onTap: () {},
-                        ),
-                        const SizedBox(width: 6),
-                        ActionLink(
-                          text: 'DTFun LLC',
-                          onTap: () => context.goNamed('contact'),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          '${DateTime.now().year}',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Powered by love and ',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        ActionLink(
-                          text: 'support',
-                          navLink:
-                              'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
-                          onTap: () {},
-                        ),
-                        Text(
-                          '.',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.background,
-                            fontSize:
-                                Theme.of(context).textTheme.bodySmall!.fontSize,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
+                    buildAttribution(),
+                    buildLoveSupport(),
                   ],
                 ),
         ),

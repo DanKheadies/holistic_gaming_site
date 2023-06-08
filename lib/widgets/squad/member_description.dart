@@ -22,8 +22,8 @@ class MemberDescription extends StatelessWidget {
         ActionLink(
           text: 'Checkout my portfolio.',
           onTap: () => context.goNamed('david'),
-          color: Theme.of(context).colorScheme.surface,
-          fontSize: 16,
+          // color: Theme.of(context).colorScheme.surface,
+          // fontSize: 16,
         ),
       ],
     );
