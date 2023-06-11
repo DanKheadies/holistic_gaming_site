@@ -15,6 +15,7 @@ final List<String> homePics = [
   'assets/images/home/crossing2.jpg',
   'assets/images/home/deadCells.jpg',
   'assets/images/home/diablo.jpg',
+  'assets/images/home/diablo4.jpg',
   'assets/images/home/dQ.jpg',
   'assets/images/home/elden.jpg',
   'assets/images/home/escapist.jpg',

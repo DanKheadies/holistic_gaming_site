@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AppBarHoriItem extends StatefulWidget {
+class SquadSubHoriItem extends StatefulWidget {
   final String label;
   final String route;
   final String namedRoute;
 
-  const AppBarHoriItem({
+  const SquadSubHoriItem({
     super.key,
     required this.label,
     required this.route,
@@ -14,10 +14,10 @@ class AppBarHoriItem extends StatefulWidget {
   });
 
   @override
-  State<AppBarHoriItem> createState() => _AppBarHoriItemState();
+  State<SquadSubHoriItem> createState() => _SquadSubHoriItemState();
 }
 
-class _AppBarHoriItemState extends State<AppBarHoriItem> {
+class _SquadSubHoriItemState extends State<SquadSubHoriItem> {
   bool isHovered = false;
 
   @override
@@ -32,11 +32,11 @@ class _AppBarHoriItemState extends State<AppBarHoriItem> {
       child: Container(
         decoration: GoRouter.of(context).location == widget.route || isHovered
             ? BoxDecoration(
-                color: Theme.of(context).colorScheme.background.withAlpha(30),
+                color: Theme.of(context).colorScheme.surface.withAlpha(30),
                 border: Border(
                   bottom: BorderSide(
                     width: 3,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                 ),
               )

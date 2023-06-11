@@ -3,12 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:holistic_gaming_site/config/config.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
-class SquadMember extends StatelessWidget {
+class MemberContainer extends StatelessWidget {
   final String name;
+  final String imageUrl;
+  final List<Widget> description;
+  final String linkText;
+  final String linkUrl;
 
-  const SquadMember({
+  const MemberContainer({
     super.key,
     required this.name,
+    required this.imageUrl,
+    required this.description,
+    required this.linkText,
+    required this.linkUrl,
   });
 
   @override
@@ -41,19 +49,31 @@ class SquadMember extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             Responsive.isMobile(context)
-                ? const Column(
+                ? Column(
                     children: [
-                      MemberImage(),
-                      SizedBox(height: 25),
-                      MemberDescription(),
+                      MemberImage(
+                        imageUrl: imageUrl,
+                      ),
+                      const SizedBox(height: 25),
+                      MemberDescription(
+                        description: description,
+                        linkText: linkText,
+                        linkUrl: linkUrl,
+                      ),
                     ],
                   )
-                : const Row(
+                : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      MemberImage(),
-                      SizedBox(width: 25),
-                      MemberDescription(),
+                      MemberImage(
+                        imageUrl: imageUrl,
+                      ),
+                      const SizedBox(width: 25),
+                      MemberDescription(
+                        description: description,
+                        linkText: linkText,
+                        linkUrl: linkUrl,
+                      ),
                     ],
                   ),
           ],

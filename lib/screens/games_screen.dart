@@ -211,6 +211,7 @@ class _GamesScreenState extends State<GamesScreen> {
                                         .bodyMedium!
                                         .fontSize
                                     : 18,
+                                color: Theme.of(context).colorScheme.background,
                                 alignment: TextAlign.center,
                               ),
                             ),

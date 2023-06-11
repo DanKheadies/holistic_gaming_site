@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class HomeLeftCol extends StatelessWidget {
   const HomeLeftCol({
@@ -7,98 +8,117 @@ class HomeLeftCol extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SelectionArea(
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 18,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Theme.of(context).colorScheme.surface,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'What?',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.background,
-                    fontSize: 17,
-                  ),
-                ),
-              ],
-            ),
+    return const Column(
+      children: [
+        InformationBlock(
+          title: 'What?',
+          body: Text(
+            'Games affect people physically, mentally, emotionally, socially, and academically. Holistic gaming recognizes these effects, and it helps people research, design, and develop awesome games.',
           ),
-          const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              'Games affect people physically, mentally, emotionally, socially, and academically. Holistic gaming recognizes these effects, and it helps people research, design, and develop awesome games.',
-            ),
+          isTight: true,
+        ),
+        InformationBlock(
+          title: 'Why?',
+          body: Text(
+            'Games make life better. They are valuable to many people for many reasons. Holistic gaming explains why they are valuable, how they work, and what people can do with games to make their lives better.',
           ),
-          const SizedBox(height: 35),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 18,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Theme.of(context).colorScheme.surface,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Why?',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.background,
-                    fontSize: 17,
-                  ),
-                ),
-              ],
-            ),
+          isTight: true,
+        ),
+        InformationBlock(
+          title: 'Who?',
+          body: Text(
+            'Everyone should adopt a holistic approach while researching and creating games—and for life. Like most things, the more you know and do, the better you\'ll be at it. We are the best holistic gamers.',
           ),
-          const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              'Games make life better. They are valuable to many people for many reasons. Holistic gaming explains why they are valuable, how they work, and what people can do with games to make their lives better.',
-            ),
-          ),
-          const SizedBox(height: 35),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 18,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Theme.of(context).colorScheme.surface,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Who?',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.background,
-                    fontSize: 17,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              'Everyone should adopt a holistic approach while researching and creating games—and for life. Like most things, the more you know and do, the better you\'ll be at it. We are the best holistic gamers.',
-            ),
-          ),
-          const SizedBox(height: 35),
-        ],
-      ),
+          isTight: true,
+        ),
+        // Container(
+        //   padding: const EdgeInsets.symmetric(
+        //     vertical: 18,
+        //   ),
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(10),
+        //     color: Theme.of(context).colorScheme.surface,
+        //   ),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: [
+        //       Text(
+        //         'What?',
+        //         style: TextStyle(
+        //           color: Theme.of(context).colorScheme.background,
+        //           fontSize: 17,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // const SizedBox(height: 10),
+        // const Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 10),
+        //   child: Text(
+        //     'Games affect people physically, mentally, emotionally, socially, and academically. Holistic gaming recognizes these effects, and it helps people research, design, and develop awesome games.',
+        //   ),
+        // ),
+        // const SizedBox(height: 35),
+        // Container(
+        //   padding: const EdgeInsets.symmetric(
+        //     vertical: 18,
+        //   ),
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(10),
+        //     color: Theme.of(context).colorScheme.surface,
+        //   ),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: [
+        //       Text(
+        //         'Why?',
+        //         style: TextStyle(
+        //           color: Theme.of(context).colorScheme.background,
+        //           fontSize: 17,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // const SizedBox(height: 10),
+        // const Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 10),
+        //   child: Text(
+        //     'Games make life better. They are valuable to many people for many reasons. Holistic gaming explains why they are valuable, how they work, and what people can do with games to make their lives better.',
+        //   ),
+        // ),
+        // const SizedBox(height: 35),
+        // Container(
+        //   padding: const EdgeInsets.symmetric(
+        //     vertical: 18,
+        //   ),
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(10),
+        //     color: Theme.of(context).colorScheme.surface,
+        //   ),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: [
+        //       Text(
+        //         'Who?',
+        //         style: TextStyle(
+        //           color: Theme.of(context).colorScheme.background,
+        //           fontSize: 17,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // const SizedBox(height: 10),
+        // const Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 10),
+        //   child: Text(
+        //     'Everyone should adopt a holistic approach while researching and creating games—and for life. Like most things, the more you know and do, the better you\'ll be at it. We are the best holistic gamers.',
+        //   ),
+        // ),
+        // const SizedBox(height: 35),
+      ],
     );
   }
 }

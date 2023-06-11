@@ -1,10 +1,13 @@
 export 'action_link.dart';
 export 'app_bar_hori_item.dart';
 export 'bullet_item.dart';
+export 'contact_input.dart';
 export 'custom_app_bar.dart';
 export 'custom_drawer.dart';
 export 'custom_footer.dart';
 export 'home/widgets.dart';
+export 'information_block.dart';
+export 'information_row.dart';
 export 'play_on_prompt.dart';
 export 'quotes_header.dart';
 export 'research/widgets.dart';

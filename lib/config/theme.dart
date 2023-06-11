@@ -41,16 +41,19 @@ ThemeData lightTheme() {
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
+        fontFamily: 'OpenSans',
         fontSize: 20,
-        height: 1.25,
+        height: 1.5,
       ),
       bodyMedium: TextStyle(
+        fontFamily: 'OpenSans',
         fontSize: 16,
-        height: 1.25,
+        height: 1.5,
       ),
       bodySmall: TextStyle(
+        fontFamily: 'OpenSans',
         fontSize: 14,
-        height: 1.25,
+        height: 1.5,
       ),
     ),
     // textTheme: const TextTheme(

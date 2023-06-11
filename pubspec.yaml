@@ -14,6 +14,7 @@ dependencies:
   carousel_slider: ^4.2.1
   cloud_firestore: ^4.7.1
   cupertino_icons: ^1.0.2
+  email_validator: ^2.1.17
   equatable: ^2.0.5
   firebase_analytics: ^10.4.1
   firebase_analytics_web: ^0.5.4+1
@@ -21,10 +22,8 @@ dependencies:
   firebase_storage: ^11.2.1
   fl_chart: ^0.62.0
   go_router: ^7.0.1
-  # google_sign_in: ^6.1.3
-  google_sign_in_web: ^0.12.0+2
+  http: ^0.13.0
   lottie: ^2.3.2
-  mailer: ^6.0.1
   url_launcher: ^6.1.11
 
 dev_dependencies:
@@ -64,3 +63,39 @@ flutter:
     - assets/images/squad/david/
     - assets/images/squad/david/books/
     - assets/images/squad/david/edtech/
+    - assets/images/thanks/
+
+fonts: 
+  - family: OpenSans
+    fonts: 
+      - asset: assets/fonts/OpenSans/OpenSans-Light.tff
+        weight: 300
+      - asset: assets/fonts/OpenSans/OpenSans-LightItalic.tff
+        style: italic
+        weight: 300
+      - asset: assets/fonts/OpenSans/OpenSans-Regular.tff
+        weight: 400
+      - asset: assets/fonts/OpenSans/OpenSans-Italic.tff
+        style: italic
+        weight: 400
+      - asset: assets/fonts/OpenSans/OpenSans-Medium.tff
+        weight: 500
+      - asset: assets/fonts/OpenSans/OpenSans-MediumItalic.tff
+        style: italic
+        weight: 500
+      - asset: assets/fonts/OpenSans/OpenSans-SemiBold.tff
+        weight: 600
+      - asset: assets/fonts/OpenSans/OpenSans-SemiBoldItalic.tff
+        style: italic
+        weight: 600
+      - asset: assets/fonts/OpenSans/OpenSans-Bold.tff
+        weight: 700
+      - asset: assets/fonts/OpenSans/OpenSans-BoldItalic.tff
+        style: italic
+        weight: 700
+      - asset: assets/fonts/OpenSans/OpenSans-ExtraBold.tff
+        weight: 800
+      - asset: assets/fonts/OpenSans/OpenSans-ExtraBoldItalic.tff
+        style: italic
+        weight: 800
+        

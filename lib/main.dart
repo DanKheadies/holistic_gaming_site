@@ -23,6 +23,7 @@ class HolisticGaming extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // theme: state == Brightness.dark ? darkTheme() : lightTheme(),
       theme: lightTheme(),
+      // theme: ThemeData(),
       routerConfig: goRouter,
     );
   }

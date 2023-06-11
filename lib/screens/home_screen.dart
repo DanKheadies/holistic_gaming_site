@@ -10,29 +10,38 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SiteWrapper(
       child: Responsive.isDesktop(context) || Responsive.isWideDesktop(context)
-          ? const Column(
+          ? Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Jumbotron(),
-                SizedBox(height: 10),
+                const Jumbotron(),
+                const SizedBox(height: 10),
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Flexible(
+                      const Flexible(
                         flex: 1,
-                        child: HomeLeftCol(),
+                        child: SizedBox(),
                       ),
-                      SizedBox(width: 10),
                       Flexible(
+                        flex: Responsive.isDesktop(context) ? 7 : 5,
+                        child: const HomeLeftCol(),
+                      ),
+                      const SizedBox(width: 50),
+                      Flexible(
+                        flex: Responsive.isDesktop(context) ? 7 : 5,
+                        child: const HomeRightCol(),
+                      ),
+                      const Flexible(
                         flex: 1,
-                        child: HomeRightCol(),
+                        child: SizedBox(),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
               ],
             )
           : const Column(
