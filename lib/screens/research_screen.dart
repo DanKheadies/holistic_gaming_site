@@ -24,7 +24,6 @@ class _ResearchScreenState extends State<ResearchScreen> {
   List<ExpansionTileController> controllers = [];
   List<ResearchArticle> articles = ResearchArticle.articles;
   Map<int, List<bool>> isSubTileExpanded = {};
-  // Map<int, bool> derp = {};
 
   @override
   void initState() {

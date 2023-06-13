@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:holistic_gaming_site/screens/pdf_screen.dart';
+import 'package:holistic_gaming_site/screens/pixatool_screen.dart';
 
 import 'package:holistic_gaming_site/screens/screens.dart';
 
@@ -109,6 +111,31 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
+    // GoRoute(
+    //   path: '/pdf',
+    //   name: 'pdf',
+    //   builder: (context, state) => const PDFScreen(pdfAsset: ''),
+    // ),
+    GoRoute(
+      path: '/pdf/:pdfAsset',
+      name: 'pdf/:pdfAsset',
+      builder: (context, state) => PDFScreen(
+        pdfAsset: state.pathParameters['pdfAsset'],
+      ),
+    ),
+    GoRoute(
+      path: '/pixatool',
+      name: 'pixatool',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const PixaToolScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
     GoRoute(
       path: '/research',
       name: 'research',
@@ -124,10 +151,21 @@ final GoRouter goRouter = GoRouter(
     ),
     GoRoute(
       path: '/research/:article',
-      name: 'research-article',
-      builder: (context, state) => ResearchScreen(
-        article: state.pathParameters['article'],
+      name: 'research-article/:article',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: ResearchScreen(
+          article: state.pathParameters['article'],
+        ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
       ),
+      // builder: (context, state) => ResearchScreen(
+      //   article: state.pathParameters['article'],
+      // ),
     ),
     GoRoute(
       path: '/squad',

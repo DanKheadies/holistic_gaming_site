@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:holistic_gaming_site/models/models.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
@@ -138,10 +139,9 @@ class _ArticleListState extends State<ArticleList> {
                           ),
                           ActionLink(
                             text: 'share this review',
-                            // TODO: update this
-                            navLink:
-                                'http://localhost:63132/#/research/${widget.articles[index].refTitle}',
-                            onTap: () {},
+                            onTap: () => context.go(
+                              '/research/${widget.articles[index].refTitle}',
+                            ),
                           ),
                           const Text(
                             '.',

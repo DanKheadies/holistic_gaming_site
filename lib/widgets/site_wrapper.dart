@@ -22,6 +22,7 @@ class SiteWrapper extends StatefulWidget {
 }
 
 class _SiteWrapperState extends State<SiteWrapper> {
+  bool showButton = false;
   FirebaseAnalyticsWeb analyticsWeb = FirebaseAnalyticsWeb();
   ScrollController scroller = ScrollController();
 
@@ -33,6 +34,8 @@ class _SiteWrapperState extends State<SiteWrapper> {
       // logPageAsEvent(context);
       logPage(context);
     });
+
+    scroller.addListener(scrollListener);
   }
 
   // Future<void> logPageAsEvent(BuildContext context) async {
@@ -46,6 +49,18 @@ class _SiteWrapperState extends State<SiteWrapper> {
     await analyticsWeb.setCurrentScreen(
       screenName: GoRouter.of(context).location,
     );
+  }
+
+  void scrollListener() {
+    if (scroller.position.pixels >= 50) {
+      setState(() {
+        showButton = true;
+      });
+    } else {
+      setState(() {
+        showButton = false;
+      });
+    }
   }
 
   @override
@@ -75,6 +90,29 @@ class _SiteWrapperState extends State<SiteWrapper> {
           ? const CustomDrawer()
           : const SizedBox(),
       bottomNavigationBar: widget.bottAppBar,
+      // Note: leaves a "hitbox"; would like a better solution
+      floatingActionButton: AnimatedOpacity(
+        opacity: showButton ? 1 : 0,
+        duration: const Duration(seconds: 1),
+        curve: Curves.easeIn,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 30),
+          child: FloatingActionButton(
+            backgroundColor: Theme.of(context).colorScheme.surface,
+            onPressed: () {
+              scroller.animateTo(
+                0,
+                duration: const Duration(seconds: 1),
+                curve: Curves.easeIn,
+              );
+            },
+            child: Icon(
+              Icons.arrow_upward,
+              color: Theme.of(context).colorScheme.background,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

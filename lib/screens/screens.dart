@@ -3,6 +3,8 @@ export 'error_screen.dart';
 export 'games_screen.dart';
 export 'games/screens.dart';
 export 'home_screen.dart';
+export 'pdf_screen.dart';
+export 'pixatool_screen.dart';
 export 'research_screen.dart';
 export 'splash_screen.dart';
 export 'squad/screens.dart';

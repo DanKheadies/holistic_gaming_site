@@ -35,37 +35,39 @@ class _ActionLinkState extends State<ActionLink> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 4,
-      ),
-      child: InkWell(
-        onTap: widget.navLink != null && widget.navLink != ''
-            ? () => toSite(widget.navLink!)
-            : widget.onTap,
-        onHover: (value) {
-          setState(() {
-            hovering = value;
-          });
-        },
-        hoverColor: Colors.transparent,
-        child: Text(
-          widget.text,
-          textAlign: widget.alignment ?? TextAlign.left,
-          style: TextStyle(
-            color: Colors.transparent,
-            decoration:
-                hovering ? TextDecoration.none : TextDecoration.underline,
-            decorationColor:
-                widget.color ?? Theme.of(context).colorScheme.surface,
-            fontSize: widget.fontSize ??
-                Theme.of(context).textTheme.bodyMedium!.fontSize,
-            shadows: [
-              Shadow(
-                color: widget.color ?? Theme.of(context).colorScheme.surface,
-                offset: const Offset(0, -2),
-              ),
-            ],
+    return SelectionContainer.disabled(
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 4,
+        ),
+        child: InkWell(
+          onTap: widget.navLink != null && widget.navLink != ''
+              ? () => toSite(widget.navLink!)
+              : widget.onTap,
+          onHover: (value) {
+            setState(() {
+              hovering = value;
+            });
+          },
+          hoverColor: Colors.transparent,
+          child: Text(
+            widget.text,
+            textAlign: widget.alignment ?? TextAlign.left,
+            style: TextStyle(
+              color: Colors.transparent,
+              decoration:
+                  hovering ? TextDecoration.none : TextDecoration.underline,
+              decorationColor:
+                  widget.color ?? Theme.of(context).colorScheme.surface,
+              fontSize: widget.fontSize ??
+                  Theme.of(context).textTheme.bodyMedium!.fontSize,
+              shadows: [
+                Shadow(
+                  color: widget.color ?? Theme.of(context).colorScheme.surface,
+                  offset: const Offset(0, -2),
+                ),
+              ],
+            ),
           ),
         ),
       ),
