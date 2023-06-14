@@ -90,17 +90,17 @@ class _ResearchScreenState extends State<ResearchScreen> {
     });
 
     // NOTE: kinda a work around, but not good enough
-    Timer(
-      Duration.zero,
-      () {
-        for (var cont in controllers) {
-          cont.collapse();
-        }
-      },
-    );
-    // for (var cont in controllers) {
-    //   cont.collapse();
-    // }
+    // Timer(
+    //   Duration.zero,
+    //   () {
+    //     for (var cont in controllers) {
+    //       cont.collapse();
+    //     }
+    //   },
+    // );
+    for (var cont in controllers) {
+      cont.collapse();
+    }
   }
 
   // TODO: using filtering breaks because of the ExpansionTile controllers
@@ -141,6 +141,12 @@ class _ResearchScreenState extends State<ResearchScreen> {
       //   tileOrder: tileOrder,
       //   controllers: controllers,
       //   handleCloseAllTiles: closeAllTiles,
+      //   handleCloseLastTile: () {
+      //     setState(() {
+      //       isTileExpanded[tileOrder.last] = false;
+      //     });
+      //     controllers[tileOrder.last].collapse();
+      //   },
       // ),
       child: Column(
         children: [

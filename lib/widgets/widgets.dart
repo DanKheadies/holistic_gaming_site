@@ -1,5 +1,6 @@
 export 'edtech/widgets.dart';
 export 'home/widgets.dart';
+export 'pixatool/widgets.dart';
 export 'research/widgets.dart';
 export 'squad/widgets.dart';
 export 'action_link.dart';

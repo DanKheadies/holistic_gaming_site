@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   carousel_slider: ^4.2.1
+  chewie: ^1.5.0
   cloud_firestore: ^4.7.1
   cupertino_icons: ^1.0.2
   email_validator: ^2.1.17
@@ -26,6 +27,7 @@ dependencies:
   lottie: ^2.3.2
   pdfx: ^2.3.0
   url_launcher: ^6.1.11
+  video_player: ^2.6.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,9 @@ flutter:
     - assets/images/squad/david/
     - assets/images/squad/david/books/
     - assets/images/squad/david/edtech/
+    - assets/images/pixatool/gifs/
+    - assets/images/pixatool/pictures/
+    - assets/images/pixatool/video-posters/
     - assets/images/thanks/
 
 fonts: 

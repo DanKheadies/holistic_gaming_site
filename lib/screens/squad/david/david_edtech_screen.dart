@@ -21,10 +21,10 @@ class _DavidEdTechScreenState extends State<DavidEdTechScreen> {
   void initState() {
     super.initState();
 
-    setupArticles();
+    setupCollection();
   }
 
-  void setupArticles() {
+  void setupCollection() {
     if (controllers.isNotEmpty) {
       controllers.clear();
     }
@@ -62,11 +62,6 @@ class _DavidEdTechScreenState extends State<DavidEdTechScreen> {
     }
   }
 
-  void handleFilter(String filter) {
-    closeAllTiles();
-    setupArticles();
-  }
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -77,6 +72,12 @@ class _DavidEdTechScreenState extends State<DavidEdTechScreen> {
         tileOrder: tileOrder,
         controllers: controllers,
         handleCloseAllTiles: closeAllTiles,
+        handleCloseLastTile: () {
+          setState(() {
+            isTileExpanded[tileOrder.last] = false;
+          });
+          controllers[tileOrder.last].collapse();
+        },
       ),
       child: Column(
         children: [

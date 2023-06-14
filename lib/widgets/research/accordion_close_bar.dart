@@ -1,4 +1,4 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -7,6 +7,7 @@ class AccordionCloseBar extends StatefulWidget {
   final List<int> tileOrder;
   final List<ExpansionTileController> controllers;
   final Function() handleCloseAllTiles;
+  final Function() handleCloseLastTile;
 
   const AccordionCloseBar({
     super.key,
@@ -14,6 +15,7 @@ class AccordionCloseBar extends StatefulWidget {
     required this.tileOrder,
     required this.controllers,
     required this.handleCloseAllTiles,
+    required this.handleCloseLastTile,
   });
 
   @override
@@ -44,18 +46,7 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.isTileExpanded[widget.tileOrder.last] = false;
-                      });
-                      // widget.controllers[widget.tileOrder.last].collapse();
-                      // NOTE: kinda a temp work-around, but not good enough
-                      Timer(
-                        Duration.zero,
-                        () => widget.controllers[widget.tileOrder.last]
-                            .collapse(),
-                      );
-                    },
+                    onPressed: widget.handleCloseLastTile,
                     child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
