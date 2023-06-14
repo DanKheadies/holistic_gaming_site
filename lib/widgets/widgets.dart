@@ -1,4 +1,5 @@
 export 'edtech/widgets.dart';
+export 'games/widgets.dart';
 export 'home/widgets.dart';
 export 'pixatool/widgets.dart';
 export 'research/widgets.dart';

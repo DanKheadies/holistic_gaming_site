@@ -60,6 +60,7 @@ flutter:
     - assets/images/
     - assets/images/connections/
     - assets/images/games/
+    - assets/images/games/generic-logos/
     - assets/images/home/
     - assets/images/logo/
     - assets/images/research/
@@ -105,4 +106,16 @@ fonts:
       - asset: assets/fonts/OpenSans/OpenSans-ExtraBoldItalic.tff
         style: italic
         weight: 800
+  - family: NotoSans
+    fonts: 
+      - asset: assets/fonts/NotoSans/NotoSansJP-Thin.tff
+        weight: 200
+      - asset: assets/fonts/NotoSans/NotoSansJP-Light.tff
+        weight: 300
+      - asset: assets/fonts/NotoSans/NotoSansJP-Regular.tff
+        weight: 400
+      - asset: assets/fonts/NotoSans/NotoSansJP-Medium.tff
+        weight: 500
+      - asset: assets/fonts/NotoSans/NotoSansJP-Bold.tff
+        weight: 700
         

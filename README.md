@@ -1,16 +1,14 @@
 # holistic_gaming_site
 
-A new Flutter project.
+Games to learn everything by learning everything about games.
 
-## Getting Started
+## About this Site
 
-This project is a starting point for a Flutter application.
+This is my personal site I developed for my M.Ed., and I am growing it as I grow. If anyone wants to join in, hit me up.
 
-A few resources to get you started if this is your first Flutter project:
+## TODOs
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Ploys R Us
+2. Light / dark mode
+3. Research articles filtering and Close Bar
+4. Font check
