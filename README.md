@@ -10,5 +10,7 @@ This is my personal site I developed for my M.Ed., and I am growing it as I grow
 
 1. Ploys R Us
 2. Light / dark mode
-3. Research articles filtering and Close Bar
-4. Font check
+3. Footer & auto-scroll hitboxes
+4. Research articles filtering and Close Bar
+5. Font check
+6. EdTech Standards
