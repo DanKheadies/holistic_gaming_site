@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
         },
         child: Center(
           child: Lottie.asset(
-            'images/splash/${files[fileIndex]}.json',
+            'assets/images/splash/${files[fileIndex]}.json',
             controller: aniCont,
             onLoaded: (composition) {
               aniCont

@@ -50,7 +50,7 @@ class _GamesScreenState extends State<GamesScreen> {
                         borderRadius: const BorderRadius.all(
                           Radius.circular(30),
                         ),
-                        child: Image.network(
+                        child: Image.asset(
                           game.picPath,
                           fit: BoxFit.contain,
                         ),
@@ -169,8 +169,9 @@ class _GamesScreenState extends State<GamesScreen> {
                         },
                         child: Container(
                           margin: const EdgeInsets.only(
-                            top: 300,
-                          ),
+                              // top: 300,
+                              // top: 100,
+                              ),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,

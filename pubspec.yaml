@@ -56,6 +56,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/
     - assets/docs/
     - assets/images/
     - assets/images/connections/
@@ -64,6 +65,7 @@ flutter:
     - assets/images/home/
     - assets/images/logo/
     - assets/images/research/
+    - assets/images/splash/
     - assets/images/splash/
     - assets/images/squad/david/
     - assets/images/squad/david/books/

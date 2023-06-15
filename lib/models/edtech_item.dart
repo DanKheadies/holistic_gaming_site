@@ -156,65 +156,50 @@ class EdTechItem extends Equatable {
             const SizedBox(height: 20),
           ],
         ),
-        'Standard 1 - Content Knowledge': Column(
-          children: [
-            const Text(
-                'I\'m too lazy to manually import all this. If you NEED to know..'),
-            const SizedBox(height: 10),
-            ActionLink(
-              text: 'Contact me.',
-              navLink: 'https://holisticgaming.com/#/contact', // TODO
-              onTap: () {},
-            ),
-          ],
+        'Standard 1 - Content Knowledge': Align(
+          alignment: Alignment.centerLeft,
+          child: ActionLink(
+            text:
+                'Please see the old site for this content (https://holistic-gaming-dtfun.web.app/squad/david/edtech)',
+            navLink: 'https://holistic-gaming-dtfun.web.app/squad/david/edtech',
+            onTap: () {},
+          ),
         ),
-        'Standard 2 - Content Pedagogy': Column(
-          children: [
-            const Text(
-                'I\'m too lazy to manually import all this. If you NEED to know..'),
-            const SizedBox(height: 10),
-            ActionLink(
-              text: 'Contact me.',
-              navLink: 'https://holisticgaming.com/#/contact', // TODO
-              onTap: () {},
-            ),
-          ],
+        'Standard 2 - Content Pedagogy': Align(
+          alignment: Alignment.centerLeft,
+          child: ActionLink(
+            text:
+                'Please see the old site for this content (https://holistic-gaming-dtfun.web.app/squad/david/edtech)',
+            navLink: 'https://holistic-gaming-dtfun.web.app/squad/david/edtech',
+            onTap: () {},
+          ),
         ),
-        'Standard 3 - Learning Environments': Column(
-          children: [
-            const Text(
-                'I\'m too lazy to manually import all this. If you NEED to know..'),
-            const SizedBox(height: 10),
-            ActionLink(
-              text: 'Contact me.',
-              navLink: 'https://holisticgaming.com/#/contact', // TODO
-              onTap: () {},
-            ),
-          ],
+        'Standard 3 - Learning Environments': Align(
+          alignment: Alignment.centerLeft,
+          child: ActionLink(
+            text:
+                'Please see the old site for this content (https://holistic-gaming-dtfun.web.app/squad/david/edtech)',
+            navLink: 'https://holistic-gaming-dtfun.web.app/squad/david/edtech',
+            onTap: () {},
+          ),
         ),
-        'Standard 4 - Professional Knowledge & Skills': Column(
-          children: [
-            const Text(
-                'I\'m too lazy to manually import all this. If you NEED to know..'),
-            const SizedBox(height: 10),
-            ActionLink(
-              text: 'Contact me.',
-              navLink: 'https://holisticgaming.com/#/contact', // TODO
-              onTap: () {},
-            ),
-          ],
+        'Standard 4 - Professional Knowledge & Skills': Align(
+          alignment: Alignment.centerLeft,
+          child: ActionLink(
+            text:
+                'Please see the old site for this content (https://holistic-gaming-dtfun.web.app/squad/david/edtech)',
+            navLink: 'https://holistic-gaming-dtfun.web.app/squad/david/edtech',
+            onTap: () {},
+          ),
         ),
-        'Standard 5 - Research': Column(
-          children: [
-            const Text(
-                'I\'m too lazy to manually import all this. If you NEED to know..'),
-            const SizedBox(height: 10),
-            ActionLink(
-              text: 'Contact me.',
-              navLink: 'https://holisticgaming.com/#/contact', // TODO
-              onTap: () {},
-            ),
-          ],
+        'Standard 5 - Research': Align(
+          alignment: Alignment.centerLeft,
+          child: ActionLink(
+            text:
+                'Please see the old site for this content (https://holistic-gaming-dtfun.web.app/squad/david/edtech)',
+            navLink: 'https://holistic-gaming-dtfun.web.app/squad/david/edtech',
+            onTap: () {},
+          ),
         ),
       },
       extraContent: const [
@@ -274,8 +259,7 @@ class EdTechItem extends Equatable {
           child: ActionLink(
             text:
                 'Class Paper: https://holisticgaming.com/pdf/CorsoResearchPaper.pdf',
-            navLink:
-                'https://holisticgaming.com/#/pdf/CorsoResearchPaper.pdf', // TODO
+            navLink: 'https://holisticgaming.com/#/pdf/CorsoResearchPaper.pdf',
             onTap: () {},
           ),
         ),
@@ -293,17 +277,31 @@ class EdTechItem extends Equatable {
           ),
         ),
         const SizedBox(height: 5),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class project: https://www.holisticgaming.com/ET652/COTSHearthstone/cotsHearthstone.html [RETIRED]',
+          // child: Text(
+          //   'Class project: https://www.holisticgaming.com/ET652/COTSHearthstone/cotsHearthstone.html [RETIRED]',
+          // ),
+          child: ActionLink(
+            text:
+                'Class project: https://www.holisticgaming.com/ET652/COTSHearthstone/cotsHearthstone.html',
+            navLink:
+                'https://holistic-gaming-dtfun.web.app/ET652/COTSHearthstone/cotsHearthstone.html',
+            onTap: () {},
           ),
         ),
         const SizedBox(height: 5),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class project: https://www.holisticgaming.com/ET652/gamerInterview.html [RETIRED]',
+          // child: Text(
+          //   'Class project: https://www.holisticgaming.com/ET652/gamerInterview.html [RETIRED]',
+          // ),
+          child: ActionLink(
+            text:
+                'Class project: https://www.holisticgaming.com/ET652/gamerInterview.html',
+            navLink:
+                'https://holistic-gaming-dtfun.web.app/ET652/gamerInterview.html',
+            onTap: () {},
           ),
         ),
       ],
@@ -366,35 +364,59 @@ class EdTechItem extends Equatable {
           ),
         ),
         const SizedBox(height: 5),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class Project: https://www.holisticgaming.com/ET735/ [RETIRED]',
+          // child: Text(
+          //   'Class Project: https://www.holisticgaming.com/ET735/ [RETIRED]',
+          // ),
+          child: ActionLink(
+            text: 'Class Project: https://holistic-gaming-dtfun.web.app/ET735/',
+            navLink: 'https://holistic-gaming-dtfun.web.app/ET735/',
+            onTap: () {},
           ),
         ),
         const SizedBox(height: 5),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class Project: https://www.holisticgaming.com/ET735/newsletter.html [RETIRED]',
+          // child: Text(
+          //   'Class Project: https://www.holisticgaming.com/ET735/newsletter.html [RETIRED]',
+          // ),
+          child: ActionLink(
+            text:
+                'Class Project: https://holistic-gaming-dtfun.web.app/ET735/newsletter.html',
+            navLink:
+                'https://holistic-gaming-dtfun.web.app/ET735/newsletter.html',
+            onTap: () {},
           ),
         ),
         const SizedBox(height: 5),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class Project: https://www.holisticgaming.com/ET735/overview.html [RETIRED]',
+          // child: Text(
+          //   'Class Project: https://www.holisticgaming.com/ET735/overview.html [RETIRED]',
+          // ),
+          child: ActionLink(
+            text:
+                'Class Project: https://holistic-gaming-dtfun.web.app/ET735/overview.html',
+            navLink:
+                'https://holistic-gaming-dtfun.web.app/ET735/overview.html',
+            onTap: () {},
           ),
         ),
       ],
     ),
-    const EdTechItem(
+    EdTechItem(
       title: 'EDET 703 - Design and Development Tools (II)',
       content: [
         Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Class Website: https://www.holisticgaming.com/ET703/ [RETIRED]',
+          // child: Text(
+          //   'Class Website: https://www.holisticgaming.com/ET703/ [RETIRED]',
+          // ),
+          child: ActionLink(
+            text: 'Class Website: https://holistic-gaming-dtfun.web.app/ET703/',
+            navLink: 'https://holistic-gaming-dtfun.web.app/ET703/',
+            onTap: () {},
           ),
         ),
       ],

@@ -237,7 +237,7 @@ class PloysGame extends Equatable {
       ],
     ),
     const PloysGame(
-      title: 'Trout aka Don\'t Drop the Soap',
+      title: 'Don\'t Drop the Soap | Trout',
       content: [
         SelectionArea(
           child: Column(
@@ -270,7 +270,7 @@ class PloysGame extends Equatable {
       ],
     ),
     const PloysGame(
-      title: 'PopTop Countdown aka Binary Roulette aka The Odds are Even',
+      title: 'Binary Roulette | PopTop Countdown | The Odds are Even',
       content: [
         SelectionArea(
           child: Column(

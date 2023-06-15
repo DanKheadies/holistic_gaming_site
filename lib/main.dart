@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:holistic_gaming_site/config/config.dart';
 import 'package:holistic_gaming_site/firebase_options.dart';
+// import 'package:holistic_gaming_site/screens/screens.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

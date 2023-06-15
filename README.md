@@ -14,3 +14,5 @@ This is my personal site I developed for my M.Ed., and I am growing it as I grow
 4. Research articles filtering and Close Bar
 5. Font check
 6. EdTech Standards
+7. Older project links
+8. Icon / logo

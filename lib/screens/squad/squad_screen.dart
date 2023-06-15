@@ -32,6 +32,7 @@ class SquadScreen extends StatelessWidget {
                   );
                 },
               ),
+              const SizedBox(height: 50),
             ],
           ),
         ],

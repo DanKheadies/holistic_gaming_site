@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 75),
               ],
             )
           : const Column(
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 15),
                   child: HomeRightCol(),
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: 75),
               ],
             ),
     );

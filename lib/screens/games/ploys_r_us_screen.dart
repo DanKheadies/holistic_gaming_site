@@ -1,4 +1,4 @@
-// import 'dart:async';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,6 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
   List<bool> isTileExpanded = [];
   List<int> tileOrder = [];
   List<ExpansionTileController> controllers = [];
-  // List<EdTechItem> edTechCollection = EdTechItem.edTechItemCollection;
   List<PloysGame> ployGames = PloysGame.ploysGameCollection;
   Map<int, List<bool>> isSubTileExpanded = {};
 
@@ -47,8 +46,6 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
   void initState() {
     super.initState();
 
-    // scroller.addListener(scrollListener);
-
     bottomColor = red;
     topColor = yellow;
     colorList = [
@@ -59,12 +56,12 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
       blue,
     ];
 
-    // Timer(
-    //   const Duration(milliseconds: 300),
-    //   () => setState(() {
-    //     bottomColor = blue;
-    //   }),
-    // );
+    Timer(
+      const Duration(milliseconds: 300),
+      () => setState(() {
+        bottomColor = blue;
+      }),
+    );
 
     setupPloys();
   }
@@ -88,14 +85,6 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
       setState(() {
         controllers.add(ExpansionTileController());
         isTileExpanded.add(false);
-        // if (ployGames[i].subsetLists != null) {
-        //   isSubTileExpanded.addAll(<int, List<bool>>{
-        //     i: List<bool>.generate(
-        //       ployGames[i].subsetLists!.length,
-        //       (index) => false,
-        //     ),
-        //   });
-        // }
       });
     }
   }
@@ -113,10 +102,6 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // print('build');
-    // final height = MediaQuery.of(context).size.height;
-    // final width = MediaQuery.of(context).size.width;
-
     return SiteWrapper(
       bottAppBar: AccordionCloseBar(
         isTileExpanded: isTileExpanded,

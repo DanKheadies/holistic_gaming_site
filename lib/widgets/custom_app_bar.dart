@@ -34,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: Image.asset('/images/logo/hg-logo.png'),
+                child: Image.asset('assets/images/logo/hg-logo.png'),
               ),
             ],
           ),

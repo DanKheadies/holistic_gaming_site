@@ -260,22 +260,19 @@ class _PixaToolScreenState extends State<PixaToolScreen> {
                     PixaToolPicBlock(
                       picList: pixatoolDavid,
                       text: 'me',
-                      linkUrl:
-                          'https://holisticgaming.com/#/squad/david', // TODO
+                      linkUrl: 'https://holisticgaming.com/#/squad/david',
                       width: width,
                     ),
                     PixaToolPicBlock(
                       picList: pixatoolJC,
                       text: 'JC',
-                      linkUrl:
-                          'https://holisticgaming.com/#/squad/david', // TODO
+                      linkUrl: 'https://holisticgaming.com/#/squad/david',
                       width: width,
                     ),
                     PixaToolPicBlock(
                       picList: pixatoolJCColors,
                       text: 'JC Colors',
-                      linkUrl:
-                          'https://holisticgaming.com/#/squad/david', // TODO
+                      linkUrl: 'https://holisticgaming.com/#/squad/david',
                       width: width,
                     ),
                     PixaToolPicBlock(
