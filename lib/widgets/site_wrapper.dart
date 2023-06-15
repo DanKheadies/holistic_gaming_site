@@ -67,61 +67,66 @@ class _SiteWrapperState extends State<SiteWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
-      body: Stack(
-        children: [
-          widget.fullscreenBackground ?? const SizedBox(),
-          RawScrollbar(
-            controller: scroller,
-            shape: const StadiumBorder(),
-            thumbColor: Theme.of(context).colorScheme.surface,
-            thickness: 10,
-            crossAxisMargin: 1,
-            child: SingleChildScrollView(
+    print('build');
+    return Title(
+      title: 'Holistic Gaming',
+      color: Theme.of(context).colorScheme.surface,
+      child: Scaffold(
+        appBar: const CustomAppBar(),
+        body: Stack(
+          children: [
+            widget.fullscreenBackground ?? const SizedBox(),
+            RawScrollbar(
               controller: scroller,
-              child: widget.child,
+              shape: const StadiumBorder(),
+              thumbColor: Theme.of(context).colorScheme.surface,
+              thickness: 10,
+              crossAxisMargin: 1,
+              child: SingleChildScrollView(
+                controller: scroller,
+                child: widget.child,
+              ),
             ),
-          ),
-          // Note: leaves a "hitbox" to be clicked / deadspace that can't be scrolled over
-          // Would like a better solution that ignores but allows for the AnimatedOpacity
-          CustomFooter(
-            scroller: scroller,
-            alwaysShowFooter: widget.alwaysShowFooter,
-          ),
-        ],
-      ),
-      endDrawer: Responsive.isMobile(context)
-          ? const CustomDrawer()
-          : const SizedBox(),
-      bottomNavigationBar: widget.bottAppBar,
-      // Note: leaves a "hitbox" to be clicked / deadspace that can't be scrolled over
-      // Would like a better solution that ignores but allows for the AnimatedOpacity
-      floatingActionButton: showButton
-          ? AnimatedOpacity(
-              opacity: showButton ? 1 : 0,
-              onEnd: () => print('test'),
-              duration: const Duration(seconds: 1),
-              curve: Curves.easeIn,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 30),
-                child: FloatingActionButton(
-                  backgroundColor: Theme.of(context).colorScheme.surface,
-                  onPressed: () {
-                    scroller.animateTo(
-                      0,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeIn,
-                    );
-                  },
-                  child: Icon(
-                    Icons.arrow_upward,
-                    color: Theme.of(context).colorScheme.background,
+            // Note: leaves a "hitbox" to be clicked / deadspace that can't be scrolled over
+            // Would like a better solution that ignores but allows for the AnimatedOpacity
+            CustomFooter(
+              scroller: scroller,
+              alwaysShowFooter: widget.alwaysShowFooter,
+            ),
+          ],
+        ),
+        endDrawer: Responsive.isMobile(context)
+            ? const CustomDrawer()
+            : const SizedBox(),
+        bottomNavigationBar: widget.bottAppBar,
+        // Note: leaves a "hitbox" to be clicked / deadspace that can't be scrolled over
+        // Would like a better solution that ignores but allows for the AnimatedOpacity
+        floatingActionButton: showButton
+            ? AnimatedOpacity(
+                opacity: showButton ? 1 : 0,
+                onEnd: () => print('test'),
+                duration: const Duration(seconds: 1),
+                curve: Curves.easeIn,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: FloatingActionButton(
+                    backgroundColor: Theme.of(context).colorScheme.surface,
+                    onPressed: () {
+                      scroller.animateTo(
+                        0,
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeIn,
+                      );
+                    },
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Theme.of(context).colorScheme.background,
+                    ),
                   ),
                 ),
-              ),
-            )
-          : const SizedBox(),
+              )
+            : const SizedBox(),
+      ),
     );
   }
 }

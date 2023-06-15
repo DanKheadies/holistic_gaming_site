@@ -8,11 +8,9 @@ This is my personal site I developed for my M.Ed., and I am growing it as I grow
 
 ## TODOs
 
-1. Ploys R Us
+1. Ploys R Us (add other games)
 2. Light / dark mode
 3. Footer & auto-scroll hitboxes
 4. Research articles filtering and Close Bar
 5. Font check
-6. EdTech Standards
-7. Older project links
-8. Icon / logo
+6. Loading gifs / pics of a size (Pixatool)
