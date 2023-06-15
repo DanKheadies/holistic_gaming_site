@@ -67,7 +67,6 @@ class _SiteWrapperState extends State<SiteWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    print('build');
     return Title(
       title: 'Holistic Gaming',
       color: Theme.of(context).colorScheme.surface,

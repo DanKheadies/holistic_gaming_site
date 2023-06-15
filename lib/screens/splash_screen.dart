@@ -49,26 +49,30 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: InkWell(
-        onTap: () {
-          navTimer.cancel();
-          context.go('/home');
-        },
-        child: Center(
-          child: Lottie.asset(
-            'assets/images/splash/${files[fileIndex]}.json',
-            controller: aniCont,
-            onLoaded: (composition) {
-              aniCont
-                ..duration = composition.duration
-                ..forward();
+    return Title(
+      title: 'Holistic Gaming',
+      color: Theme.of(context).colorScheme.surface,
+      child: Scaffold(
+        body: InkWell(
+          onTap: () {
+            navTimer.cancel();
+            context.go('/home');
+          },
+          child: Center(
+            child: Lottie.asset(
+              'assets/images/splash/${files[fileIndex]}.json',
+              controller: aniCont,
+              onLoaded: (composition) {
+                aniCont
+                  ..duration = composition.duration
+                  ..forward();
 
-              navTimer = Timer(
-                composition.duration,
-                () => context.go('/home'),
-              );
-            },
+                navTimer = Timer(
+                  composition.duration,
+                  () => context.go('/home'),
+                );
+              },
+            ),
           ),
         ),
       ),

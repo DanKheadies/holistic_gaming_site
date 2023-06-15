@@ -55,59 +55,63 @@ class _PDFScreenState extends State<PDFScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.tertiary,
-      appBar: AppBar(
-        title: Text(widget.pdfAsset ?? ''),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.navigate_before),
-            onPressed: () {
-              pdfController.previousPage(
-                curve: Curves.ease,
-                duration: const Duration(milliseconds: 100),
-              );
-            },
-          ),
-          PdfPageNumber(
-            controller: pdfController,
-            builder: (_, loadingState, page, pagesCount) => Container(
-              alignment: Alignment.center,
-              child: Text(
-                '$page/${pagesCount ?? 0}',
-                style: const TextStyle(fontSize: 22),
+    return Title(
+      title: 'Holistic Gaming - PDF',
+      color: Theme.of(context).colorScheme.surface,
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
+        appBar: AppBar(
+          title: Text(widget.pdfAsset ?? ''),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.navigate_before),
+              onPressed: () {
+                pdfController.previousPage(
+                  curve: Curves.ease,
+                  duration: const Duration(milliseconds: 100),
+                );
+              },
+            ),
+            PdfPageNumber(
+              controller: pdfController,
+              builder: (_, loadingState, page, pagesCount) => Container(
+                alignment: Alignment.center,
+                child: Text(
+                  '$page/${pagesCount ?? 0}',
+                  style: const TextStyle(fontSize: 22),
+                ),
               ),
             ),
-          ),
-          IconButton(
-            icon: const Icon(Icons.navigate_next),
-            onPressed: () {
-              pdfController.nextPage(
-                curve: Curves.ease,
-                duration: const Duration(milliseconds: 100),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: () {
-              pdfController.loadDocument(
-                PdfDocument.openAsset('assets/docs/${widget.pdfAsset}'),
-              );
-            },
-          ),
-        ],
-      ),
-      body: PdfView(
-        builders: PdfViewBuilders<DefaultBuilderOptions>(
-          options: const DefaultBuilderOptions(),
-          documentLoaderBuilder: (_) =>
-              const Center(child: CircularProgressIndicator()),
-          pageLoaderBuilder: (_) =>
-              const Center(child: CircularProgressIndicator()),
-          pageBuilder: _pageBuilder,
+            IconButton(
+              icon: const Icon(Icons.navigate_next),
+              onPressed: () {
+                pdfController.nextPage(
+                  curve: Curves.ease,
+                  duration: const Duration(milliseconds: 100),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.refresh),
+              onPressed: () {
+                pdfController.loadDocument(
+                  PdfDocument.openAsset('assets/docs/${widget.pdfAsset}'),
+                );
+              },
+            ),
+          ],
         ),
-        controller: pdfController,
+        body: PdfView(
+          builders: PdfViewBuilders<DefaultBuilderOptions>(
+            options: const DefaultBuilderOptions(),
+            documentLoaderBuilder: (_) =>
+                const Center(child: CircularProgressIndicator()),
+            pageLoaderBuilder: (_) =>
+                const Center(child: CircularProgressIndicator()),
+            pageBuilder: _pageBuilder,
+          ),
+          controller: pdfController,
+        ),
       ),
     );
   }
