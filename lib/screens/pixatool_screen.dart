@@ -33,6 +33,7 @@ class _PixaToolScreenState extends State<PixaToolScreen> {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      screen: 'Pixatool',
       bottAppBar: AccordionCloseBar(
         isTileExpanded: isTileExpanded,
         tileOrder: tileOrder,

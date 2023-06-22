@@ -188,6 +188,7 @@ class TheStoryOfDanKheadiesScreen extends StatelessWidget {
     }
 
     return SiteWrapper(
+      screen: 'The Story of Dan Kheadies',
       child: Responsive.isMobile(context) || Responsive.isTablet(context)
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.center,

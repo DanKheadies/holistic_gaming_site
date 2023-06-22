@@ -129,6 +129,7 @@ class SuperBestFriendsScreen extends StatelessWidget {
     }
 
     return SiteWrapper(
+      screen: 'Super Best Friends',
       alwaysShowFooter: true,
       child: Stack(
         children: [

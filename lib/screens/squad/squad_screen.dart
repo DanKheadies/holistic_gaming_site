@@ -9,6 +9,7 @@ class SquadScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SiteWrapper(
+      screen: 'Squad',
       alwaysShowFooter: true,
       child: Stack(
         children: [
@@ -32,7 +33,7 @@ class SquadScreen extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 75),
             ],
           ),
         ],

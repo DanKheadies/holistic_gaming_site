@@ -11,6 +11,7 @@ class ThanksKindaScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      screen: 'Thanks Kinda',
       alwaysShowFooter: true,
       child: Stack(
         children: [

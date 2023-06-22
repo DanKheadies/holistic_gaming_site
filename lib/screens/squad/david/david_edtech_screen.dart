@@ -67,6 +67,7 @@ class _DavidEdTechScreenState extends State<DavidEdTechScreen> {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      screen: 'David - EdTech',
       bottAppBar: AccordionCloseBar(
         isTileExpanded: isTileExpanded,
         tileOrder: tileOrder,

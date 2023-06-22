@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SiteWrapper(
+      screen: 'Home',
       child: Responsive.isDesktop(context) || Responsive.isWideDesktop(context)
           ? Column(
               mainAxisAlignment: MainAxisAlignment.start,

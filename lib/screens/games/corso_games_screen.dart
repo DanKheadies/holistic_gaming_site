@@ -78,6 +78,7 @@ class CorsoGamesScreen extends StatelessWidget {
     }
 
     return SiteWrapper(
+      screen: 'Corso Games',
       alwaysShowFooter: true,
       child: Stack(
         children: [

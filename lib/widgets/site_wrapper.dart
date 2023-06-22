@@ -6,6 +6,7 @@ import 'package:holistic_gaming_site/config/config.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class SiteWrapper extends StatefulWidget {
+  final String screen;
   final Widget child;
   final Widget? bottAppBar;
   final bool? alwaysShowFooter;
@@ -13,6 +14,7 @@ class SiteWrapper extends StatefulWidget {
 
   const SiteWrapper({
     super.key,
+    required this.screen,
     required this.child,
     this.bottAppBar,
     this.alwaysShowFooter,
@@ -33,19 +35,18 @@ class _SiteWrapperState extends State<SiteWrapper> {
     super.initState();
 
     Future.delayed(Duration.zero).then((value) {
-      // logPageAsEvent(context);
+      logPageAsEvent(context);
       logPage(context);
     });
 
     scroller.addListener(scrollListener);
   }
 
-  // Future<void> logPageAsEvent(BuildContext context) async {
-  //   // print(GoRouter.of(context).location);
-  //   await analytics.logEvent(
-  //     name: GoRouter.of(context).location,
-  //   );
-  // }
+  Future<void> logPageAsEvent(BuildContext context) async {
+    await analyticsWeb.logEvent(
+      name: widget.screen,
+    );
+  }
 
   Future<void> logPage(BuildContext context) async {
     await analyticsWeb.setCurrentScreen(
@@ -67,6 +68,7 @@ class _SiteWrapperState extends State<SiteWrapper> {
 
   @override
   Widget build(BuildContext context) {
+    // Note: builds twice; worth looking into?
     return Title(
       title: 'Holistic Gaming',
       color: Theme.of(context).colorScheme.surface,

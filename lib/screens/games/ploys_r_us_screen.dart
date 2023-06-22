@@ -103,6 +103,7 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
   @override
   Widget build(BuildContext context) {
     return SiteWrapper(
+      screen: 'Ploys R Us',
       bottAppBar: AccordionCloseBar(
         isTileExpanded: isTileExpanded,
         tileOrder: tileOrder,

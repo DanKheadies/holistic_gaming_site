@@ -11,6 +11,7 @@ class DavidScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      screen: 'David',
       child: Column(
         children: [
           SquadSubAppBar(

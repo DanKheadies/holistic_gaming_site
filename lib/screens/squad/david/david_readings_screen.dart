@@ -20,6 +20,7 @@ class DavidReadingsScreen extends StatelessWidget {
     }
 
     return SiteWrapper(
+      screen: 'David - Readings',
       child: Column(
         children: [
           SquadSubAppBar(

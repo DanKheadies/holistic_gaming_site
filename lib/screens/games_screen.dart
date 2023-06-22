@@ -19,6 +19,7 @@ class _GamesScreenState extends State<GamesScreen> {
   @override
   Widget build(BuildContext context) {
     return SiteWrapper(
+      screen: 'Games',
       alwaysShowFooter: true,
       child: CarouselSlider(
         options: CarouselOptions(

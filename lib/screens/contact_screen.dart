@@ -116,6 +116,7 @@ class _ContactScreenState extends State<ContactScreen> {
     final width = MediaQuery.of(context).size.width;
 
     return SiteWrapper(
+      screen: 'Contact',
       alwaysShowFooter: true,
       child: Stack(
         children: [
