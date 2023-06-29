@@ -1,38 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:holistic_gaming_site/screens/pdf_screen.dart';
-import 'package:holistic_gaming_site/screens/pixatool_screen.dart';
 
 import 'package:holistic_gaming_site/screens/screens.dart';
 
 final GoRouter goRouter = GoRouter(
   routes: [
-    GoRoute(
-      path: '/home',
-      name: 'home',
-      pageBuilder: (context, state) => CustomTransitionPage(
-        child: const HomeScreen(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-            FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
-      ),
-    ),
-    // GoRoute(
-    //   path: '/home/test',
-    //   name: 'test',
-    //   // builder: (context, state) => const TestScreen(),
-    //   pageBuilder: (context, state) => CustomTransitionPage(
-    //     key: state.pageKey,
-    //     child: const TestScreen(),
-    //     transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-    //         FadeTransition(
-    //       opacity: animation,
-    //       child: child,
-    //     ),
-    //   ),
-    // ),
     GoRoute(
       path: '/contact',
       name: 'contact',
@@ -111,11 +83,18 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
-    // GoRoute(
-    //   path: '/pdf',
-    //   name: 'pdf',
-    //   builder: (context, state) => const PDFScreen(pdfAsset: ''),
-    // ),
+    GoRoute(
+      path: '/home',
+      name: 'home',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const HomeScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
     GoRoute(
       path: '/pdf/:pdfAsset',
       name: 'pdf/:pdfAsset',
@@ -163,9 +142,6 @@ final GoRouter goRouter = GoRouter(
           child: child,
         ),
       ),
-      // builder: (context, state) => ResearchScreen(
-      //   article: state.pathParameters['article'],
-      // ),
     ),
     GoRoute(
       path: '/squad',
@@ -271,12 +247,6 @@ final GoRouter goRouter = GoRouter(
         ),
       ),
     ),
-    // ShellRoute(
-    //   routes: [],
-    //   builder: (context, state, child) {
-    //     return BottomNav(child: child);
-    //   },
-    // ),
   ],
   errorPageBuilder: (context, state) => CustomTransitionPage(
     key: state.pageKey,

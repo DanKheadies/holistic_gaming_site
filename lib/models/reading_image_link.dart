@@ -25,6 +25,11 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Persepolis Rising (The Expanse 7)',
+      'assets/images/squad/david/books/exp7Persepolis.jpg',
+      'https://www.amazon.com/Persepolis-Rising-Expanse-James-Corey/dp/0316332836',
+    ),
+    ReadingImageLink(
       'Tomorrow and Tomorrow and Tomorrow',
       'assets/images/squad/david/books/tomorrow.jpg',
       'https://www.amazon.com/Tomorrow-novel-Gabrielle-Zevin/dp/0593321200',
