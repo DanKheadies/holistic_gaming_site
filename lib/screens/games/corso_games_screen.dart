@@ -21,7 +21,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.0',
+                'v2.0.1',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
@@ -51,7 +51,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.0',
+                'v2.0.1',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
