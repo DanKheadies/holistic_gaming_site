@@ -63,6 +63,7 @@ final List<String> homePics = [
   'assets/images/home/ssbu.jpg',
   'assets/images/home/takes2.jpg',
   'assets/images/home/terraria.jpg',
+  'assets/images/home/totk.jpg',
   'assets/images/home/valfaris.jpg',
   'assets/images/home/vampire.jpg',
   'assets/images/home/whatGolf.jpg',
