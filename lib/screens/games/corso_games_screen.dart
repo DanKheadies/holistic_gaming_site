@@ -21,7 +21,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.1',
+                'v2.0.2',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
@@ -51,7 +51,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.1',
+                'v2.0.2',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
@@ -64,7 +64,7 @@ class CorsoGamesScreen extends StatelessWidget {
           ),
           handlePress: () async {
             final Uri url = Uri.parse(
-              'https://apps.apple.com/jp/app/corso-games/id1617108711?l=en',
+              'https://apps.apple.com/us/app/corso-games/id1617108711',
             );
             if (!await launchUrl(url)) {
               throw Exception('Could not launch $url');

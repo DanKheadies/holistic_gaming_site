@@ -25,6 +25,16 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'What\'s Our Problem',
+      'assets/images/squad/david/books/whatsProblem.jpg',
+      'https://www.amazon.com/Whats-Our-Problem-Self-Help-Societies/dp/B0BVGH6T1Q',
+    ),
+    ReadingImageLink(
+      'Light Bringer',
+      'assets/images/squad/david/books/lightbringer.jpg',
+      'https://www.amazon.com/Light-Bringer-Red-Rising-Novel-ebook/dp/B0B5Z4RZ2W',
+    ),
+    ReadingImageLink(
       'Persepolis Rising (The Expanse 7)',
       'assets/images/squad/david/books/exp7Persepolis.jpg',
       'https://www.amazon.com/Persepolis-Rising-Expanse-James-Corey/dp/0316332836',
