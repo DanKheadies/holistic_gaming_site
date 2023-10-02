@@ -25,6 +25,36 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Horus Rising',
+      'assets/images/squad/david/books/horusRising.jpg',
+      'https://www.audible.com/pd/Horus-Rising-Audiobook/B0764LBS4B',
+    ),
+    ReadingImageLink(
+      'The Adventure Zone: Murder on the Rockport Limited!',
+      'assets/images/squad/david/books/advZone2.jpg',
+      'https://www.amazon.com/Adventure-Zone-Murder-Rockport-Limited/dp/1250153719',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 1',
+      'assets/images/squad/david/books/berserkV1.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-1-Kentaro-Miura/dp/1506711987',
+    ),
+    ReadingImageLink(
+      'Leviathan Falls',
+      'assets/images/squad/david/books/exp9Leviathan.jpg',
+      'https://www.amazon.com/Tiamats-Wrath-Expanse-James-Corey/dp/0316332879',
+    ),
+    ReadingImageLink(
+      'The Adventure Zone: Here There Be Gerblins',
+      'assets/images/squad/david/books/advZone1.jpg',
+      'https://www.amazon.com/Adventure-Zone-Here-There-Gerblins/dp/1250153700',
+    ),
+    ReadingImageLink(
+      'Tiamat\'s Wrath',
+      'assets/images/squad/david/books/exp8Tiamat.jpg',
+      'https://www.amazon.com/Tiamats-Wrath-Expanse-James-Corey/dp/0316332879',
+    ),
+    ReadingImageLink(
       'What\'s Our Problem',
       'assets/images/squad/david/books/whatsProblem.jpg',
       'https://www.amazon.com/Whats-Our-Problem-Self-Help-Societies/dp/B0BVGH6T1Q',

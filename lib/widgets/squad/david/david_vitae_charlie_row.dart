@@ -96,19 +96,6 @@ class DavidVitaeCharlieRow extends StatelessWidget {
       body: Column(
         children: [
           ...buildEmploymentRow(
-            'Imagine Chat! LLC',
-            'Commerce Township, MI',
-            'Chief Technology Officer & Founder',
-            'June 2020 - Present',
-            [
-              const Text('Empowering the youth.'),
-              const SizedBox(height: 5),
-              const Text(
-                  'Developing emotional intelligence in young children.'),
-            ],
-          ),
-          const SizedBox(height: 20),
-          ...buildEmploymentRow(
             'DTFun LLC',
             'Durham, NC',
             'Chief Executive Officer & Owner',
@@ -130,6 +117,19 @@ class DavidVitaeCharlieRow extends StatelessWidget {
               const SizedBox(height: 5),
               const Text(
                   'Developing instructional materials for the company\'s software.'),
+            ],
+          ),
+          const SizedBox(height: 20),
+          ...buildEmploymentRow(
+            'Imagine Chat! LLC',
+            'Commerce Township, MI',
+            'Chief Technology Officer & Founder',
+            'June 2020 - June 2023',
+            [
+              const Text('Empowering the youth.'),
+              const SizedBox(height: 5),
+              const Text(
+                  'Developing emotional intelligence in young children.'),
             ],
           ),
           const SizedBox(height: 20),
