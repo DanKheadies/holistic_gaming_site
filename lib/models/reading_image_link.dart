@@ -25,6 +25,31 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The Sunlit Man',
+      'assets/images/squad/david/books/sunlit.jpg',
+      'https://www.amazon.com/Secret-Project-Cosmere-Novel-Projects-ebook/dp/B0BPN84MD5',
+    ),
+    ReadingImageLink(
+      'Yumi and the Nightmare Painter',
+      'assets/images/squad/david/books/yumi.jpg',
+      'https://www.amazon.com/Yumi-Nightmare-Painter-Brandon-Sanderson/dp/1250899699',
+    ),
+    ReadingImageLink(
+      'The Coddling of the American Mind',
+      'assets/images/squad/david/books/coddling.jpg',
+      'https://www.amazon.com/Coddling-of-American-Mind-audiobook/dp/B079P7PDWB/',
+    ),
+    ReadingImageLink(
+      'Recursion',
+      'assets/images/squad/david/books/recursion.jpg',
+      'https://www.amazon.com/Recursion-Blake-Crouch-audiobook/dp/B07N2Y1T8G/',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 2',
+      'assets/images/squad/david/books/berserkV2.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-2-Kentaro-Miura/dp/1506711995/',
+    ),
+    ReadingImageLink(
       'Horus Rising',
       'assets/images/squad/david/books/horusRising.jpg',
       'https://www.audible.com/pd/Horus-Rising-Audiobook/B0764LBS4B',
