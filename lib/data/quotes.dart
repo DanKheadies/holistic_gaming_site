@@ -22,4 +22,5 @@ final List<String> quotes = [
   '"In games, the hero is an archetype that must wander lost in the wilderness to find the knowledge necessary for his or her quest."',
   '"You are not the cards you\'re dealt."',
   '"The divine wisdom was, above all else, to be compared to games because games are played for their own sake, not for any ulterior motive."',
+  '"In games, you don\'t judge your opponents by their intentions, but by the effect of their actions. You measure their strategy and power by what you can see and feel."',
 ];
