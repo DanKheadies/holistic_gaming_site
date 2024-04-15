@@ -25,6 +25,16 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Dungeon Crawler Carl',
+      'assets/images/squad/david/books/dcCarl.jpg',
+      'https://www.amazon.com/Dungeon-Crawler-Carl-Gamelit-Adventure-ebook/dp/B08BKGYQXW',
+    ),
+    ReadingImageLink(
+      'Red Mars',
+      'assets/images/squad/david/books/redMars.jpg',
+      'https://www.amazon.com/Red-Mars-Trilogy-Stanley-Robinson/dp/0553560735',
+    ),
+    ReadingImageLink(
       'The Sunlit Man',
       'assets/images/squad/david/books/sunlit.jpg',
       'https://www.amazon.com/Secret-Project-Cosmere-Novel-Projects-ebook/dp/B0BPN84MD5',
