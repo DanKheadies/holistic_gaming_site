@@ -25,6 +25,16 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Green Mars',
+      'assets/images/squad/david/books/greenMars.jpg',
+      'https://www.amazon.com/Green-Mars-Trilogy-Stanley-Robinson/dp/0553572393',
+    ),
+    ReadingImageLink(
+      'Carl\'s Doomsday Scenario',
+      'assets/images/squad/david/books/dcCarl2.jpg',
+      'https://www.amazon.com/Carls-Doomsday-Scenario-Dungeon-Crawler/dp/B08RRKNNJZ',
+    ),
+    ReadingImageLink(
       'Dungeon Crawler Carl',
       'assets/images/squad/david/books/dcCarl.jpg',
       'https://www.amazon.com/Dungeon-Crawler-Carl-Gamelit-Adventure-ebook/dp/B08BKGYQXW',

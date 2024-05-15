@@ -21,7 +21,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.2',
+                'v2.1.0',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
@@ -51,7 +51,7 @@ class CorsoGamesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'v2.0.2',
+                'v2.1.0',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface.withAlpha(150),
                 ),
@@ -72,6 +72,36 @@ class CorsoGamesScreen extends StatelessWidget {
           },
           icon: Icons.ios_share,
           color: Colors.lightBlue,
+          width: width,
+        ),
+        GameTile(
+          imageUrl: 'assets/images/games/generic-logos/browsers.png',
+          title: 'Web',
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'v2.1.0',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.surface.withAlpha(150),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Access view your browser. Full screen recommended.',
+              ),
+            ],
+          ),
+          handlePress: () async {
+            final Uri url = Uri.parse(
+              'https://corso-games-app.web.app/#/',
+            );
+            if (!await launchUrl(url)) {
+              throw Exception('Could not launch $url');
+            }
+          },
+          icon: Icons.ios_share,
+          color: Colors.orange,
           width: width,
         ),
       ];
