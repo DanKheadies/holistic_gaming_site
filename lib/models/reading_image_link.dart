@@ -25,6 +25,26 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 4',
+      'assets/images/squad/david/books/berserkV4.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-4-Kentaro-Miura/dp/1506715214',
+    ),
+    ReadingImageLink(
+      'The Legend of Zelda: Ocarina of Time',
+      'assets/images/squad/david/books/zeldaOcarina.jpg',
+      'https://www.amazon.com/Legend-Zelda-Ocarina-Legendary-Legendary/dp/1421589591',
+    ),
+    ReadingImageLink(
+      '48 Laws of Power',
+      'assets/images/squad/david/books/48Laws.jpg',
+      'https://www.amazon.com/48-Laws-of-Power-Robert-Greene-audiobook/dp/B00X0TKUS0',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 3',
+      'assets/images/squad/david/books/berserkV3.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-3-Kentaro-Miura/dp/1506712002',
+    ),
+    ReadingImageLink(
       'Green Mars',
       'assets/images/squad/david/books/greenMars.jpg',
       'https://www.amazon.com/Green-Mars-Trilogy-Stanley-Robinson/dp/0553572393',

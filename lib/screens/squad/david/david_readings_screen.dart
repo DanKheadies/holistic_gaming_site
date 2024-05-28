@@ -14,9 +14,7 @@ class DavidReadingsScreen extends StatelessWidget {
 
     void toSite(String site) async {
       final Uri url = Uri.parse(site);
-      if (!await launchUrl(url)) {
-        throw Exception('Could not launch $url');
-      }
+      await launchUrl(url);
     }
 
     return SiteWrapper(
