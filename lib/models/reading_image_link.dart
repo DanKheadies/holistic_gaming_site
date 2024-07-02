@@ -25,6 +25,26 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The Gate of the Feral Gods',
+      'assets/images/squad/david/books/dcCarl4.jpg',
+      'https://www.amazon.com/Gate-Feral-Gods-Dungeon-Crawler-ebook/dp/B093DJ7F3C',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 5',
+      'assets/images/squad/david/books/berserkV5.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-5-Kentaro-Miura/dp/1506715222',
+    ),
+    ReadingImageLink(
+      'Blue Mars',
+      'assets/images/squad/david/books/blueMars.jpg',
+      'https://www.amazon.com/Blue-Mars-Trilogy-Stanley-Robinson/dp/0593358856/',
+    ),
+    ReadingImageLink(
+      'The Dungeon Anarchist\'s Cookbook',
+      'assets/images/squad/david/books/dcCarl3.jpg',
+      'https://www.amazon.com/Dungeon-Anarchists-Cookbook-Crawler-Carl/dp/B094X214V9/',
+    ),
+    ReadingImageLink(
       'Berserk, Deluxe Edition Vol. 4',
       'assets/images/squad/david/books/berserkV4.jpg',
       'https://www.amazon.com/Berserk-Deluxe-4-Kentaro-Miura/dp/1506715214',
