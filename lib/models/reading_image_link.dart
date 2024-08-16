@@ -25,6 +25,41 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Queen',
+      'assets/images/squad/david/books/queen.jpg',
+      'https://www.amazon.com/Queen-Chronicle-Sibyls-Timothy-Zahn/dp/1665239379',
+    ),
+    ReadingImageLink(
+      'Knight',
+      'assets/images/squad/david/books/knight.jpg',
+      'https://www.amazon.com/Knight-Chronicle-Sibyls-Timothy-Zahn/dp/0765329670',
+    ),
+    ReadingImageLink(
+      'The Eye of the Bedlam Bride',
+      'assets/images/squad/david/books/dcCarl6.jpg',
+      'https://www.amazon.com/Eye-Bedlam-Bride-Dungeon-Crawler/dp/B0C7T9NK5N',
+    ),
+    ReadingImageLink(
+      'Fourth Wing',
+      'assets/images/squad/david/books/fourthWing.jpg',
+      'https://www.amazon.com/Fourth-Wing/dp/0349437009',
+    ),
+    ReadingImageLink(
+      'The Butcher\'s Masquerade',
+      'assets/images/squad/david/books/dcCarl5.jpg',
+      'https://www.amazon.com/Butchers-Masquerade-Dungeon-Crawler-Carl-ebook/dp/B09R6C5X88',
+    ),
+    ReadingImageLink(
+      'Pawn',
+      'assets/images/squad/david/books/pawn.jpg',
+      'https://www.amazon.com/Pawn-Sibyls-War-Timothy-Zahn/dp/B08XLGJN4K',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 6',
+      'assets/images/squad/david/books/berserkV6.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-6-Kentaro-Miura/dp/1506715230',
+    ),
+    ReadingImageLink(
       'The Gate of the Feral Gods',
       'assets/images/squad/david/books/dcCarl4.jpg',
       'https://www.amazon.com/Gate-Feral-Gods-Dungeon-Crawler-ebook/dp/B093DJ7F3C',
@@ -37,12 +72,12 @@ class ReadingImageLink extends Equatable {
     ReadingImageLink(
       'Blue Mars',
       'assets/images/squad/david/books/blueMars.jpg',
-      'https://www.amazon.com/Blue-Mars-Trilogy-Stanley-Robinson/dp/0593358856/',
+      'https://www.amazon.com/Blue-Mars-Trilogy-Stanley-Robinson/dp/0593358856',
     ),
     ReadingImageLink(
       'The Dungeon Anarchist\'s Cookbook',
       'assets/images/squad/david/books/dcCarl3.jpg',
-      'https://www.amazon.com/Dungeon-Anarchists-Cookbook-Crawler-Carl/dp/B094X214V9/',
+      'https://www.amazon.com/Dungeon-Anarchists-Cookbook-Crawler-Carl/dp/B094X214V9',
     ),
     ReadingImageLink(
       'Berserk, Deluxe Edition Vol. 4',
