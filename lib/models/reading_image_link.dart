@@ -25,6 +25,16 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The Egg',
+      'assets/images/squad/david/books/egg.jpg',
+      'https://www.amazon.com/Egg-Other-Stories-Andy-Weir/dp/1543642721',
+    ),
+    ReadingImageLink(
+      'Kaiju Battlefield Surgeon',
+      'assets/images/squad/david/books/kaiju.jpg',
+      'https://www.amazon.com/Kaiju-Battlefield-Surgeon-LitRPG-Adventure/dp/B08ZBFFBFB',
+    ),
+    ReadingImageLink(
       'Queen',
       'assets/images/squad/david/books/queen.jpg',
       'https://www.amazon.com/Queen-Chronicle-Sibyls-Timothy-Zahn/dp/1665239379',

@@ -50,7 +50,9 @@ class _SiteWrapperState extends State<SiteWrapper> {
 
   Future<void> logPage(BuildContext context) async {
     await analyticsWeb.setCurrentScreen(
-      screenName: GoRouter.of(context).location,
+      // screenName: GoRouter.of(context).location,
+      screenName:
+          GoRouter.of(context).routeInformationProvider.value.uri.toString(),
     );
   }
 
@@ -121,7 +123,7 @@ class _SiteWrapperState extends State<SiteWrapper> {
                     },
                     child: Icon(
                       Icons.arrow_upward,
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                 ),

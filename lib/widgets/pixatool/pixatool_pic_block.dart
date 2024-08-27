@@ -22,7 +22,7 @@ class PixaToolPicBlock extends StatefulWidget {
 }
 
 class _PixaToolPicBlockState extends State<PixaToolPicBlock> {
-  CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,11 +73,11 @@ class _PixaToolPicBlockState extends State<PixaToolPicBlock> {
                         padding: const EdgeInsets.all(20),
                         backgroundColor: Theme.of(context).colorScheme.surface,
                         foregroundColor:
-                            Theme.of(context).colorScheme.background,
+                            Theme.of(context).scaffoldBackgroundColor,
                       ),
                       child: Icon(
                         Icons.arrow_forward,
-                        color: Theme.of(context).colorScheme.background,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
                     ),
                   )
@@ -94,11 +94,11 @@ class _PixaToolPicBlockState extends State<PixaToolPicBlock> {
                         padding: const EdgeInsets.all(20),
                         backgroundColor: Theme.of(context).colorScheme.surface,
                         foregroundColor:
-                            Theme.of(context).colorScheme.background,
+                            Theme.of(context).scaffoldBackgroundColor,
                       ),
                       child: Icon(
                         Icons.arrow_back,
-                        color: Theme.of(context).colorScheme.background,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
                     ),
                   )

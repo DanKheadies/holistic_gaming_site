@@ -34,29 +34,31 @@ class _PixaToolScreenState extends State<PixaToolScreen> {
 
     return SiteWrapper(
       screen: 'Pixatool',
-      bottAppBar: AccordionCloseBar(
-        isTileExpanded: isTileExpanded,
-        tileOrder: tileOrder,
-        controllers: [
-          gifController,
-          photoController,
-          videoController,
-        ],
-        handleCloseAllTiles: closeAllTiles,
-        handleCloseLastTile: () {
-          final index = tileOrder.last;
-          setState(() {
-            isTileExpanded[index] = false;
-          });
-          if (index == 0) {
-            videoController.collapse();
-          } else if (index == 1) {
-            gifController.collapse();
-          } else if (index == 2) {
-            photoController.collapse();
-          }
-        },
-      ),
+      bottAppBar: isTileExpanded.any((tile) => tile)
+          ? AccordionCloseBar(
+              isTileExpanded: isTileExpanded,
+              tileOrder: tileOrder,
+              controllers: [
+                gifController,
+                photoController,
+                videoController,
+              ],
+              handleCloseAllTiles: closeAllTiles,
+              handleCloseLastTile: () {
+                final index = tileOrder.last;
+                setState(() {
+                  isTileExpanded[index] = false;
+                });
+                if (index == 0) {
+                  videoController.collapse();
+                } else if (index == 1) {
+                  gifController.collapse();
+                } else if (index == 2) {
+                  photoController.collapse();
+                }
+              },
+            )
+          : const SizedBox(),
       child: Column(
         children: [
           const QuotesHeader(),

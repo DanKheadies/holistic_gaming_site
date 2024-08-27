@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                     colors: [
-                      Theme.of(context).colorScheme.background,
+                      Theme.of(context).scaffoldBackgroundColor,
                       Theme.of(context).colorScheme.surface,
                     ],
                     radius: 0.525,

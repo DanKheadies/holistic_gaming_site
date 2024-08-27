@@ -40,7 +40,7 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                       child: Text(
                         'Close All',
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.background,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
                       ),
                     ),
@@ -52,7 +52,7 @@ class _AccordionCloseBarState extends State<AccordionCloseBar> {
                       child: Text(
                         'Close Last',
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.background,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
                       ),
                     ),

@@ -90,7 +90,7 @@ class _CustomFooterState extends State<CustomFooter> {
       children: [
         ActionLink(
           text: 'CC SA NC BY',
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).scaffoldBackgroundColor,
           fontSize: 14,
           onTap: () => playOnPrompt(
             context,
@@ -101,7 +101,7 @@ class _CustomFooterState extends State<CustomFooter> {
         const SizedBox(width: 6),
         ActionLink(
           text: 'DTFun LLC',
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).scaffoldBackgroundColor,
           fontSize: 14,
           onTap: () => context.goNamed('contact'),
         ),
@@ -109,7 +109,7 @@ class _CustomFooterState extends State<CustomFooter> {
         Text(
           '${DateTime.now().year}',
           style: TextStyle(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).scaffoldBackgroundColor,
             fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
             fontWeight: FontWeight.w300,
           ),
@@ -125,14 +125,14 @@ class _CustomFooterState extends State<CustomFooter> {
         Text(
           'Powered by love and ',
           style: TextStyle(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).scaffoldBackgroundColor,
             fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
             fontWeight: FontWeight.w300,
           ),
         ),
         ActionLink(
           text: 'support',
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).scaffoldBackgroundColor,
           fontSize: 14,
           navLink:
               'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=P8HU4RD3W2XQY&source=url&ssrt=1684876315079',
@@ -141,7 +141,7 @@ class _CustomFooterState extends State<CustomFooter> {
         Text(
           '.',
           style: TextStyle(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).scaffoldBackgroundColor,
             fontSize: Theme.of(context).textTheme.bodySmall!.fontSize,
             fontWeight: FontWeight.w300,
           ),

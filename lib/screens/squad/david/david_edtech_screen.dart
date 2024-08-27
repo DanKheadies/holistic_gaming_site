@@ -68,18 +68,20 @@ class _DavidEdTechScreenState extends State<DavidEdTechScreen> {
 
     return SiteWrapper(
       screen: 'David - EdTech',
-      bottAppBar: AccordionCloseBar(
-        isTileExpanded: isTileExpanded,
-        tileOrder: tileOrder,
-        controllers: controllers,
-        handleCloseAllTiles: closeAllTiles,
-        handleCloseLastTile: () {
-          setState(() {
-            isTileExpanded[tileOrder.last] = false;
-          });
-          controllers[tileOrder.last].collapse();
-        },
-      ),
+      bottAppBar: isTileExpanded.any((tile) => tile)
+          ? AccordionCloseBar(
+              isTileExpanded: isTileExpanded,
+              tileOrder: tileOrder,
+              controllers: controllers,
+              handleCloseAllTiles: closeAllTiles,
+              handleCloseLastTile: () {
+                setState(() {
+                  isTileExpanded[tileOrder.last] = false;
+                });
+                controllers[tileOrder.last].collapse();
+              },
+            )
+          : const SizedBox(),
       child: Column(
         children: [
           SquadSubAppBar(

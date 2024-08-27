@@ -43,7 +43,7 @@ class MemberContainer extends StatelessWidget {
               child: Text(
                 name,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
               ),
             ),

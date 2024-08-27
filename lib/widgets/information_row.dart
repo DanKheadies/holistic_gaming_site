@@ -46,7 +46,7 @@ class InformationRow extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.background,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           fontSize: 17,
                         ),
                       ),

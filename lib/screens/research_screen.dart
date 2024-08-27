@@ -135,7 +135,6 @@ class _ResearchScreenState extends State<ResearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('build');
     return SiteWrapper(
       screen: 'Research',
       // bottAppBar: AccordionCloseBar(

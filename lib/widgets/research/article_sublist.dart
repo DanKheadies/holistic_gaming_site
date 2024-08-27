@@ -46,7 +46,7 @@ class _ArticleSublistState extends State<ArticleSublist> {
                     color: widget.isSubTileExpanded[widget.index]!
                             .elementAt(mapIndex)
                         ? Theme.of(context).colorScheme.surface
-                        : Theme.of(context).colorScheme.background,
+                        : Theme.of(context).scaffoldBackgroundColor,
                     fontSize: 17,
                     fontWeight: widget.isSubTileExpanded[widget.index]!
                             .elementAt(mapIndex)
@@ -56,8 +56,8 @@ class _ArticleSublistState extends State<ArticleSublist> {
                 ),
               ),
               iconColor: Theme.of(context).colorScheme.surface,
-              collapsedIconColor: Theme.of(context).colorScheme.background,
-              backgroundColor: Theme.of(context).colorScheme.background,
+              collapsedIconColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               // controller: widget.controllers[index],
               onExpansionChanged: (value) {
                 List<bool> tempList = widget.isSubTileExpanded[widget.index]!;

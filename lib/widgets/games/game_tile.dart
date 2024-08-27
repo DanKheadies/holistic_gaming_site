@@ -44,11 +44,11 @@ class GameTile extends StatelessWidget {
               shape: const CircleBorder(),
               padding: const EdgeInsets.all(20),
               backgroundColor: color,
-              foregroundColor: Theme.of(context).colorScheme.background,
+              foregroundColor: Theme.of(context).scaffoldBackgroundColor,
             ),
             child: Icon(
               icon,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
         ),

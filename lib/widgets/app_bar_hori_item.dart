@@ -30,13 +30,20 @@ class _AppBarHoriItemState extends State<AppBarHoriItem> {
         });
       },
       child: Container(
-        decoration: GoRouter.of(context).location == widget.route || isHovered
+        // decoration: GoRouter.of(context).location == widget.route || isHovered
+        decoration: GoRouter.of(context)
+                        .routeInformationProvider
+                        .value
+                        .uri
+                        .toString() ==
+                    widget.route ||
+                isHovered
             ? BoxDecoration(
-                color: Theme.of(context).colorScheme.background.withAlpha(30),
+                color: Theme.of(context).scaffoldBackgroundColor.withAlpha(30),
                 border: Border(
                   bottom: BorderSide(
                     width: 3,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),
               )

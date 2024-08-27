@@ -55,44 +55,44 @@ class CustomDrawer extends StatelessWidget {
               'Holistic Gaming',
               style: TextStyle(
                 fontSize: 18,
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).scaffoldBackgroundColor,
               ),
             ),
             onTap: () => context.goNamed('home'),
-            hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
+            hoverColor: Theme.of(context).scaffoldBackgroundColor.withAlpha(30),
           ),
           ListTile(
             title: Text(
               'Games',
               style: TextStyle(
                 fontSize: 18,
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).scaffoldBackgroundColor,
               ),
             ),
             onTap: () => context.goNamed('games'),
-            hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
+            hoverColor: Theme.of(context).scaffoldBackgroundColor.withAlpha(30),
           ),
           ListTile(
             title: Text(
               'Research',
               style: TextStyle(
                 fontSize: 18,
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).scaffoldBackgroundColor,
               ),
             ),
             onTap: () => context.goNamed('research'),
-            hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
+            hoverColor: Theme.of(context).scaffoldBackgroundColor.withAlpha(30),
           ),
           ListTile(
             title: Text(
               'Squad',
               style: TextStyle(
                 fontSize: 18,
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).scaffoldBackgroundColor,
               ),
             ),
             onTap: () => context.goNamed('squad'),
-            hoverColor: Theme.of(context).colorScheme.background.withAlpha(30),
+            hoverColor: Theme.of(context).scaffoldBackgroundColor.withAlpha(30),
           ),
         ],
       ),

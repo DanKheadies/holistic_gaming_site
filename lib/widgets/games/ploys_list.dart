@@ -48,7 +48,7 @@ class _PloysListState extends State<PloysList> {
                   style: TextStyle(
                     color: widget.isTileExpanded[index]
                         ? Theme.of(context).colorScheme.surface
-                        : Theme.of(context).colorScheme.background,
+                        : Theme.of(context).scaffoldBackgroundColor,
                     fontSize: 17,
                     fontWeight: widget.isTileExpanded[index]
                         ? FontWeight.bold
@@ -57,8 +57,8 @@ class _PloysListState extends State<PloysList> {
                 ),
               ),
               iconColor: Theme.of(context).colorScheme.surface,
-              collapsedIconColor: Theme.of(context).colorScheme.background,
-              backgroundColor: Theme.of(context).colorScheme.background,
+              collapsedIconColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               controller: widget.controllers[index],
               onExpansionChanged: (value) => widget.handleToggle(value, index),
               children: [

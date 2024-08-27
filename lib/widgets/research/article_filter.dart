@@ -24,7 +24,12 @@ class _ArticleFilterState extends State<ArticleFilter> {
         const SizedBox(height: 30),
         ListTile(
           title: filter == 'All Articles'
-              ? const Text('All Articles')
+              ? Text(
+                  'All Articles',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                )
               : ActionLink(
                   text: 'All Articles',
                   onTap: () {
@@ -38,12 +43,17 @@ class _ArticleFilterState extends State<ArticleFilter> {
             Icons.filter_list,
             color: filter == 'All Articles'
                 ? Theme.of(context).colorScheme.surface
-                : Theme.of(context).colorScheme.background,
+                : Theme.of(context).scaffoldBackgroundColor,
           ),
         ),
         ListTile(
           title: filter == 'Dan Kheadies'
-              ? const Text('Dan Kheadies')
+              ? Text(
+                  'Dan Kheadies',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                )
               : ActionLink(
                   text: 'Dan Kheadies',
                   onTap: () {
@@ -57,7 +67,7 @@ class _ArticleFilterState extends State<ArticleFilter> {
             Icons.filter_list,
             color: filter == 'Dan Kheadies'
                 ? Theme.of(context).colorScheme.surface
-                : Theme.of(context).colorScheme.background,
+                : Theme.of(context).scaffoldBackgroundColor,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 25,
@@ -65,7 +75,12 @@ class _ArticleFilterState extends State<ArticleFilter> {
         ),
         ListTile(
           title: filter == 'Gaming'
-              ? const Text('Gaming')
+              ? Text(
+                  'Gaming',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                )
               : ActionLink(
                   text: 'Gaming',
                   onTap: () {
@@ -79,7 +94,7 @@ class _ArticleFilterState extends State<ArticleFilter> {
             Icons.filter_list,
             color: filter == 'Gaming'
                 ? Theme.of(context).colorScheme.surface
-                : Theme.of(context).colorScheme.background,
+                : Theme.of(context).scaffoldBackgroundColor,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 25,
@@ -87,7 +102,12 @@ class _ArticleFilterState extends State<ArticleFilter> {
         ),
         ListTile(
           title: filter == 'Immunis'
-              ? const Text('Immunis')
+              ? Text(
+                  'Immunis',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                )
               : ActionLink(
                   text: 'Immunis',
                   onTap: () {
@@ -101,7 +121,7 @@ class _ArticleFilterState extends State<ArticleFilter> {
             Icons.filter_list,
             color: filter == 'Immunis'
                 ? Theme.of(context).colorScheme.surface
-                : Theme.of(context).colorScheme.background,
+                : Theme.of(context).scaffoldBackgroundColor,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 25,

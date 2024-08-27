@@ -65,8 +65,8 @@ class _GamesScreenState extends State<GamesScreen> {
                         end: Alignment.centerRight,
                         colors: [
                           Colors.transparent,
-                          Theme.of(context).colorScheme.background,
-                          Theme.of(context).colorScheme.background,
+                          Theme.of(context).scaffoldBackgroundColor,
+                          Theme.of(context).scaffoldBackgroundColor,
                           Colors.transparent,
                         ],
                         stops: [
@@ -122,7 +122,7 @@ class _GamesScreenState extends State<GamesScreen> {
                           child: Text(
                             game.description,
                             style: TextStyle(
-                              color: Theme.of(context).colorScheme.background,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               fontSize: Responsive.isMobile(context) ||
                                       Responsive.isTablet(context)
                                   ? 16
@@ -156,8 +156,8 @@ class _GamesScreenState extends State<GamesScreen> {
                             end: Alignment.centerRight,
                             colors: [
                               Colors.transparent,
-                              Theme.of(context).colorScheme.background,
-                              Theme.of(context).colorScheme.background,
+                              Theme.of(context).scaffoldBackgroundColor,
+                              Theme.of(context).scaffoldBackgroundColor,
                               Colors.transparent,
                             ],
                             stops: [
@@ -213,7 +213,8 @@ class _GamesScreenState extends State<GamesScreen> {
                                         .bodyMedium!
                                         .fontSize
                                     : 18,
-                                color: Theme.of(context).colorScheme.background,
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
                                 alignment: TextAlign.center,
                               ),
                             ),

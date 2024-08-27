@@ -35,7 +35,7 @@ class _PixaToolTileState extends State<PixaToolTile> {
             style: TextStyle(
               color: widget.isExpanded
                   ? Theme.of(context).colorScheme.surface
-                  : Theme.of(context).colorScheme.background,
+                  : Theme.of(context).scaffoldBackgroundColor,
               fontSize: 17,
               fontWeight:
                   widget.isExpanded ? FontWeight.bold : FontWeight.normal,
@@ -43,8 +43,8 @@ class _PixaToolTileState extends State<PixaToolTile> {
           ),
         ),
         iconColor: Theme.of(context).colorScheme.surface,
-        collapsedIconColor: Theme.of(context).colorScheme.background,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        collapsedIconColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         controller: widget.controller,
         onExpansionChanged: (value) => widget.expansionHandler(value),
         children: [

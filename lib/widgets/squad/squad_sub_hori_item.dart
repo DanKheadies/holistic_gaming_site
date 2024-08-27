@@ -30,7 +30,14 @@ class _SquadSubHoriItemState extends State<SquadSubHoriItem> {
         });
       },
       child: Container(
-        decoration: GoRouter.of(context).location == widget.route || isHovered
+        // decoration: GoRouter.of(context).location == widget.route || isHovered
+        decoration: GoRouter.of(context)
+                        .routeInformationProvider
+                        .value
+                        .uri
+                        .toString() ==
+                    widget.route ||
+                isHovered
             ? BoxDecoration(
                 color: Theme.of(context).colorScheme.surface.withAlpha(30),
                 border: Border(

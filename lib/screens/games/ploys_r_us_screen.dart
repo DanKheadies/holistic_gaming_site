@@ -104,18 +104,20 @@ class _PloysRUsScreenState extends State<PloysRUsScreen> {
   Widget build(BuildContext context) {
     return SiteWrapper(
       screen: 'Ploys R Us',
-      bottAppBar: AccordionCloseBar(
-        isTileExpanded: isTileExpanded,
-        tileOrder: tileOrder,
-        controllers: controllers,
-        handleCloseAllTiles: closeAllTiles,
-        handleCloseLastTile: () {
-          setState(() {
-            isTileExpanded[tileOrder.last] = false;
-          });
-          controllers[tileOrder.last].collapse();
-        },
-      ),
+      bottAppBar: isTileExpanded.any((tile) => tile)
+          ? AccordionCloseBar(
+              isTileExpanded: isTileExpanded,
+              tileOrder: tileOrder,
+              controllers: controllers,
+              handleCloseAllTiles: closeAllTiles,
+              handleCloseLastTile: () {
+                setState(() {
+                  isTileExpanded[tileOrder.last] = false;
+                });
+                controllers[tileOrder.last].collapse();
+              },
+            )
+          : const SizedBox(),
       fullscreenBackground: SizedBox.expand(
         child: FittedBox(
           fit: BoxFit.cover,
