@@ -25,6 +25,36 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'All Systems Red',
+      'assets/images/squad/david/books/allSystemsRed.jpg',
+      'https://www.amazon.com/All-Systems-Red-Martha-Wells-audiobook/dp/B076X98RLL/',
+    ),
+    ReadingImageLink(
+      'A Court of Thorns and Roses',
+      'assets/images/squad/david/books/courtThornsRoses.jpg',
+      'https://www.amazon.com/Court-Thorns-Roses-Sarah-Maas/dp/1635575567',
+    ),
+    ReadingImageLink(
+      'Children of Ruin',
+      'assets/images/squad/david/books/childrenRuin.jpg',
+      'https://www.amazon.com/Children-Ruin-Time-Adrian-Tchaikovsky/dp/031645253X',
+    ),
+    ReadingImageLink(
+      'Not Till We Are Lost',
+      'assets/images/squad/david/books/notTillLost.jpg',
+      'https://www.amazon.com/Not-Till-Are-Lost-Bobiverse/dp/B0CW2345TV',
+    ),
+    ReadingImageLink(
+      'Iron Flame',
+      'assets/images/squad/david/books/ironFlame.jpg',
+      'https://www.amazon.com/Iron-Flame-Empyrean-Book-2/dp/B0C9V75P93/',
+    ),
+    ReadingImageLink(
+      'Children of Time',
+      'assets/images/squad/david/books/childrenTime.jpg',
+      'https://www.amazon.com/Children-Time-Adrian-Tchaikovsky/dp/0316452505',
+    ),
+    ReadingImageLink(
       'The Egg',
       'assets/images/squad/david/books/egg.jpg',
       'https://www.amazon.com/Egg-Other-Stories-Andy-Weir/dp/1543642721',
