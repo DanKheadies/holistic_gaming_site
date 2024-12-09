@@ -25,6 +25,41 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The 12th Planet',
+      'assets/images/squad/david/books/12thPlanet.jpg',
+      'https://www.amazon.com/Twelfth-Planet-Book-Earth-Chronicles/dp/0061379131',
+    ),
+    ReadingImageLink(
+      'Children of Memory',
+      'assets/images/squad/david/books/childrenMemory.jpg',
+      'https://www.amazon.com/Children-Memory-Adrian-Tchaikovsky/dp/0316466409',
+    ),
+    ReadingImageLink(
+      'Black Holes, Tides, and Curved Spacetime',
+      'assets/images/squad/david/books/bhTidesSpacetime.jpg',
+      'https://www.amazon.com/Black-Holes-Tides-Curved-Spacetime/dp/1598039857',
+    ),
+    ReadingImageLink(
+      'Network Effect',
+      'assets/images/squad/david/books/networkEffect.jpg',
+      'https://www.amazon.com/Network-Effect-Murderbot-Novel-Diaries/dp/1250229863',
+    ),
+    ReadingImageLink(
+      'Exit Strategy',
+      'assets/images/squad/david/books/exitStrategy.jpg',
+      'https://www.amazon.com/Exit-Strategy-Murderbot-Martha-Wells/dp/1250191858',
+    ),
+    ReadingImageLink(
+      'Rogue Protocol',
+      'assets/images/squad/david/books/rogueProtocol.jpg',
+      'https://www.amazon.com/Rogue-Protocol-Murderbot-Martha-Wells-ebook/dp/B0756JSWGL',
+    ),
+    ReadingImageLink(
+      'Artificial Condition',
+      'assets/images/squad/david/books/artificialCondition.jpg',
+      'https://www.amazon.com/Artificial-Condition-Murderbot-Martha-Wells/dp/1250186927',
+    ),
+    ReadingImageLink(
       'All Systems Red',
       'assets/images/squad/david/books/allSystemsRed.jpg',
       'https://www.amazon.com/All-Systems-Red-Martha-Wells-audiobook/dp/B076X98RLL/',
