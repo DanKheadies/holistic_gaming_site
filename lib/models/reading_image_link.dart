@@ -25,6 +25,21 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Buddha, Vol 1',
+      'assets/images/squad/david/books/buddha1.jpg',
+      'https://www.amazon.com/Buddha-Vol-Kapilavastu-Osamu-Tezuka/dp/1932234438',
+    ),
+    ReadingImageLink(
+      'Sid Meier\'s Memoir!',
+      'assets/images/squad/david/books/sidMeier.jpg',
+      'https://www.amazon.com/Sid-Meiers-Memoir-Computer-Games/dp/B08MNG8VX8',
+    ),
+    ReadingImageLink(
+      'Play Nice',
+      'assets/images/squad/david/books/playNice.jpg',
+      'https://www.amazon.com/Play-Nice-Future-Blizzard-Entertainment/dp/1538725428',
+    ),
+    ReadingImageLink(
       'The 12th Planet',
       'assets/images/squad/david/books/12thPlanet.jpg',
       'https://www.amazon.com/Twelfth-Planet-Book-Earth-Chronicles/dp/0061379131',
@@ -38,6 +53,11 @@ class ReadingImageLink extends Equatable {
       'Black Holes, Tides, and Curved Spacetime',
       'assets/images/squad/david/books/bhTidesSpacetime.jpg',
       'https://www.amazon.com/Black-Holes-Tides-Curved-Spacetime/dp/1598039857',
+    ),
+    ReadingImageLink(
+      'The Story of Human Language',
+      'assets/images/squad/david/books/humanLanguage.jpg',
+      'https://www.amazon.com/Story-Human-Language-John-McWhorter/dp/1565859472',
     ),
     ReadingImageLink(
       'Network Effect',
