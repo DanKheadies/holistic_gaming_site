@@ -1,11 +1,11 @@
 {
-    "name": "Holistic Gaming",
-    "short_name": "Holistic Gaming",
+    "name": "holistic_gaming_site",
+    "short_name": "holistic_gaming_site",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#fdfdfd",
-    "theme_color": "#202020",
-    "description": "Games to learn everything by learning everything about games.",
+    "theme_color": "#fdfdfd",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

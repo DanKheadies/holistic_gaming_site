@@ -25,6 +25,26 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Perfect Blue',
+      'assets/images/squad/david/books/perfectBlue.jpg',
+      'https://www.amazon.com/Perfect-Blue-Metamorphosis-Yoshikazu-Takeuchi/dp/162692645X',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 7',
+      'assets/images/squad/david/books/berserkV7.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-7-Kentaro-Miura/dp/150671790X',
+    ),
+    ReadingImageLink(
+      'Console Wars',
+      'assets/images/squad/david/books/consoleWars.jpg',
+      'https://www.amazon.com/Console-Wars-Nintendo-Defined-Generation/dp/0062276700',
+    ),
+    ReadingImageLink(
+      'Wind and Truth',
+      'assets/images/squad/david/books/windTruth.jpg',
+      'https://www.amazon.com/Wind-Truth-Book-Stormlight-Archive/dp/1250319188',
+    ),
+    ReadingImageLink(
       'Buddha, Vol 1',
       'assets/images/squad/david/books/buddha1.jpg',
       'https://www.amazon.com/Buddha-Vol-Kapilavastu-Osamu-Tezuka/dp/1932234438',
