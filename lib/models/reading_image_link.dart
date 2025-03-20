@@ -25,6 +25,21 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The Anxious Generation',
+      'assets/images/squad/david/books/anxiousGen.jpg',
+      'https://www.amazon.com/Anxious-Generation-Rewiring-Childhood-Epidemic/dp/0593655036',
+    ),
+    ReadingImageLink(
+      'This Inevitable Ruin',
+      'assets/images/squad/david/books/dcCarl7.jpg',
+      'https://www.amazon.com/This-Inevitable-Ruin-Dungeon-Crawler/dp/B0DK29VYL1',
+    ),
+    ReadingImageLink(
+      'Onyx Storm',
+      'assets/images/squad/david/books/onyxStorm.jpg',
+      'https://www.amazon.com/Onyx-Storm-Deluxe-Limited-Empyrean/dp/1649374186',
+    ),
+    ReadingImageLink(
       'Perfect Blue',
       'assets/images/squad/david/books/perfectBlue.jpg',
       'https://www.amazon.com/Perfect-Blue-Metamorphosis-Yoshikazu-Takeuchi/dp/162692645X',

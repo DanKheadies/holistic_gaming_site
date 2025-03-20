@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:holistic_gaming_site/screens/screens.dart';
+import 'package:holistic_gaming_site/screens/_screens.dart';
 
 final GoRouter goRouter = GoRouter(
   routes: [
+    GoRoute(
+      path: '/',
+      name: 'splash',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const SplashScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
     GoRoute(
       path: '/contact',
       name: 'contact',
@@ -235,11 +248,26 @@ final GoRouter goRouter = GoRouter(
       ),
     ),
     GoRoute(
-      path: '/',
-      name: 'splash',
+      path: '/webpage',
+      name: 'webpage',
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child: const SplashScreen(),
+        child: const WebpageScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/webpage/:url',
+      name: 'webpage/:url',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: WebpageScreen(
+          url: state.pathParameters['url'],
+        ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) =>
             FadeTransition(
           opacity: animation,

@@ -11,3 +11,4 @@ export 'squad/screens.dart';
 export 'test_screen.dart';
 export 'thanks_kinda_screen.dart';
 export 'thanks_screen.dart';
+export 'webpage_screen.dart';
