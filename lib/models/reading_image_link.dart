@@ -25,9 +25,69 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'Be Useful',
+      'assets/images/squad/david/books/beUseful.jpg',
+      'https://www.amazon.com/Be-Useful-Seven-Tools-Life/dp/0593655958',
+    ),
+    ReadingImageLink(
+      'Isles of the Emberdark',
+      'assets/images/squad/david/books/islesEmberdark.jpg',
+      'https://www.amazon.com/Isles-Emberdark-Cosmere-Secret-Projects/dp/B0F4RTHZV5',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 14',
+      'assets/images/squad/david/books/berserkV14.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-14/dp/1506741061',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 13',
+      'assets/images/squad/david/books/berserkV13.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-13-Kentaro-Miura/dp/1506727573',
+    ),
+    ReadingImageLink(
+      'A Court of Frost and Starlight',
+      'assets/images/squad/david/books/courtFrostStarlight.jpg',
+      'https://www.amazon.com/Court-Frost-Starlight-Thorns-Roses-ebook/dp/B075818VDG',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 12',
+      'assets/images/squad/david/books/berserkV12.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-12/dp/1506727565',
+    ),
+    ReadingImageLink(
+      'A Court of Wings and Ruin',
+      'assets/images/squad/david/books/courtWingsRuin.jpg',
+      'https://www.amazon.com/Court-Wings-Ruin-Thorns-Roses/dp/1635575605',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 11',
+      'assets/images/squad/david/books/berserkV11.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-11/dp/1506727557',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 10',
+      'assets/images/squad/david/books/berserkV10.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-10/dp/1506727549',
+    ),
+    ReadingImageLink(
+      'A Court of Mist and Fury',
+      'assets/images/squad/david/books/courtMistFury.jpg',
+      'https://www.amazon.com/Court-Mist-Fury-Thorns-Roses/dp/1635575583',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 9',
+      'assets/images/squad/david/books/berserkV9.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-9-Kentaro-Miura/dp/1506717926',
+    ),
+    ReadingImageLink(
       'The Anxious Generation',
       'assets/images/squad/david/books/anxiousGen.jpg',
       'https://www.amazon.com/Anxious-Generation-Rewiring-Childhood-Epidemic/dp/0593655036',
+    ),
+    ReadingImageLink(
+      'Berserk, Deluxe Edition Vol. 8',
+      'assets/images/squad/david/books/berserkV8.jpg',
+      'https://www.amazon.com/Berserk-Deluxe-8-Kentaro-Mira/dp/1506717918',
     ),
     ReadingImageLink(
       'This Inevitable Ruin',
