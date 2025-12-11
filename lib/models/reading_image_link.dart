@@ -25,6 +25,36 @@ class ReadingImageLink extends Equatable {
     //   '',
     // ),
     ReadingImageLink(
+      'The Frugal Wizard\'s Handbook for Surviving Medieval England',
+      'assets/images/squad/david/books/frugalWizard.jpg',
+      'https://www.amazon.com/Wizards-Handbook-Surviving-Medieval-England/dp/B0D18MSLRS/',
+    ),
+    ReadingImageLink(
+      'Solo Leveling',
+      'assets/images/squad/david/books/soloLeveling.jpg',
+      'https://asuracomic.net/series/solo-leveling-785fa2ed',
+    ),
+    ReadingImageLink(
+      'I Will Teach You to Be Rich',
+      'assets/images/squad/david/books/teachRich.jpg',
+      'https://www.amazon.com/Will-Teach-You-Rich-Second/dp/1523505745',
+    ),
+    ReadingImageLink(
+      'Flybot',
+      'assets/images/squad/david/books/flybot.jpg',
+      'https://www.amazon.com/Audible-Flybot/dp/B0F75GJ91F',
+    ),
+    ReadingImageLink(
+      'A Court of Silver Flames',
+      'assets/images/squad/david/books/courtSilverFlames.jpg',
+      'https://www.amazon.com/Court-Silver-Flames-Thorns-Roses/dp/168119628X',
+    ),
+    ReadingImageLink(
+      'The Lies of Locke Lamora',
+      'assets/images/squad/david/books/liesLamora1.jpg',
+      'https://www.amazon.com/Lies-Locke-Lamora-Gentleman-Bastards/dp/055358894X',
+    ),
+    ReadingImageLink(
       'Be Useful',
       'assets/images/squad/david/books/beUseful.jpg',
       'https://www.amazon.com/Be-Useful-Seven-Tools-Life/dp/0593655958',
