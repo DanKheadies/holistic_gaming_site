@@ -1,9 +1,6 @@
-import 'dart:convert';
-
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
 import 'package:holistic_gaming_site/widgets/widgets.dart';
 
 class ContactScreen extends StatefulWidget {
@@ -54,7 +51,8 @@ class _ContactScreenState extends State<ContactScreen> {
         messageController.value.text,
       );
 
-      if (response.statusCode == 200) {
+      // if (response.statusCode == 200) {
+      if (response == 200) {
         showSnackBar('Thanks for the message. We\'ll reach out soon.');
       } else {
         showSnackBar(
@@ -71,34 +69,26 @@ class _ContactScreenState extends State<ContactScreen> {
     }
   }
 
-  Future sendEmail(
+  Future<dynamic> sendEmail(
     String name,
     String email,
     String message,
   ) async {
-    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
-    const serviceId = 'service_56ax7kn';
-    const templateId = 'hg_contact';
-    const publicKey = 'user_NNh1HrO27gE32yLcqTOyh';
+    try {
+      HttpsCallableResult<dynamic> response =
+          await FirebaseFunctions.instance.httpsCallable('contactEmail').call({
+        // await FirebaseFunctions.instance.httpsCallable('basicEmail').call({
+        'email': email,
+        'message': message,
+        'name': name,
+      });
 
-    final response = await http.post(
-      url,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: json.encode({
-        'service_id': serviceId,
-        'template_id': templateId,
-        'user_id': publicKey,
-        'template_params': {
-          'from_name': name,
-          'from_email': email,
-          'message': message,
-        },
-      }),
-    );
-
-    return response;
+      return response.data;
+    } on FirebaseFunctionsException catch (err) {
+      print('ff error: $err');
+    } catch (err) {
+      print('error: $err');
+    }
   }
 
   @override

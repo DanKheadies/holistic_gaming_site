@@ -1,6 +1,6 @@
 import 'package:firebase_analytics_web/firebase_analytics_web.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 import 'package:holistic_gaming_site/config/config.dart';
 import 'package:holistic_gaming_site/widgets/widgets.dart';
@@ -34,10 +34,10 @@ class _SiteWrapperState extends State<SiteWrapper> {
   void initState() {
     super.initState();
 
-    Future.delayed(Duration.zero).then((value) {
-      logPageAsEvent(context);
-      logPage(context);
-    });
+    // Future.delayed(Duration.zero).then((value) {
+    //   logPageAsEvent(context);
+    //   logPage(context);
+    // });
 
     scroller.addListener(scrollListener);
   }
@@ -49,11 +49,11 @@ class _SiteWrapperState extends State<SiteWrapper> {
   }
 
   Future<void> logPage(BuildContext context) async {
-    await analyticsWeb.setCurrentScreen(
-      // screenName: GoRouter.of(context).location,
-      screenName:
-          GoRouter.of(context).routeInformationProvider.value.uri.toString(),
-    );
+    // await analyticsWeb.setCurrentScreen(
+    //   // screenName: GoRouter.of(context).location,
+    //   screenName:
+    //       GoRouter.of(context).routeInformationProvider.value.uri.toString(),
+    // );
   }
 
   void scrollListener() {
